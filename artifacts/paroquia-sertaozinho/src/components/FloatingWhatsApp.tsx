@@ -1,23 +1,15 @@
 import { MessageCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function FloatingWhatsApp() {
   return (
-    <motion.a
+    <a
       href="https://wa.me/551639420000" // Placeholder number
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-green-900/20 hover:scale-110 transition-transform duration-300 group"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
+      className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-whatsapp text-white rounded-full flex items-center justify-center hover:bg-whatsapp/90 transition-colors shadow-sm group"
+      aria-label="Fale conosco no WhatsApp"
     >
-      <MessageCircle className="w-7 h-7" />
-      
-      {/* Tooltip on hover */}
-      <span className="absolute right-full mr-4 bg-white text-foreground px-3 py-1.5 rounded-lg shadow-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-        Fale com a Secretaria
-      </span>
-    </motion.a>
+      <MessageCircle className="w-5 h-5 stroke-[2]" />
+    </a>
   );
 }

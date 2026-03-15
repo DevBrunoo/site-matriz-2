@@ -1,194 +1,149 @@
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { Clock, Calendar, Heart, Users, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Clock, Calendar, Heart, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full pt-20">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-primary">
           <img
             src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
             alt="Interior da Igreja"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay grayscale"
           />
-          {/* Gradient Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/50 to-background"></div>
+          <div className="absolute inset-0 bg-primary/70"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-md">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-20">
+          <div>
+            <span className="text-secondary font-medium tracking-[0.2em] uppercase text-xs mb-6 block">
               Sertãozinho - SP
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-              Paróquia Nossa Senhora <span className="text-gold-gradient">Aparecida</span>
+            <h1 className="font-display text-4xl md:text-6xl font-normal text-white mb-8 leading-tight">
+              Paróquia Nossa Senhora <span className="text-secondary italic">Aparecida</span>
             </h1>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-md font-medium">
+            <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
               Bem-vindo à Casa do Senhor. Uma comunidade de fé, esperança e caridade, caminhando juntos com Maria.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/historia">
-                <Button variant="gold" size="lg" className="w-full sm:w-auto">
-                  Conheça Nossa História
-                </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Link href="/historia" className="px-8 py-3 bg-secondary text-white text-sm font-semibold tracking-wider uppercase hover:bg-secondary/90 transition-colors">
+                Conheça Nossa História
               </Link>
-              <Link href="/agenda">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary">
-                  Horários de Missa
-                </Button>
+              <Link href="/agenda" className="px-8 py-3 border border-white/60 text-white text-sm font-semibold tracking-wider uppercase hover:bg-white/10 transition-colors">
+                Horários de Missa
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Quick Info Grid */}
-      <section className="py-16 bg-background relative z-20 -mt-10">
+      <section className="py-24 bg-background border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-xl shadow-primary/5 border border-border flex flex-col items-center text-center group hover:-translate-y-1 transition-transform duration-300"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                <Clock className="w-8 h-8" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <div className="bg-white flex flex-col p-6 border-l border-secondary/30">
+              <div className="text-secondary mb-6">
+                <Clock className="w-6 h-6 stroke-[1.5]" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Horários de Missa</h3>
-              <p className="text-muted-foreground mb-4">Confira nossos horários de celebrações semanais e dominicais.</p>
-              <Link href="/agenda" className="text-primary font-semibold hover:text-secondary flex items-center gap-1 mt-auto">
-                Ver todos <ArrowRight className="w-4 h-4" />
+              <h3 className="font-display text-xl mb-3 text-primary">Horários de Missa</h3>
+              <p className="text-muted-foreground mb-6 font-light leading-relaxed">
+                Confira nossos horários de celebrações semanais e dominicais para participar conosco.
+              </p>
+              <Link href="/agenda" className="text-xs font-semibold tracking-wider uppercase text-primary hover:text-secondary flex items-center gap-2 mt-auto group transition-colors">
+                Ver horários <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-primary text-white p-8 rounded-2xl shadow-xl shadow-primary/20 flex flex-col items-center text-center group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden"
-            >
-              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/damask-seamless.png')]"></div>
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-secondary mb-4 group-hover:bg-secondary group-hover:text-primary transition-colors">
-                  <Heart className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Dízimo</h3>
-                <p className="text-white/80 mb-4">Seja um dizimista fiel e ajude nossa paróquia a manter suas obras.</p>
-                <Link href="/contato" className="text-secondary font-semibold hover:text-white flex items-center gap-1 mt-auto">
-                  Como participar <ArrowRight className="w-4 h-4" />
-                </Link>
+            <div className="bg-white flex flex-col p-6 border-l border-secondary/30">
+              <div className="text-secondary mb-6">
+                <Heart className="w-6 h-6 stroke-[1.5]" />
               </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white p-8 rounded-2xl shadow-xl shadow-primary/5 border border-border flex flex-col items-center text-center group hover:-translate-y-1 transition-transform duration-300"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                <Calendar className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Secretaria</h3>
-              <p className="text-muted-foreground mb-4">Atendimento de segunda a sexta das 08h às 17h30. Sábados até 12h.</p>
-              <Link href="/contato" className="text-primary font-semibold hover:text-secondary flex items-center gap-1 mt-auto">
-                Fale conosco <ArrowRight className="w-4 h-4" />
+              <h3 className="font-display text-xl mb-3 text-primary">Dízimo</h3>
+              <p className="text-muted-foreground mb-6 font-light leading-relaxed">
+                Seja um dizimista fiel e ajude nossa paróquia a manter suas obras de evangelização e caridade.
+              </p>
+              <Link href="/contato" className="text-xs font-semibold tracking-wider uppercase text-primary hover:text-secondary flex items-center gap-2 mt-auto group transition-colors">
+                Como participar <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
+            </div>
+
+            <div className="bg-white flex flex-col p-6 border-l border-secondary/30">
+              <div className="text-secondary mb-6">
+                <Calendar className="w-6 h-6 stroke-[1.5]" />
+              </div>
+              <h3 className="font-display text-xl mb-3 text-primary">Secretaria</h3>
+              <p className="text-muted-foreground mb-6 font-light leading-relaxed">
+                Atendimento presencial de segunda a sexta das 08h às 17h30, e aos sábados até 12h.
+              </p>
+              <Link href="/contato" className="text-xs font-semibold tracking-wider uppercase text-primary hover:text-secondary flex items-center gap-2 mt-auto group transition-colors">
+                Fale conosco <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Sacramentos Highlights */}
-      <section className="py-20 bg-muted/30 relative">
-         <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
-          <img src={`${import.meta.env.BASE_URL}images/pattern-bg.png`} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Os Sacramentos</h2>
-            <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Os sacramentos são sinais visíveis da graça invisível, instituídos por Jesus Cristo para a nossa santificação.
+      <section className="py-24 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <h2 className="font-display text-3xl text-primary mb-4">Os Sacramentos</h2>
+            <div className="w-12 h-px bg-secondary mb-6"></div>
+            <p className="text-muted-foreground max-w-2xl text-lg font-light">
+              Sinais visíveis da graça invisível, instituídos por Jesus Cristo.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['Batismo', 'Eucaristia', 'Matrimônio', 'Confissão'].map((sacramento, i) => (
-              <motion.div
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {['Batismo', 'Eucaristia', 'Matrimônio', 'Confissão'].map((sacramento) => (
+              <div
                 key={sacramento}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-border hover:border-secondary/50 hover:shadow-xl transition-all text-center group cursor-pointer"
+                className="bg-white p-8 group border-t border-transparent hover:border-secondary transition-colors"
               >
-                <div className="w-14 h-14 mx-auto border-2 border-primary/20 rounded-full flex items-center justify-center text-primary mb-4 group-hover:border-secondary group-hover:text-secondary transition-colors">
-                  <Heart className="w-6 h-6" /> {/* Placeholder icon */}
-                </div>
-                <h3 className="text-lg font-bold mb-2">{sacramento}</h3>
-                <Link href="/sacramentos" className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-display text-lg mb-4 text-primary">{sacramento}</h3>
+                <Link href="/sacramentos" className="text-xs tracking-wide text-muted-foreground group-hover:text-secondary transition-colors uppercase">
                   Saiba mais &rarr;
                 </Link>
-              </motion.div>
+              </div>
             ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link href="/sacramentos">
-              <Button variant="outline">Ver todos os Sacramentos</Button>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Próximos Eventos */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-24 bg-background border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Próximos Eventos</h2>
-              <div className="w-24 h-1 bg-secondary"></div>
+              <h2 className="font-display text-3xl text-primary mb-4">Agenda Paroquial</h2>
+              <div className="w-12 h-px bg-secondary"></div>
             </div>
-            <Link href="/agenda">
-              <Button variant="gold">Agenda Completa</Button>
+            <Link href="/agenda" className="text-xs font-semibold tracking-wider uppercase text-primary hover:text-secondary transition-colors pb-1 border-b border-primary hover:border-secondary">
+              Ver agenda completa
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-col gap-4">
             {[
-              { day: "15", month: "OUT", title: "Festa da Padroeira", desc: "Missa solene e procissão luminosa." },
-              { day: "22", month: "OUT", title: "Encontro de Jovens", desc: "No salão paroquial a partir das 19h." },
-              { day: "05", month: "NOV", title: "Bazar Beneficente", desc: "Roupas e artesanatos em prol da paróquia." }
+              { day: "15", month: "Out", title: "Festa da Padroeira", desc: "Missa solene e procissão luminosa" },
+              { day: "22", month: "Out", title: "Encontro de Jovens", desc: "No salão paroquial a partir das 19h" },
+              { day: "05", month: "Nov", title: "Bazar Beneficente", desc: "Roupas e artesanatos em prol da paróquia" }
             ].map((event, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 flex gap-6 hover:bg-white/20 transition-colors"
+                className="flex items-center gap-8 py-6 border-b border-gray-100 hover:bg-muted/50 transition-colors px-4 -mx-4"
               >
-                <div className="flex flex-col items-center justify-center bg-white text-primary rounded-xl w-20 h-20 shrink-0 shadow-lg">
-                  <span className="text-2xl font-bold leading-none">{event.day}</span>
-                  <span className="text-sm font-semibold">{event.month}</span>
+                <div className="flex flex-col items-center justify-center shrink-0 w-16">
+                  <span className="font-display text-2xl text-primary leading-none">{event.day}</span>
+                  <span className="text-xs font-medium uppercase tracking-widest text-secondary mt-1">{event.month}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-white/80 text-sm">{event.desc}</p>
+                  <h3 className="text-lg font-medium text-primary mb-1">{event.title}</h3>
+                  <p className="text-muted-foreground text-sm font-light">{event.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

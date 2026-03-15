@@ -5,7 +5,6 @@
   --font-sans: 'Montserrat', sans-serif;
   --font-display: 'Playfair Display', serif;
 
-  /* Color Palette: Azul Mariano, Gold, Light Background */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-primary: hsl(var(--primary));
@@ -20,30 +19,29 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   
-  --color-green-whatsapp: hsl(var(--whatsapp));
+  --color-whatsapp: hsl(var(--whatsapp));
 
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.5rem;
 }
 
 :root {
-  /* Light Theme (Default) */
-  --background: 210 33% 98%; /* #F8FAFC */
-  --foreground: 224 64% 15%; /* Darker Blue for text */
+  --background: 0 0% 100%; /* #FFFFFF */
+  --foreground: 224 64% 15%; /* Dark Blue */
   
-  --primary: 224 64% 33%; /* #1E3A8A - Azul Mariano */
+  --primary: 224 64% 15%; /* Dark Blue */
   --primary-foreground: 0 0% 100%;
   
   --secondary: 46 65% 52%; /* #D4AF37 - Gold Accent */
   --secondary-foreground: 224 64% 15%;
   
-  --muted: 214 32% 91%;
+  --muted: 0 0% 98%; /* #F9F9F9 */
   --muted-foreground: 215 16% 47%;
   
   --accent: 46 65% 52%; /* Gold */
   --accent-foreground: 0 0% 100%;
   
-  --border: 214 32% 91%;
+  --border: 0 0% 93%; /* Light gray border */
   
   --card: 0 0% 100%;
   --card-foreground: 224 64% 15%;
@@ -59,15 +57,5 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     @apply font-semibold tracking-tight text-primary;
-  }
-}
-
-@layer utilities {
-  .glass-panel {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg shadow-primary/5;
-  }
-  
-  .text-gold-gradient {
-    @apply bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] bg-clip-text text-transparent;
   }
 }
