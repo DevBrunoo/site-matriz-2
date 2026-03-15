@@ -15,6 +15,7 @@ import Agenda from "@/pages/Agenda";
 import Sacramentos from "@/pages/Sacramentos";
 import Pastorais from "@/pages/Pastorais";
 import Contato from "@/pages/Contato";
+import Dizimo from "@/pages/Dizimo";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -54,7 +55,10 @@ function Router() {
       <Route path="/contato">
         <Layout><Contato /></Layout>
       </Route>
-      
+      <Route path="/dizimo">
+        <Layout><Dizimo /></Layout>
+      </Route>
+
       {/* 404 does not use the standard layout */}
       <Route component={NotFound} />
     </Switch>

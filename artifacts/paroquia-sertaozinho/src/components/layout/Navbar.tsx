@@ -48,6 +48,15 @@ const NAV_ITEMS = [
       { label: "Coral", href: "/pastorais#coral" },
     ],
   },
+  {
+    label: "Dízimo e Doações",
+    href: "/dizimo",
+    children: [
+      { label: "Seja um Dizimista", href: "/dizimo#dizimista" },
+      { label: "Como Contribuir", href: "/dizimo#como-contribuir" },
+      { label: "Doações Online", href: "/dizimo#doacoes" },
+    ],
+  },
 ];
 
 export function Navbar() {
