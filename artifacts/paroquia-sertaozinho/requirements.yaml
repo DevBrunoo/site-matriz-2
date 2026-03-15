@@ -1,0 +1,19 @@
+packages:
+  "framer-motion": "For smooth scroll animations, navbar transitions, and dropdowns"
+  "react-hook-form": "For the contact form state management"
+  "@hookform/resolvers": "For Zod validation with react-hook-form"
+  "clsx": "For conditional class merging"
+  "tailwind-merge": "For merging tailwind classes safely"
+
+images:
+  - path: "artifacts/paroquia-sertaozinho/public/images/hero-bg.png"
+    description: "Beautiful interior of a majestic traditional Catholic church with warm glowing light streaming through stained glass windows, dramatic atmosphere, high resolution"
+    aspect_ratio: "16:9"
+  - path: "artifacts/paroquia-sertaozinho/public/images/pattern-bg.png"
+    description: "Subtle elegant damask religious seamless pattern background in very light cream and pale gold, high-end luxurious texture"
+    aspect_ratio: "16:9"
+
+notes:
+  - The site is frontend-only presentation, no backend API is required for content.
+  - The contact form uses a simulated mutation hook.
+  - Logo is assumed to be at /logo.png as per instructions.

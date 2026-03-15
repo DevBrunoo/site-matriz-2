@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Paróquia Nossa Senhora Aparecida - Sertãozinho"
+version = "1.0.0"
+id = "artifacts/paroquia-sertaozinho"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 23637
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/paroquia-sertaozinho run dev"
+
+[services.env]
+PORT = "23637"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/paroquia-sertaozinho", "run", "build"]
+publicDir = "artifacts/paroquia-sertaozinho/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

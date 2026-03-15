@@ -1,0 +1,67 @@
+text
+Crie um site completo e visualmente deslumbrante para a **Paróquia Matriz de Sertãozinho-SP**, uma igreja católica tradicional e acolhedora. O design deve ser **elegante, moderno e espiritual**, usando tons de azul celeste, branco, dourado suave e verde esmeralda. Use fontes serifadas elegantes (como Playfair Display) para títulos e sans-serif limpa (como Montserrat) para textos.
+
+## 🏗️ ESTRUTURA DO NAVBAR (fixo no topo, transparente com efeito glassmorphism):
+┌───────────────────────────────────────────────────────────────┐
+│ [LOGO com imagem de Nossa Senhora Aparecida] PARÓQUIA ▼ AGENDA ▼ SACRAMENTOS ▼ PASTORAIS ▼ CONTATO │
+└───────────────────────────────────────────────────────────────┘
+
+text
+
+**DROPDOWNS com animações suaves:**
+- **PARÓQUIA ▼**
+  - História
+  - Capelas e Setores
+  - Padres e Diáconos  
+  - Secretaria
+- **AGENDA ▼**
+  - Eventos
+  - Missas (horários)
+  - Via Sacra
+- **SACRAMENTOS ▼**
+  - Batismo
+  - Confissão
+  - Matrimônio
+  - Crisma
+  - Eucaristia
+- **PASTORAIS ▼**
+  - RCC
+  - TLC
+  - Terço dos Homens
+  - Catequese
+  - PASCOM
+  - Liturgia
+  - Coral
+
+## 📱 DESIGN RESPONSIVO E MODERNO:
+- **Hero Section**: Imagem fullscreen de igreja ao pôr do sol + overlay escuro + título "Paróquia Matriz de Sertãozinho" + subtítulo "Bem-vindo à Casa do Senhor" + botão CTA "Conheça nossa história"
+- **Cards com hover effects** e sombras suaves
+- **Galeria de fotos** em grid masonry
+- **Calendário interativo** de eventos
+- **Formulário de contato** com validação
+- **Mapas Google** da localização
+- **Botão WhatsApp flutuante** (verde)
+- **Footer** com horários de missa, endereço, redes sociais
+
+## 🎨 PALETA DE CORES:
+- Primária: #1E3A8A (azul mariana)
+- Secundária: #F8FAFC (cinza claro)
+- Acento: #D4AF37 (dourado eclesiástico)
+- Sucesso: #10B981 (verde sacramental)
+
+## 📂 PÁGINAS E CONTEÚDO:
+1. **Home**: Hero + destaques de missas + últimas notícias + galeria
+2. **História**: Timeline da paróquia + fotos antigas
+3. **Agenda**: Calendário + lista de missas horários
+4. **Sacramentos**: Cards explicativos de cada um + como agendar
+5. **Pastorais**: Cards com descrição, responsáveis e contatos
+6. **Contato**: Mapa + formulário + dados completos
+
+## ✨ EFEITOS ESPECIAIS:
+- Animações suaves no scroll (AOS library)
+- Partículas flutuantes sutis na hero section
+- Botões com ripple effect
+- Dropdowns com slide-down animation
+- Galeria lightbox
+
+**GERE O CÓDIGO HTML/CSS/JS COMPLETO e responsivo, pronto para uso!**
