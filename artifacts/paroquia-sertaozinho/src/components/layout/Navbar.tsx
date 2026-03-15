@@ -51,11 +51,7 @@ const NAV_ITEMS = [
   {
     label: "Dízimo e Doações",
     href: "/dizimo",
-    children: [
-      { label: "Seja um Dizimista", href: "/dizimo#dizimista" },
-      { label: "Como Contribuir", href: "/dizimo#como-contribuir" },
-      { label: "Doações Online", href: "/dizimo#doacoes" },
-    ],
+    children: [],
   },
 ];
 
@@ -110,30 +106,34 @@ export function Navbar() {
                   className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-secondary transition-colors py-8"
                 >
                   {item.label}
-                  <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+                  {item.children.length > 0 && (
+                    <ChevronDown className="w-3.5 h-3.5 opacity-50" />
+                  )}
                 </Link>
 
-                <AnimatePresence>
-                  {activeDropdown === item.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute top-[100%] left-0 w-48 bg-white border border-gray-100 shadow-sm py-2 z-50"
-                    >
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:text-secondary hover:bg-gray-50 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {item.children.length > 0 && (
+                  <AnimatePresence>
+                    {activeDropdown === item.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute top-[100%] left-0 w-48 bg-white border border-gray-100 shadow-sm py-2 z-50"
+                      >
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            className="block px-4 py-2 text-sm text-foreground hover:text-secondary hover:bg-gray-50 transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
               </div>
             ))}
             
@@ -171,38 +171,49 @@ export function Navbar() {
             <div className="px-4 py-4 space-y-1">
               {NAV_ITEMS.map((item) => (
                 <div key={item.label} className="space-y-1">
-                  <button
-                    onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
-                    className="flex justify-between items-center w-full px-4 py-3 text-left font-medium text-foreground"
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={cn(
-                        "w-4 h-4 transition-transform opacity-50",
-                        activeDropdown === item.label && "rotate-180"
-                      )}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {activeDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="pl-8 space-y-1 overflow-hidden bg-gray-50"
+                  {item.children.length > 0 ? (
+                    <>
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
+                        className="flex justify-between items-center w-full px-4 py-3 text-left font-medium text-foreground"
                       >
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block py-2 text-sm text-foreground/80 hover:text-secondary"
+                        {item.label}
+                        <ChevronDown
+                          className={cn(
+                            "w-4 h-4 transition-transform opacity-50",
+                            activeDropdown === item.label && "rotate-180"
+                          )}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {activeDropdown === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-8 space-y-1 overflow-hidden bg-gray-50"
                           >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                className="block py-2 text-sm text-foreground/80 hover:text-secondary"
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 font-medium text-foreground hover:text-secondary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </div>
               ))}
               <div className="pt-4 pb-2 px-4">
