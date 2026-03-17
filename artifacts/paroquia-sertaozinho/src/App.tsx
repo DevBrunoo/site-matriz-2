@@ -1,11 +1,14 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { isAuthenticated } from "@/lib/adminAuth";
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import AdminLogin from "@/pages/admin/AdminLogin";
+import AdminDashboard from "@/pages/admin/AdminDashboard";
 
 import Home from "@/pages/Home";
 import Historia from "@/pages/Historia";
@@ -85,6 +88,12 @@ function Router() {
       {/* Outros */}
       <Route path="/contato"><Layout><Contato /></Layout></Route>
       <Route path="/dizimo"><Layout><Dizimo /></Layout></Route>
+
+      {/* Admin */}
+      <Route path="/admin"><AdminLogin /></Route>
+      <Route path="/admin/dashboard">
+        {isAuthenticated() ? <AdminDashboard /> : <Redirect to="/admin" />}
+      </Route>
 
       <Route component={NotFound} />
     </Switch>
