@@ -35,6 +35,7 @@ import Liturgia from "@/pages/Liturgia";
 import Coral from "@/pages/Coral";
 import Contato from "@/pages/Contato";
 import Dizimo from "@/pages/Dizimo";
+import Cartazes from "@/pages/Cartazes";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -88,6 +89,7 @@ function Router() {
       {/* Outros */}
       <Route path="/contato"><Layout><Contato /></Layout></Route>
       <Route path="/dizimo"><Layout><Dizimo /></Layout></Route>
+      <Route path="/cartazes"><Layout><Cartazes /></Layout></Route>
 
       {/* Admin */}
       <Route path="/admin"><AdminLogin /></Route>
