@@ -33,6 +33,12 @@ import Catequese from "@/pages/Catequese";
 import Pascom from "@/pages/Pascom";
 import Liturgia from "@/pages/Liturgia";
 import Coral from "@/pages/Coral";
+import AssociacaoRosario from "@/pages/AssociacaoRosario";
+import PastoralFamiliar from "@/pages/PastoralFamiliar";
+import GrupoEvangelizacao from "@/pages/GrupoEvangelizacao";
+import PastoralSobriedade from "@/pages/PastoralSobriedade";
+import PastoralDizimo from "@/pages/PastoralDizimo";
+import RenovacaoCarismatica from "@/pages/RenovacaoCarismatica";
 import Contato from "@/pages/Contato";
 import Dizimo from "@/pages/Dizimo";
 import Cartazes from "@/pages/Cartazes";
@@ -85,6 +91,12 @@ function Router() {
       <Route path="/pascom"><Layout><Pascom /></Layout></Route>
       <Route path="/liturgia"><Layout><Liturgia /></Layout></Route>
       <Route path="/coral"><Layout><Coral /></Layout></Route>
+      <Route path="/associacao-do-rosario"><Layout><AssociacaoRosario /></Layout></Route>
+      <Route path="/pastoral-familiar"><Layout><PastoralFamiliar /></Layout></Route>
+      <Route path="/grupo-de-evangelizacao"><Layout><GrupoEvangelizacao /></Layout></Route>
+      <Route path="/pastoral-da-sobriedade"><Layout><PastoralSobriedade /></Layout></Route>
+      <Route path="/pastoral-do-dizimo"><Layout><PastoralDizimo /></Layout></Route>
+      <Route path="/renovacao-carismatica"><Layout><RenovacaoCarismatica /></Layout></Route>
 
       {/* Outros */}
       <Route path="/contato"><Layout><Contato /></Layout></Route>
