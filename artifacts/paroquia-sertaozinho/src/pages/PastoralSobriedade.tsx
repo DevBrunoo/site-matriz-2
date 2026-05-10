@@ -33,7 +33,7 @@ export default function PastoralSobriedade() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Coordenação</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👤 Coordenação</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               A pastoral é coordenada por{" "}
@@ -47,7 +47,7 @@ export default function PastoralSobriedade() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Encontros</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📅 Encontros</h2>
             </div>
             <div className="flex flex-col gap-3">
               {[
@@ -67,7 +67,7 @@ export default function PastoralSobriedade() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🎯 Missão</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Atuar na prevenção e recuperação da dependência química e de outras dependências, promovendo a
@@ -79,7 +79,7 @@ export default function PastoralSobriedade() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Quem pode participar?</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👥 Quem pode participar?</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed mb-4">
               Qualquer pessoa pode participar. A pastoral é aberta:
@@ -106,7 +106,7 @@ export default function PastoralSobriedade() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Inscrição e documentos</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📋 Inscrição e documentos</h2>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -128,7 +128,7 @@ export default function PastoralSobriedade() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O que é viver a sobriedade?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🌱 O que é viver a sobriedade?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             A sobriedade vai além da abstinência. Ela é um estilo de vida novo, que envolve:
@@ -155,7 +155,7 @@ export default function PastoralSobriedade() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Como a Pastoral atua?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🤝 Como a Pastoral atua?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             A caminhada da Pastoral da Sobriedade é inspirada em um processo contínuo de crescimento humano e

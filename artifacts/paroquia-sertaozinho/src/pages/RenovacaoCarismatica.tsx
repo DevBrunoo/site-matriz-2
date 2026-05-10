@@ -30,7 +30,7 @@ export default function RenovacaoCarismatica() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Coordenação</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👤 Coordenação</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               O grupo é coordenado por <span className="font-semibold text-primary">Luís Alberto da Silva</span>, que,
@@ -42,7 +42,7 @@ export default function RenovacaoCarismatica() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Encontros</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📅 Encontros</h2>
             </div>
             <div className="flex flex-col gap-3">
               {[
@@ -62,7 +62,7 @@ export default function RenovacaoCarismatica() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🎯 Missão</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Levar as pessoas a terem um encontro pessoal com Jesus Cristo, renovando sua fé e sua vida à luz do
@@ -74,7 +74,7 @@ export default function RenovacaoCarismatica() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Quem pode participar?</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👥 Quem pode participar?</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               O grupo é aberto a todas as pessoas, sem distinção de idade, estado civil ou qualquer outra condição.
@@ -90,7 +90,7 @@ export default function RenovacaoCarismatica() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Inscrição e documentos</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📋 Inscrição e documentos</h2>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -112,7 +112,7 @@ export default function RenovacaoCarismatica() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O que você vai encontrar?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🙏 O que você vai encontrar?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-8 leading-relaxed">
             Nos encontros da RCC, vivemos momentos profundos de espiritualidade e comunhão:

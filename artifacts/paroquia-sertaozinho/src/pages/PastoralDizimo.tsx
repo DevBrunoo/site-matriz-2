@@ -29,7 +29,7 @@ export default function PastoralDizimo() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Coordenação</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👤 Coordenação</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               A pastoral é coordenada por{" "}
@@ -42,7 +42,7 @@ export default function PastoralDizimo() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Encontros</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📅 Encontros</h2>
             </div>
             <div className="flex flex-col gap-3">
               {[
@@ -62,7 +62,7 @@ export default function PastoralDizimo() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🎯 Missão</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Promover a evangelização, ajudando os fiéis a compreenderem que todos somos chamados a colaborar com
@@ -74,7 +74,7 @@ export default function PastoralDizimo() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Quem pode participar?</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👥 Quem pode participar?</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Todos podem participar. A Pastoral do Dízimo é aberta a qualquer pessoa que deseje servir à
@@ -90,7 +90,7 @@ export default function PastoralDizimo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Inscrição e documentos</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📋 Inscrição e documentos</h2>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -111,7 +111,7 @@ export default function PastoralDizimo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O que é o dízimo?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">💡 O que é o dízimo?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             O dízimo é uma expressão concreta de fé e gratidão a Deus. É a devolução generosa de uma parte
@@ -137,7 +137,7 @@ export default function PastoralDizimo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Por que o dízimo é importante?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🌾 Por que o dízimo é importante?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             Através do dízimo, a Igreja pode:

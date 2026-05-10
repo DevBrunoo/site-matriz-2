@@ -32,7 +32,7 @@ export default function PastoralFamiliar() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Coordenação</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👤 Coordenação</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               A pastoral é coordenada por{" "}
@@ -45,7 +45,7 @@ export default function PastoralFamiliar() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Encontros</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📅 Encontros</h2>
             </div>
             <div className="flex flex-col gap-3 mb-4">
               {[
@@ -67,7 +67,7 @@ export default function PastoralFamiliar() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🎯 Missão</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Promover a evangelização em família, ajudando os lares a crescerem na fé, no amor e na vivência dos
@@ -79,7 +79,7 @@ export default function PastoralFamiliar() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Quem pode participar?</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👥 Quem pode participar?</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed mb-4">
               Não há restrições. A Pastoral Familiar é aberta a:
@@ -107,7 +107,7 @@ export default function PastoralFamiliar() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Inscrição e participação</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📋 Inscrição e participação</h2>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -128,7 +128,7 @@ export default function PastoralFamiliar() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O que a Pastoral Familiar oferece?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">💞 O que a Pastoral Familiar oferece?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             A pastoral busca acompanhar as famílias em todas as fases da vida, oferecendo:
@@ -155,7 +155,7 @@ export default function PastoralFamiliar() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Por que participar?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🌱 Por que participar?</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             A família enfrenta muitos desafios nos dias de hoje. Por isso, caminhar junto com outras famílias

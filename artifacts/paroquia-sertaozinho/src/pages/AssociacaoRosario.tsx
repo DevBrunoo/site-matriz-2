@@ -33,7 +33,7 @@ export default function AssociacaoRosario() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Coordenação</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👤 Coordenação</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               A associação é coordenada por{" "}
@@ -46,7 +46,7 @@ export default function AssociacaoRosario() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Local</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📍 Local</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed">
               Igreja Matriz Nossa Senhora Aparecida
@@ -57,7 +57,7 @@ export default function AssociacaoRosario() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Encontros e compromissos</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📅 Encontros e compromissos</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
@@ -96,7 +96,7 @@ export default function AssociacaoRosario() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🎯 Missão</h2>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -117,7 +117,7 @@ export default function AssociacaoRosario() {
           <div className="border border-gray-100 p-8 hover:border-secondary/30 transition-colors">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-secondary" />
-              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Quem pode participar?</h2>
+              <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">👥 Quem pode participar?</h2>
             </div>
             <p className="text-muted-foreground font-light text-[15px] leading-relaxed mb-4">
               Qualquer pessoa pode participar, desde que sinta o desejo de caminhar com Maria através do Rosário.
@@ -143,7 +143,7 @@ export default function AssociacaoRosario() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Inscrição e documentos</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📋 Inscrição e documentos</h2>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -165,7 +165,7 @@ export default function AssociacaoRosario() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O valor do Santo Rosário</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">📿 O valor do Santo Rosário</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
             O Rosário é uma das mais belas e profundas formas de oração da Igreja. Por meio dele, contemplamos a
@@ -191,7 +191,7 @@ export default function AssociacaoRosario() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Um sinal de compromisso</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🌸 Um sinal de compromisso</h2>
           </div>
           <p className="text-[15px] text-muted-foreground font-light mb-4 leading-relaxed">
             Ao ingressar na Associação, o membro recebe a{" "}
