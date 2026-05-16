@@ -72,23 +72,23 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10">
+          <Link href="/" className="flex items-center gap-3.5 group">
+            <div className="w-14 h-14 shrink-0">
               <img
                 src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Paróquia Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-sm"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%23D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 7L7 17M7 7l10 10"/></svg>';
                 }}
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-primary text-lg leading-tight">
+            <div className="flex flex-col leading-tight">
+              <span className="font-sans font-extrabold text-primary text-[17px] tracking-tight leading-snug">
                 Nossa Senhora Aparecida
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-secondary font-medium">
-                Sertãozinho - SP
+              <span className="text-[9.5px] uppercase tracking-[0.22em] text-secondary font-bold mt-0.5">
+                Sertãozinho · SP
               </span>
             </div>
           </Link>
