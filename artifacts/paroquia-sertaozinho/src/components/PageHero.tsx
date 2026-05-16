@@ -7,68 +7,79 @@ interface PageHeroProps {
 export function PageHero({ category, title, subtitle }: PageHeroProps) {
   return (
     <section className="relative pt-20 overflow-hidden">
-      {/* Background with subtle dot pattern */}
       <div
-        className="relative py-24 md:py-32"
+        className="relative py-28 md:py-36"
         style={{
-          background: "linear-gradient(135deg, #162d6e 0%, #1E3A8A 50%, #1a3580 100%)",
-          backgroundImage: `
-            linear-gradient(135deg, #162d6e 0%, #1E3A8A 50%, #1a3580 100%),
-            radial-gradient(circle, rgba(212,175,55,0.12) 1px, transparent 1px)
-          `,
-          backgroundSize: "auto, 28px 28px",
+          background: "linear-gradient(160deg, #0c1736 0%, #152358 45%, #1E3A8A 100%)",
         }}
       >
-        {/* Subtle vignette overlay */}
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.09) 1px, transparent 1px)",
+            backgroundSize: "30px 30px",
+          }}
+        />
+
+        {/* Ambient glow */}
+        <div
+          className="absolute top-0 left-0 right-0 h-full pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 65% 70% at 20% 50%, rgba(212,175,55,0.05) 0%, transparent 70%)",
+          }}
+        />
+
+        {/* Vignette */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background:
-              "radial-gradient(ellipse 70% 80% at 50% 50%, transparent 50%, rgba(15,25,60,0.5) 100%)",
+            background: "radial-gradient(ellipse 80% 85% at 50% 50%, transparent 45%, rgba(8,14,40,0.6) 100%)",
           }}
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Decorative ornament */}
-          <div className="flex justify-start mb-6">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <line x1="0" y1="18" x2="36" y2="18" stroke="#D4AF37" strokeWidth="0.75" opacity="0.5" />
-              <line x1="18" y1="0" x2="18" y2="36" stroke="#D4AF37" strokeWidth="0.75" opacity="0.5" />
-              <rect
-                x="11" y="11" width="14" height="14"
-                transform="rotate(45 18 18)"
-                fill="none" stroke="#D4AF37" strokeWidth="1" opacity="0.7"
+          {/* Ornament */}
+          <div className="flex justify-start mb-7">
+            <div className="relative">
+              <div
+                className="absolute inset-0 -m-4 rounded-full blur-xl opacity-25"
+                style={{ background: "radial-gradient(circle, #D4AF37, transparent 70%)" }}
               />
-              <circle cx="18" cy="18" r="2.5" fill="#D4AF37" />
-            </svg>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="relative">
+                <line x1="0" y1="20" x2="40" y2="20" stroke="#D4AF37" strokeWidth="0.7" opacity="0.4" />
+                <line x1="20" y1="0" x2="20" y2="40" stroke="#D4AF37" strokeWidth="0.7" opacity="0.4" />
+                <rect x="12" y="12" width="16" height="16" transform="rotate(45 20 20)" fill="none" stroke="#D4AF37" strokeWidth="1" opacity="0.7" />
+                <rect x="15.5" y="15.5" width="9" height="9" transform="rotate(45 20 20)" fill="none" stroke="#D4AF37" strokeWidth="0.5" opacity="0.35" />
+                <circle cx="20" cy="20" r="2.5" fill="#D4AF37" opacity="0.9" />
+              </svg>
+            </div>
           </div>
 
-          <span className="text-secondary font-semibold tracking-[0.25em] uppercase text-[11px] mb-4 block opacity-90">
+          <span className="text-secondary font-semibold tracking-[0.28em] uppercase text-[10px] mb-4 block" style={{ opacity: 0.9 }}>
             {category}
           </span>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-4">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.06] mb-4">
             {title}
           </h1>
 
           {subtitle && (
-            <p className="text-white/60 font-light text-lg mt-2">{subtitle}</p>
+            <p className="text-white/55 font-light text-lg mt-3 max-w-xl">{subtitle}</p>
           )}
 
           <div className="flex items-center gap-3 mt-8">
             <div className="w-14 h-px bg-secondary" />
             <div className="w-2 h-2 rotate-45 border border-secondary/70" />
-            <div className="w-6 h-px bg-secondary/40" />
+            <div className="w-6 h-px bg-secondary/35" />
           </div>
         </div>
       </div>
 
-      {/* Smooth bottom transition */}
+      {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.06))",
-        }}
+        style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.04))" }}
       />
     </section>
   );
