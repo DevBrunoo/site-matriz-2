@@ -19,8 +19,6 @@ const NAV_ITEMS = [
       { label: "Pastoral da Sobriedade", href: "/pastoral-da-sobriedade" },
       { label: "Pastoral do Dízimo", href: "/pastoral-do-dizimo" },
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },
-      { label: "TLC", href: "/tlc" },
-      { label: "Catequese", href: "/catequese" },
     ],
   },
   { label: "Agenda", href: "/agenda", children: [] },
