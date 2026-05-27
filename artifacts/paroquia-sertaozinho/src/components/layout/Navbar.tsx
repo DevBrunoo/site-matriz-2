@@ -5,36 +5,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  {
-    label: "Paróquia",
-    href: "/historia",
-    children: [
-      { label: "História", href: "/historia" },
-      { label: "Capelas e Setores", href: "/capelas" },
-      { label: "Padres e Diáconos", href: "/padres" },
-      { label: "Secretaria", href: "/secretaria" },
-    ],
-  },
-  {
-    label: "Agenda",
-    href: "/agenda",
-    children: [
-      { label: "Horários de Missa", href: "/missas" },
-      { label: "Eventos", href: "/eventos" },
-      { label: "Via Sacra", href: "/via-sacra" },
-    ],
-  },
-  {
-    label: "Sacramentos",
-    href: "/sacramentos",
-    children: [
-      { label: "Batismo", href: "/batismo" },
-      { label: "Confissão", href: "/confissao" },
-      { label: "Eucaristia", href: "/eucaristia" },
-      { label: "Crisma", href: "/crisma" },
-      { label: "Matrimônio", href: "/matrimonio" },
-    ],
-  },
+  { label: "História", href: "/historia", children: [] },
+  { label: "Capelas e Setores", href: "/capelas", children: [] },
+  { label: "Padres e Diáconos", href: "/padres", children: [] },
+  { label: "Secretaria", href: "/secretaria", children: [] },
   {
     label: "Pastorais",
     href: "/pastorais",
@@ -50,9 +24,13 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Dízimo e Doações",
-    href: "/dizimo",
-    children: [],
+    label: "Agenda",
+    href: "/agenda",
+    children: [
+      { label: "Horários de Missa", href: "/missas" },
+      { label: "Eventos", href: "/eventos" },
+      { label: "Via Sacra", href: "/via-sacra" },
+    ],
   },
 ];
 
