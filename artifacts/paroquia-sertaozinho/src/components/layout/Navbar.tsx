@@ -23,15 +23,7 @@ const NAV_ITEMS = [
       { label: "Catequese", href: "/catequese" },
     ],
   },
-  {
-    label: "Agenda",
-    href: "/agenda",
-    children: [
-      { label: "Horários de Missa", href: "/missas" },
-      { label: "Eventos", href: "/eventos" },
-      { label: "Via Sacra", href: "/via-sacra" },
-    ],
-  },
+  { label: "Agenda", href: "/agenda", children: [] },
 ];
 
 export function Navbar() {

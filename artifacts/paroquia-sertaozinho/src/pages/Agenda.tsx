@@ -1,108 +1,223 @@
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Clock, MapPin, Phone, Mail, Instagram, Star } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+};
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+
+const MISSAS = [
+  { dia: "Terça-feira",   horarios: ["19h"],            obs: "" },
+  { dia: "Quarta-feira",  horarios: ["19h"],            obs: "Missa da Divina Misericórdia" },
+  { dia: "Sexta-feira",   horarios: ["15h"],            obs: "" },
+  { dia: "Sábado",        horarios: ["19h"],            obs: "" },
+  { dia: "Domingo",       horarios: ["7h", "9h", "19h"], obs: "" },
+];
+
+const FESTAS = [
+  {
+    titulo: "Festa de Nossa Senhora do Rosário",
+    periodo: "Outubro",
+    descricao:
+      "Celebração em louvor a Nossa Senhora do Rosário, com procissão, novena, missas festivas e atividades comunitárias que reúnem toda a paróquia.",
+    cor: "bg-violet-600",
+    icone: "🌹",
+  },
+  {
+    titulo: "Festa da Padroeira — N. Sra. Aparecida",
+    periodo: "12 de Outubro",
+    descricao:
+      "Dia da Padroeira do Brasil e da nossa paróquia. Celebração solene com Missa Festiva, procissão mariana e louvor à nossa querida Mãe Aparecida.",
+    cor: "bg-secondary",
+    icone: "👑",
+  },
+];
+
+const CONTATO = [
+  { icon: MapPin,    label: "Endereço",   valor: "Largo da Matriz Cônego Antônio de Oliveira – Centro, Sertãozinho/SP" },
+  { icon: Phone,     label: "Telefone",   valor: "(16) 3947-6524 / (16) 3041-6221" },
+  { icon: Phone,     label: "WhatsApp",   valor: "(16) 99464-8668", whatsapp: true },
+  { icon: Mail,      label: "E-mail",     valor: "matrizstz@gmail.com" },
+  { icon: Instagram, label: "Instagram",  valor: "@matrizstz" },
+];
 
 export default function Agenda() {
-  const missas = [
-    { day: "Segunda-feira", times: ["19:00"] },
-    { day: "Terça-feira", times: ["07:00", "19:00"] },
-    { day: "Quarta-feira", times: ["19:00 (Novena)"] },
-    { day: "Quinta-feira", times: ["07:00", "19:00"] },
-    { day: "Sexta-feira", times: ["19:00"] },
-    { day: "Sábado", times: ["18:30"] },
-    { day: "Domingo", times: ["07:00", "09:30", "19:00"] },
-  ];
-
-  const eventos = [
-    { date: "15 de Outubro", title: "Festa da Padroeira", local: "Igreja Matriz", time: "Dia todo" },
-    { date: "22 de Outubro", title: "Encontro de Jovens", local: "Salão Paroquial", time: "19:00 às 22:00" },
-    { date: "05 de Novembro", title: "Bazar Beneficente", local: "Pátio da Igreja", time: "08:00 às 17:00" },
-    { date: "12 de Novembro", title: "Batizados", local: "Igreja Matriz", time: "09:00" },
-  ];
-
   return (
-    <main className="pt-24 pb-20">
-      <section className="bg-primary py-16 text-center text-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display text-white">Agenda Paroquial</h1>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-lg text-white/90">
-            Acompanhe os horários de nossas celebrações e eventos.
-          </p>
-        </div>
-      </section>
+    <main className="pt-16 sm:pt-20 pb-24">
+      <PageHero
+        title="Agenda Paroquial"
+        subtitle="Horários de missas, festas e informações de contato da Paróquia Nossa Senhora Aparecida."
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* Missas */}
-          <div id="missas">
-            <div className="flex items-center gap-3 mb-8">
-              <Clock className="w-8 h-8 text-secondary" />
-              <h2 className="text-3xl font-bold">Horários de Missa</h2>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-20">
+
+        {/* ── Horários de Missa ─────────────────────────────────── */}
+        <motion.section
+          initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Igreja Matriz</span>
+            <h2 className="font-display text-3xl font-bold text-primary flex items-center gap-3 mb-4">
+              <Clock className="w-6 h-6 text-secondary stroke-[1.5]" />
+              Horários de Missa
+            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
             </div>
-            
-            <div className="bg-white rounded-2xl shadow-lg border border-border overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-primary/5 border-b border-border">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-bold text-primary">Dia da Semana</th>
-                    <th className="px-6 py-4 text-left font-bold text-primary">Horários</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {missas.map((item) => (
-                    <tr key={item.day} className="hover:bg-primary/5 transition-colors">
-                      <td className="px-6 py-4 font-medium">{item.day}</td>
-                      <td className="px-6 py-4 text-muted-foreground">
-                        {item.times.map((t, i) => (
-                          <span key={i} className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-semibold mr-2 mb-2">
-                            {t}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="border border-gray-100 overflow-hidden">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-primary text-white">
+                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase">Dia da Semana</th>
+                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase">Horário(s)</th>
+                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase hidden sm:table-cell">Observação</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 bg-white">
+                {MISSAS.map((m) => (
+                  <tr key={m.dia} className="hover:bg-muted/40 transition-colors">
+                    <td className="px-5 sm:px-7 py-4 font-semibold text-primary text-sm">{m.dia}</td>
+                    <td className="px-5 sm:px-7 py-4">
+                      <div className="flex flex-wrap gap-2">
+                        {m.horarios.map((h) => (
+                          <span key={h} className="bg-primary text-white text-[11px] font-bold px-2.5 py-1">
+                            {h}
                           </span>
                         ))}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4 italic">
-              * A Secretaria da Matriz atende de segunda a sexta, das 8h às 17h30.
-            </p>
-          </div>
+                      </div>
+                    </td>
+                    <td className="px-5 sm:px-7 py-4 text-sm text-muted-foreground italic hidden sm:table-cell">{m.obs}</td>
+                  </tr>
+                ))}
+                <tr className="bg-muted/30">
+                  <td className="px-5 sm:px-7 py-4 font-semibold text-muted-foreground text-sm">Segunda-feira</td>
+                  <td className="px-5 sm:px-7 py-4 text-sm text-muted-foreground italic" colSpan={2}>Sem missa regular</td>
+                </tr>
+              </tbody>
+            </table>
+          </motion.div>
 
-          {/* Eventos */}
-          <div id="eventos">
-            <div className="flex items-center gap-3 mb-8">
-              <Calendar className="w-8 h-8 text-secondary" />
-              <h2 className="text-3xl font-bold">Próximos Eventos</h2>
-            </div>
+          <motion.p variants={fadeUp} className="text-xs text-muted-foreground mt-4 font-light">
+            * Os horários podem sofrer alterações em datas especiais. Confirme pelo WhatsApp ou telefone.
+          </motion.p>
+        </motion.section>
 
-            <div className="space-y-4">
-              {eventos.map((ev, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl shadow-md border border-border flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-shadow">
-                  <div className="bg-primary text-white p-4 rounded-lg text-center min-w-[120px] flex flex-col justify-center">
-                    <span className="text-xl font-bold leading-tight">{ev.date.split(' ')[0]}</span>
-                    <span className="text-sm">{ev.date.split(' ').slice(1).join(' ')}</span>
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl font-bold mb-2 text-foreground">{ev.title}</h3>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {ev.time}</span>
-                      <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {ev.local}</span>
-                    </div>
-                  </div>
+        {/* ── Festas ────────────────────────────────────────────── */}
+        <motion.section
+          initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Celebrações Especiais</span>
+            <h2 className="font-display text-3xl font-bold text-primary flex items-center gap-3 mb-4">
+              <Star className="w-6 h-6 text-secondary stroke-[1.5]" />
+              Festas da Paróquia
+            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {FESTAS.map((f) => (
+              <motion.div
+                key={f.titulo}
+                variants={fadeUp}
+                className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col"
+              >
+                <div className={`h-1 w-full ${f.cor}`} />
+                <div className="p-7 flex flex-col flex-1">
+                  <div className="text-3xl mb-4">{f.icone}</div>
+                  <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-secondary mb-2">{f.periodo}</span>
+                  <h3 className="font-display text-[17px] font-semibold text-primary mb-3 leading-snug">{f.titulo}</h3>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">{f.descricao}</p>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
 
-            <div id="via-sacra" className="mt-12 bg-primary/5 p-8 rounded-2xl border border-primary/20">
-              <h3 className="text-2xl font-bold text-primary mb-3">Via Sacra</h3>
-              <p className="text-foreground">
-                Durante o tempo da Quaresma, realizamos a Via Sacra todas as sextas-feiras às 19:30, após a Santa Missa. Venha percorrer os passos de Jesus.
-              </p>
+        {/* ── Informações de Contato ────────────────────────────── */}
+        <motion.section
+          initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Paróquia Nossa Senhora Aparecida</span>
+            <h2 className="font-display text-3xl font-bold text-primary flex items-center gap-3 mb-4">
+              <MapPin className="w-6 h-6 text-secondary stroke-[1.5]" />
+              Informações e Contato
+            </h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
             </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-gray-100">
+            {CONTATO.map(({ icon: Icon, label, valor, whatsapp }) => (
+              <motion.div key={label} variants={fadeUp} className="bg-white p-6 sm:p-8 flex gap-4 items-start">
+                <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
+                  <Icon className="w-4 h-4 text-secondary stroke-[1.5]" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-1">{label}</p>
+                  {whatsapp ? (
+                    <a
+                      href={`https://wa.me/55${valor.replace(/\D/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-primary hover:text-secondary transition-colors underline underline-offset-2"
+                    >
+                      {valor}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-medium text-primary">{valor}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Pároco */}
+            <motion.div variants={fadeUp} className="bg-white p-6 sm:p-8 flex gap-4 items-start">
+              <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-secondary font-bold text-sm">✝</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-1">Pároco</p>
+                <p className="text-sm font-medium text-primary">Pe. Sérgio Donizetti Carmona</p>
+              </div>
+            </motion.div>
+
+            {/* Fundação */}
+            <motion.div variants={fadeUp} className="bg-white p-6 sm:p-8 flex gap-4 items-start">
+              <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
+                <span className="text-secondary font-bold text-sm">⚜</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-1">Ano de Fundação</p>
+                <p className="text-sm font-medium text-primary">1900</p>
+              </div>
+            </motion.div>
           </div>
 
-        </div>
+          {/* Secretaria notice */}
+          <motion.div variants={fadeUp} className="mt-6 bg-primary/[0.04] border border-primary/10 p-6 flex gap-4">
+            <Clock className="w-5 h-5 text-secondary shrink-0 mt-0.5 stroke-[1.5]" />
+            <p className="text-sm text-primary font-light leading-relaxed">
+              <span className="font-semibold">Secretaria:</span> Atendimento de segunda a sexta das 08h às 17h30 e sábados das 08h às 12h.
+              Para dúvidas sobre sacramentos, batizados e casamentos, entre em contato pelo telefone ou WhatsApp.
+            </p>
+          </motion.div>
+        </motion.section>
+
       </div>
     </main>
   );
