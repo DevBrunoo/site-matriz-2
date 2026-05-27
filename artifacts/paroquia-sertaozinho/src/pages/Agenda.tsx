@@ -18,14 +18,6 @@ const MISSAS = [
 
 const FESTAS = [
   {
-    titulo: "Festa de Nossa Senhora do Rosário",
-    periodo: "Outubro",
-    descricao:
-      "Celebração em louvor a Nossa Senhora do Rosário, com procissão, novena, missas festivas e atividades comunitárias que reúnem toda a paróquia.",
-    cor: "bg-violet-600",
-    icone: "🌹",
-  },
-  {
     titulo: "Festa da Padroeira — N. Sra. Aparecida",
     periodo: "12 de Outubro",
     descricao:
