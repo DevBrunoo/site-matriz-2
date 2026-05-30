@@ -137,14 +137,6 @@ export default function Agenda() {
             </motion.div>
           </div>
 
-          {/* Secretaria notice */}
-          <motion.div variants={fadeUp} className="mt-6 bg-primary/[0.04] border border-primary/10 p-6 flex gap-4">
-            <Clock className="w-5 h-5 text-secondary shrink-0 mt-0.5 stroke-[1.5]" />
-            <p className="text-sm text-primary font-light leading-relaxed">
-              <span className="font-semibold">Secretaria:</span> Seg–Sex das 08h às 17h30 · Sáb das 08h às 12h.
-              Para dúvidas sobre sacramentos, batizados e casamentos, entre em contato pelo telefone ou WhatsApp.
-            </p>
-          </motion.div>
         </motion.section>
 
       </div>
