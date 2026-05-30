@@ -58,13 +58,9 @@ export function Footer() {
                 <span>Seg - Sex</span>
                 <span>08:00 - 17:30</span>
               </li>
-              <li className="flex justify-between border-b border-white/10 pb-2">
+              <li className="flex justify-between pb-2">
                 <span>Sábado</span>
                 <span>08:00 - 12:00</span>
-              </li>
-              <li className="flex justify-between pb-2">
-                <span>Domingo</span>
-                <span>Aberto*</span>
               </li>
             </ul>
           </div>
