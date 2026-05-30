@@ -8,14 +8,6 @@ const fadeUp = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-const MISSAS = [
-  { dia: "Terça-feira",   horarios: ["19h"],            obs: "" },
-  { dia: "Quarta-feira",  horarios: ["19h"],            obs: "Missa da Divina Misericórdia" },
-  { dia: "Sexta-feira",   horarios: ["15h"],            obs: "" },
-  { dia: "Sábado",        horarios: ["19h"],            obs: "" },
-  { dia: "Domingo",       horarios: ["7h", "9h", "19h"], obs: "" },
-];
-
 const FESTAS = [
   {
     titulo: "Festa da Padroeira — N. Sra. Aparecida",
@@ -40,65 +32,10 @@ export default function Agenda() {
     <main className="pt-16 sm:pt-20 pb-24">
       <PageHero
         title="Agenda Paroquial"
-        subtitle="Horários de missas, festas e informações de contato da Paróquia Nossa Senhora Aparecida."
+        subtitle="Festas e informações de contato da Paróquia Nossa Senhora Aparecida."
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-20">
-
-        {/* ── Horários de Missa ─────────────────────────────────── */}
-        <motion.section
-          initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}
-          variants={stagger}
-        >
-          <motion.div variants={fadeUp} className="mb-10">
-            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Igreja Matriz</span>
-            <h2 className="font-display text-3xl font-bold text-primary flex items-center gap-3 mb-4">
-              <Clock className="w-6 h-6 text-secondary stroke-[1.5]" />
-              Horários de Missa
-            </h2>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-px bg-secondary" />
-              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
-            </div>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="border border-gray-100 overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-primary text-white">
-                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase">Dia da Semana</th>
-                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase">Horário(s)</th>
-                  <th className="px-5 sm:px-7 py-4 text-left text-[11px] font-bold tracking-[0.18em] uppercase hidden sm:table-cell">Observação</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 bg-white">
-                {MISSAS.map((m) => (
-                  <tr key={m.dia} className="hover:bg-muted/40 transition-colors">
-                    <td className="px-5 sm:px-7 py-4 font-semibold text-primary text-sm">{m.dia}</td>
-                    <td className="px-5 sm:px-7 py-4">
-                      <div className="flex flex-wrap gap-2">
-                        {m.horarios.map((h) => (
-                          <span key={h} className="bg-primary text-white text-[11px] font-bold px-2.5 py-1">
-                            {h}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="px-5 sm:px-7 py-4 text-sm text-muted-foreground italic hidden sm:table-cell">{m.obs}</td>
-                  </tr>
-                ))}
-                <tr className="bg-muted/30">
-                  <td className="px-5 sm:px-7 py-4 font-semibold text-muted-foreground text-sm">Segunda-feira</td>
-                  <td className="px-5 sm:px-7 py-4 text-sm text-muted-foreground italic" colSpan={2}>Sem missa regular</td>
-                </tr>
-              </tbody>
-            </table>
-          </motion.div>
-
-          <motion.p variants={fadeUp} className="text-xs text-muted-foreground mt-4 font-light">
-            * Os horários podem sofrer alterações em datas especiais. Confirme pelo WhatsApp ou telefone.
-          </motion.p>
-        </motion.section>
 
         {/* ── Festas ────────────────────────────────────────────── */}
         <motion.section
