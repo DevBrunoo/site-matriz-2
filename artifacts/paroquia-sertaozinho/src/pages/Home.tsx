@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Clock, Calendar, Heart, ArrowRight, MapPin } from "lucide-react";
+import { Clock, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { getEventos, getAvisos, Evento, Aviso } from "@/lib/adminData";
-
-const SACRAMENTOS = [
-  { num: "I", label: "Batismo", href: "/batismo", desc: "Porta de entrada para a fé cristã" },
-  { num: "II", label: "Eucaristia", href: "/eucaristia", desc: "Presença real de Jesus entre nós" },
-  { num: "III", label: "Matrimônio", href: "/matrimonio", desc: "Aliança de amor segundo Deus" },
-  { num: "IV", label: "Confissão", href: "/confissao", desc: "Reconciliação com Deus e a Igreja" },
-];
+import { getAvisos, Aviso } from "@/lib/adminData";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,24 +14,10 @@ const stagger = {
   show: { transition: { staggerChildren: 0.1 } },
 };
 
-const CATEGORY_COLORS: Record<string, string> = {
-  "Missa": "bg-blue-600",
-  "Encontro": "bg-emerald-600",
-  "Retiro": "bg-violet-600",
-  "Evento": "bg-amber-600",
-  "Celebração": "bg-rose-600",
-};
-
-function getCategoryColor(cat: string) {
-  return CATEGORY_COLORS[cat] ?? "bg-primary";
-}
-
 export default function Home() {
-  const [eventos, setEventos] = useState<Evento[]>([]);
   const [avisos, setAvisos] = useState<Aviso[]>([]);
 
   useEffect(() => {
-    setEventos(getEventos().slice(0, 4));
     setAvisos(getAvisos().filter((a) => a.ativo).slice(0, 2));
   }, []);
 
@@ -195,127 +174,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* ── Sacramentos ───────────────────────────────────────────── */}
-      <motion.section
-        className="py-16 sm:py-24 bg-muted/50"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={stagger}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 sm:mb-16">
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Igreja Católica</span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary mb-4">Os Sacramentos</h2>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-px bg-secondary" />
-                <div className="w-2 h-2 rotate-45 bg-secondary/50" />
-              </div>
-            </div>
-            <p className="text-muted-foreground font-light max-w-sm text-sm leading-relaxed">
-              Sinais visíveis da graça de Deus, instituídos por Jesus Cristo para nos santificar.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
-            {SACRAMENTOS.map(({ num, label, href, desc }) => (
-              <motion.div key={label} variants={fadeUp}>
-                <Link
-                  href={href}
-                  className="group flex flex-col p-7 sm:p-8 lg:p-10 bg-white hover:bg-primary transition-colors duration-300 h-full"
-                >
-                  <span className="text-[11px] font-bold tracking-[0.2em] text-secondary/60 group-hover:text-secondary/70 mb-4 transition-colors">
-                    {num}
-                  </span>
-                  <div className="w-5 h-px bg-secondary/30 group-hover:bg-secondary/50 transition-colors mb-5" />
-                  <h3 className="font-display text-xl font-semibold text-primary group-hover:text-white transition-colors mb-2">{label}</h3>
-                  <p className="text-muted-foreground group-hover:text-white/55 text-sm font-light transition-colors flex-1">{desc}</p>
-                  <div className="flex items-center gap-2 mt-7 text-[10px] font-bold tracking-[0.18em] uppercase text-secondary group-hover:text-secondary/75 transition-colors">
-                    Saiba mais <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* ── Agenda ────────────────────────────────────────────────── */}
-      <motion.section
-        className="py-16 sm:py-24 bg-background border-t border-gray-100"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={stagger}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 sm:mb-14 gap-4">
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Próximos Eventos</span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary mb-4">Agenda Paroquial</h2>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-px bg-secondary" />
-                <div className="w-2 h-2 rotate-45 bg-secondary/50" />
-              </div>
-            </div>
-            <Link
-              href="/eventos"
-              className="flex items-center gap-2 text-[10px] font-bold tracking-[0.18em] uppercase text-primary hover:text-secondary transition-colors group pb-1 border-b border-primary/20 hover:border-secondary shrink-0"
-            >
-              Ver agenda completa <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-
-          {/* Event cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {eventos.map((ev) => (
-              <motion.div
-                key={ev.id}
-                variants={fadeUp}
-                className="group bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden"
-              >
-                {/* Top colored bar */}
-                <div className={`h-1 w-full ${getCategoryColor(ev.categoria)}`} />
-
-                <div className="p-5 flex flex-col flex-1">
-                  {/* Date block */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex flex-col items-center justify-center w-12 h-12 bg-primary text-white shrink-0">
-                      <span className="font-display font-bold text-xl leading-none">{ev.dia}</span>
-                      <span className="text-[8px] font-bold uppercase tracking-widest text-secondary mt-0.5">{ev.mes}</span>
-                    </div>
-                    <div>
-                      <span className={`text-[9px] font-bold uppercase tracking-widest text-white px-2 py-0.5 ${getCategoryColor(ev.categoria)}`}>
-                        {ev.categoria}
-                      </span>
-                      <p className="text-[11px] text-muted-foreground mt-1">{ev.horario}</p>
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-display font-semibold text-[15px] text-primary mb-2 leading-snug group-hover:text-secondary transition-colors line-clamp-2 flex-1">
-                    {ev.titulo}
-                  </h3>
-
-                  {/* Location */}
-                  <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-gray-100">
-                    <MapPin className="w-3 h-3 text-secondary shrink-0 stroke-[1.5]" />
-                    <p className="text-[11px] text-muted-foreground truncate">{ev.local}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {eventos.length === 0 && (
-            <motion.div variants={fadeUp} className="text-center py-16 text-muted-foreground text-sm font-light">
-              Nenhum evento programado no momento.
-            </motion.div>
-          )}
-        </div>
-      </motion.section>
 
       {/* ── Quote strip ───────────────────────────────────────────── */}
       <motion.section
