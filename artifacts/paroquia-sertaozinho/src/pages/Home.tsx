@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Clock, Heart, ArrowRight } from "lucide-react";
+import { Clock, Calendar, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAvisos, Aviso } from "@/lib/adminData";
 
