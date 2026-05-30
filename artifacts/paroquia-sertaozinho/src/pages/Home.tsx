@@ -205,7 +205,7 @@ export default function Home() {
             </svg>
           </div>
           <p className="font-display font-medium text-white/90 text-2xl sm:text-3xl md:text-4xl leading-relaxed">
-            "Fazei tudo o que Ele vos disser."
+            "O Senhor é o meu pastor, nada me faltará."
           </p>
           <div className="flex items-center justify-center gap-4 my-5 sm:my-6">
             <div className="w-12 h-px bg-secondary/40" />
@@ -213,7 +213,7 @@ export default function Home() {
             <div className="w-12 h-px bg-secondary/40" />
           </div>
           <p className="text-secondary font-bold tracking-[0.25em] uppercase text-[10px] sm:text-[11px]">
-            Jo 2,5 — Nossa Senhora
+            Salmos 23:1
           </p>
         </div>
       </motion.section>
