@@ -39,7 +39,7 @@ export default function Secretaria() {
                 {[
                   { dia: "Segunda a Sexta", horario: "08h00 às 12h00 e 13h30 às 17h30" },
                   { dia: "Sábado", horario: "08h00 às 12h00" },
-                  { dia: "Domingo e Feriados", horario: "Fechado" },
+                  { dia: "Domingo", horario: "Aberto — horário a confirmar" },
                 ].map((item) => (
                   <div key={item.dia} className="flex items-start gap-4 py-4 border-b border-gray-100">
                     <Clock className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
