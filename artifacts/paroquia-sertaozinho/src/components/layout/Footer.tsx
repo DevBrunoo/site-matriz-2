@@ -37,15 +37,15 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-light">
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-4 h-4 text-secondary shrink-0 mt-1 stroke-[1.5]" />
-                <span className="leading-relaxed">Rua Cel. Quito Junqueira, S/N<br/>Centro, Sertãozinho - SP</span>
+                <span className="leading-relaxed">Largo da Matriz Cônego Antônio de Oliveira<br/>Centro, Sertãozinho - SP</span>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-4 h-4 text-secondary shrink-0 stroke-[1.5]" />
-                <span>(16) 3942-0000</span>
+                <span>(16) 3947-6524 / 3041-6221</span>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-4 h-4 text-secondary shrink-0 stroke-[1.5]" />
-                <span>secretaria@paroquiaaparecida.org.br</span>
+                <span>matrizstz@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export function Footer() {
               </li>
               <li className="flex justify-between pb-2">
                 <span>Domingo</span>
-                <span>Fechado</span>
+                <span>Aberto*</span>
               </li>
             </ul>
           </div>
