@@ -50,20 +50,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Office Hours */}
-          <div>
-            <h4 className="font-display text-sm tracking-widest uppercase mb-6 text-secondary">Secretaria</h4>
-            <ul className="space-y-3 text-sm font-light text-white/70">
-              <li className="flex justify-between border-b border-white/10 pb-2">
-                <span>Seg - Sex</span>
-                <span>08:00 - 17:30</span>
-              </li>
-              <li className="flex justify-between pb-2">
-                <span>Sábado</span>
-                <span>08:00 - 12:00</span>
-              </li>
-            </ul>
-          </div>
 
         </div>
 
