@@ -73,7 +73,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Secretaria</h4>
-                  <p className="text-sm text-muted-foreground">Seg a Sex: 08h - 17h30<br/>Sáb: 08h - 12h</p>
+                  <p className="text-sm text-muted-foreground">Ter a Sex: 08h - 17h30<br/>Sáb: 08h - 12h</p>
                 </div>
               </div>
             </div>

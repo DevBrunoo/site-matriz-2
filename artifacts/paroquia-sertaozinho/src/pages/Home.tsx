@@ -151,7 +151,7 @@ export default function Home() {
             {[
               { icon: Clock, label: "Horários de Missa", desc: "Celebrações diárias na Matriz e semanais nas capelas da paróquia.", href: "/missas", cta: "Ver horários" },
               { icon: Heart, label: "Dízimo e Doações", desc: "Seja um dizimista fiel e contribua com a obra evangelizadora da nossa paróquia.", href: "/dizimo", cta: "Como participar" },
-              { icon: Calendar, label: "Secretaria", desc: "Atendimento de segunda a sexta das 08h às 17h30 e sábados das 08h às 12h.", href: "/secretaria", cta: "Fale conosco" },
+              { icon: Calendar, label: "Secretaria", desc: "Atendimento de terça a sexta das 08h às 17h30 e sábados das 08h às 12h.", href: "/secretaria", cta: "Fale conosco" },
             ].map(({ icon: Icon, label, desc, href, cta }) => (
               <motion.div
                 key={label}

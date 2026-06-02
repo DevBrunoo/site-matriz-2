@@ -25,7 +25,7 @@ export default function Secretaria() {
 
               <div className="flex flex-col gap-4 mb-10">
                 {[
-                  { dia: "Segunda a Sexta", horario: "08h00 às 12h00 e 13h30 às 17h30" },
+                  { dia: "Terça a Sexta", horario: "08h00 às 12h00 e 13h30 às 17h30" },
                   { dia: "Sábado", horario: "08h00 às 12h00" },
                 ].map((item) => (
                   <div key={item.dia} className="flex items-start gap-4 py-4 border-b border-gray-100">

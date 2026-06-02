@@ -91,7 +91,7 @@ export default function Dizimo() {
               </div>
               <h3 className="font-display text-xl text-primary mb-3">Na Secretaria</h3>
               <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                Compareça à secretaria paroquial e cadastre-se como dizimista. Você poderá entregar seu dízimo pessoalmente de segunda a sexta das 08h às 17h30 e aos sábados até 12h.
+                Compareça à secretaria paroquial e cadastre-se como dizimista. Você poderá entregar seu dízimo pessoalmente de terça a sexta das 08h às 17h30 e aos sábados até 12h.
               </p>
               <div className="text-sm text-muted-foreground">
                 <p className="font-medium text-primary mb-1">Endereço:</p>
