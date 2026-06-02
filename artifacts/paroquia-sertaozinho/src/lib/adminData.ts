@@ -60,11 +60,10 @@ const defaultCapelas: CapelaDado[] = [
 ];
 
 const defaultPadres: PadreDado[] = [
-  { id: "1", tipo: "Pároco", nome: "Pe. João Carlos Oliveira", ordenacao: "Ordenado em 1998", bio: "Natural de Ribeirão Preto, lidera a Paróquia de Sertãozinho desde 2018. Graduado em Teologia pela PUC-SP.", contato: "paroquia@nossasenhoraaparecida.org.br" },
-  { id: "2", tipo: "Padre Auxiliar", nome: "Pe. Marcos Antônio Silva", ordenacao: "Ordenado em 2010", bio: "Responsável pelas pastorais de juventude e catequese, e pelas capelas do setor norte e leste.", contato: "pastoral@nossasenhoraaparecida.org.br" },
-  { id: "3", tipo: "Padre Auxiliar", nome: "Pe. Rafael Mendes", ordenacao: "Ordenado em 2015", bio: "Responsável pelos sacramentos e acompanhamento espiritual dos grupos de RCC e Terço dos Homens.", contato: "pastoral@nossasenhoraaparecida.org.br" },
-  { id: "4", tipo: "Diácono Permanente", nome: "Dc. José Augusto Ferreira", ordenacao: "Ordenado diácono em 2012", bio: "Casado, pai de três filhos. Serve no ministério da caridade e auxilia nas celebrações.", contato: "diaconia@nossasenhoraaparecida.org.br" },
-  { id: "5", tipo: "Diácono Permanente", nome: "Dc. Carlos Eduardo Rocha", ordenacao: "Ordenado diácono em 2018", bio: "Atua nas visitas aos enfermos e no acompanhamento de famílias em situação de vulnerabilidade.", contato: "diaconia@nossasenhoraaparecida.org.br" },
+  { id: "1", tipo: "Pároco", nome: "Pe. Sérgio Donizetti Carmona", ordenacao: "Ordenação: 02/06/1996", bio: "Nascido em 29/03/1964. Pároco da Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
+  { id: "2", tipo: "Padre Auxiliar", nome: "Pe. Rafael Costa do Nascimento", ordenacao: "Ordenação: 11/11/2023", bio: "Nascido em 11/12/1990. Ingressou em comunidade missionária em 2010. Realizou seus estudos na Universidade de Szczecin, Polônia (2015) e concluiu na Universidade de Poznan, Polônia (2021). Idealizador do projeto Santo Encontro — unir solteiros católicos, formar casais e construir famílias de Deus: www.santoencontro.com", contato: "" },
+  { id: "3", tipo: "Diácono Permanente", nome: "Diácono Jorge Silva", ordenacao: "Ordenação: 09/08/2025", bio: "Nascido em 21/02/1959. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
+  { id: "4", tipo: "Diácono Permanente", nome: "Diácono José Marçal Pereira", ordenacao: "Ordenação: 09/08/2025", bio: "Nascido em 21/08/1966. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
 ];
 
 const defaultContentBlocks: ContentBlock[] = [
