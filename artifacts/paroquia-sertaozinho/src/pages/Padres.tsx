@@ -27,9 +27,6 @@ export default function Padres() {
                   </span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-secondary bg-secondary/10 px-2 py-0.5 mb-2">
-                    {p.tipo}
-                  </span>
                   <h3 className="text-base font-semibold text-primary mb-1">{p.nome}</h3>
                   <p className="text-[11px] text-muted-foreground font-light mb-3 tracking-wide">{p.ordenacao}</p>
                   <p className="text-sm text-muted-foreground font-light leading-relaxed mb-4">{p.bio}</p>

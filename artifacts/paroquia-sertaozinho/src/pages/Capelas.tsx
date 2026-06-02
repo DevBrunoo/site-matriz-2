@@ -1,64 +1,87 @@
-import { useState, useEffect } from "react";
-import { MapPin, Clock } from "lucide-react";
-import { getCapelas, CapelaDado } from "@/lib/adminData";
+import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
-export default function Capelas() {
-  const [capelas, setCapelas] = useState<CapelaDado[]>([]);
-  useEffect(() => { setCapelas(getCapelas()); }, []);
+const fadeUp = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+};
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
+const CAPELAS = [
+  { nome: "São Vicente de Paulo", endereco: "R: Frederico Ozanan, 931 – Centro", cep: "CEP: 14160-640" },
+  { nome: "Nossa Senhora do Rosário", endereco: "R: João Mossin, 337 – Jardim dos Bandeirantes", cep: "CEP: 14170-800" },
+];
+
+const SETORES = [
+  "Setor Santo Antônio (Paty)",
+  "Setor Sagrado Coração de Jesus",
+  "Centro Catequético",
+];
+
+export default function Capelas() {
   return (
-    <main className="w-full">
+    <main className="w-full pt-16 sm:pt-20 pb-24">
       <PageHero category="Paróquia Nossa Senhora Aparecida" title="Capelas e Setores" />
 
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-muted-foreground font-light leading-relaxed text-base max-w-2xl mb-16">
-            A Paróquia é composta pela Igreja Matriz e por capelas distribuídas nos diferentes setores da cidade, levando a fé a cada bairro de Sertãozinho.
-          </p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-16">
 
-          <div className="flex flex-col gap-4">
-            {capelas.map((c) => (
-              <div
-                key={c.id}
-                className={`group flex flex-col md:flex-row md:items-center gap-6 p-8 border transition-shadow hover:shadow-sm ${
-                  c.destaque
-                    ? "border-secondary/30 bg-primary/[0.02]"
-                    : "border-gray-100 bg-white"
-                }`}
+        {/* Capelas */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={stagger}>
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Paróquia Nossa Senhora Aparecida</span>
+            <h2 className="font-display text-3xl font-bold text-primary mb-4">Capelas</h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {CAPELAS.map((c) => (
+              <motion.div
+                key={c.nome}
+                variants={fadeUp}
+                className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-sm transition-all p-7 flex gap-4"
               >
-                {/* Left: identity */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    {c.destaque && (
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white bg-secondary px-2 py-0.5">
-                        Matriz
-                      </span>
-                    )}
-                    <span className="text-[10px] font-semibold uppercase tracking-widest text-secondary">
-                      {c.setor}
-                    </span>
-                  </div>
-                  <h2 className="text-lg font-semibold text-primary mb-2">{c.nome}</h2>
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm font-light">
-                    <MapPin className="w-3.5 h-3.5 text-secondary shrink-0" />
-                    {c.endereco}
-                  </div>
+                <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-secondary stroke-[1.5]" />
                 </div>
-
-                {/* Right: missas */}
-                <div className="shrink-0 md:text-right border-t md:border-t-0 md:border-l border-gray-100 pt-4 md:pt-0 md:pl-8">
-                  <div className="flex items-center gap-1.5 mb-1 md:justify-end">
-                    <Clock className="w-3.5 h-3.5 text-secondary" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Missas</span>
-                  </div>
-                  <p className="text-sm text-primary font-medium leading-relaxed">{c.missas}</p>
+                <div>
+                  <h3 className="font-display font-semibold text-primary text-[16px] mb-1">{c.nome}</h3>
+                  <p className="text-sm text-muted-foreground font-light">{c.endereco}</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">{c.cep}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.section>
+
+        {/* Setores */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={stagger}>
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Organização</span>
+            <h2 className="font-display text-3xl font-bold text-primary mb-4">Setores</h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="border border-gray-100 overflow-hidden">
+            {SETORES.map((s, i) => (
+              <div
+                key={s}
+                className={`px-7 py-5 flex items-center gap-4 ${i < SETORES.length - 1 ? "border-b border-gray-100" : ""} hover:bg-muted/30 transition-colors`}
+              >
+                <div className="w-1.5 h-1.5 rotate-45 bg-secondary shrink-0" />
+                <span className="font-medium text-primary text-sm">{s}</span>
+              </div>
+            ))}
+          </motion.div>
+        </motion.section>
+
+      </div>
     </main>
   );
 }

@@ -1,16 +1,4 @@
-import { Clock, Phone, Mail, MapPin, FileText } from "lucide-react";
-
-const servicos = [
-  "Agendamento de Batismos",
-  "Agendamento de Casamentos",
-  "Agendamento de Crisma",
-  "Emissão de Certidões e Documentos",
-  "Inscrições para Catequese",
-  "Inscrições para o Dízimo",
-  "Cadastro de Novos Paroquianos",
-  "Informações sobre Pastorais",
-  "Atendimento para Missas de Sétimo Dia e Aniversário de Falecimento",
-];
+import { Clock, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Secretaria() {
   return (
@@ -68,19 +56,6 @@ export default function Secretaria() {
               </div>
             </div>
 
-            {/* Serviços */}
-            <div>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Serviços Disponíveis</h2>
-              <div className="w-10 h-px bg-secondary mb-8"></div>
-              <div className="flex flex-col gap-3">
-                {servicos.map((servico) => (
-                  <div key={servico} className="flex items-center gap-4 py-3 border-b border-gray-100">
-                    <FileText className="w-4 h-4 text-secondary shrink-0" />
-                    <span className="text-muted-foreground font-light">{servico}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

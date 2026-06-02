@@ -5,10 +5,26 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { label: "História", href: "/historia", children: [] },
+  {
+    label: "Matriz",
+    href: "/historia",
+    children: [
+      { label: "História", href: "/historia" },
+      { label: "Brasão", href: "/brasao" },
+      { label: "Secretaria", href: "/secretaria" },
+      { label: "Horários", href: "/missas" },
+    ],
+  },
   { label: "Capelas e Setores", href: "/capelas", children: [] },
   { label: "Padres e Diáconos", href: "/padres", children: [] },
-  { label: "Secretaria", href: "/secretaria", children: [] },
+  {
+    label: "Sacramentos",
+    href: "/sacramentos",
+    children: [
+      { label: "Confissão", href: "/confissao" },
+      { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
+    ],
+  },
   {
     label: "Pastorais",
     href: "/pastorais",

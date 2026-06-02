@@ -22,6 +22,8 @@ import ViaSacra from "@/pages/ViaSacra";
 import Sacramentos from "@/pages/Sacramentos";
 import Batismo from "@/pages/Batismo";
 import Confissao from "@/pages/Confissao";
+import UncaoEnfermos from "@/pages/UncaoEnfermos";
+import Brasao from "@/pages/Brasao";
 import Eucaristia from "@/pages/Eucaristia";
 import Crisma from "@/pages/Crisma";
 import Matrimonio from "@/pages/Matrimonio";
@@ -78,6 +80,8 @@ function Router() {
       <Route path="/sacramentos"><Layout><Sacramentos /></Layout></Route>
       <Route path="/batismo"><Layout><Batismo /></Layout></Route>
       <Route path="/confissao"><Layout><Confissao /></Layout></Route>
+      <Route path="/uncao-dos-enfermos"><Layout><UncaoEnfermos /></Layout></Route>
+      <Route path="/brasao"><Layout><Brasao /></Layout></Route>
       <Route path="/eucaristia"><Layout><Eucaristia /></Layout></Route>
       <Route path="/crisma"><Layout><Crisma /></Layout></Route>
       <Route path="/matrimonio"><Layout><Matrimonio /></Layout></Route>
