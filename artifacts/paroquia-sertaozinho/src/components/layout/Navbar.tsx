@@ -21,17 +21,21 @@ const NAV_ITEMS = [
     label: "Sacramentos",
     href: "/sacramentos",
     children: [
+      { label: "Batismo", href: "/batismo" },
+      { label: "Eucaristia / 1ª Comunhão", href: "/eucaristia" },
+      { label: "Crisma", href: "/crisma" },
       { label: "Confissão", href: "/confissao" },
-      { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
       { label: "Matrimônio", href: "/matrimonio" },
+      { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
     ],
   },
   {
     label: "Pastorais",
     href: "/pastorais",
     children: [
+      { label: "Pastoral Familiar", href: "/pastoral-familiar" },
       { label: "Associação do Rosário", href: "/associacao-do-rosario" },
-      { label: 'Grupo de Evangelização', href: "/grupo-de-evangelizacao" },
+      { label: "Grupo de Evangelização", href: "/grupo-de-evangelizacao" },
       { label: "Pastoral da Sobriedade", href: "/pastoral-da-sobriedade" },
       { label: "Pastoral do Dízimo", href: "/pastoral-do-dizimo" },
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },

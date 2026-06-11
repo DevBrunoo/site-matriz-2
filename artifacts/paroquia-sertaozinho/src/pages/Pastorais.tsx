@@ -11,6 +11,13 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
 const PASTORAIS = [
   {
+    id: "pastoral-familiar",
+    nome: "Pastoral Familiar",
+    desc: "Cuida, acompanha e fortalece as famílias na fé e no amor. Coordenada por Agnes e Fernando Liboni. Encontros na última segunda-feira de cada mês, nas casas dos integrantes.",
+    icon: Heart,
+    href: "/pastoral-familiar",
+  },
+  {
     id: "associacao-do-rosario",
     nome: "Associação do Rosário",
     desc: "Grupo dedicado à devoção e rezar o Santo Rosário, fortalecendo a fé e a comunhão mariana na paróquia.",
