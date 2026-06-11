@@ -16,7 +16,10 @@ const CAPELAS = [
 const SETORES = [
   "Setor Santo Antônio (Paty)",
   "Setor Sagrado Coração de Jesus",
-  "Centro Catequético",
+];
+
+const CENTROS = [
+  { nome: "Centro Catequético Joaninha Gilberti", endereco: "R. Epitácio Pessoa, 1408 – Centro", cep: "CEP: 14160-180" },
 ];
 
 export default function Capelas() {
@@ -79,6 +82,37 @@ export default function Capelas() {
               </div>
             ))}
           </motion.div>
+        </motion.section>
+
+        {/* Centro Catequético */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={stagger}>
+          <motion.div variants={fadeUp} className="mb-10">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">Educação da Fé</span>
+            <h2 className="font-display text-3xl font-bold text-primary mb-4">Centro Catequético</h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 gap-4">
+            {CENTROS.map((c) => (
+              <motion.div
+                key={c.nome}
+                variants={fadeUp}
+                className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-sm transition-all p-7 flex gap-4"
+              >
+                <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-secondary stroke-[1.5]" />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-primary text-[16px] mb-1">{c.nome}</h3>
+                  <p className="text-sm text-muted-foreground font-light">{c.endereco}</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">{c.cep}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
 
       </div>

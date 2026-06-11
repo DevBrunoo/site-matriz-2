@@ -23,6 +23,7 @@ const NAV_ITEMS = [
     children: [
       { label: "Confissão", href: "/confissao" },
       { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
+      { label: "Matrimônio", href: "/matrimonio" },
     ],
   },
   {
@@ -30,8 +31,7 @@ const NAV_ITEMS = [
     href: "/pastorais",
     children: [
       { label: "Associação do Rosário", href: "/associacao-do-rosario" },
-      { label: "Pastoral Familiar", href: "/pastoral-familiar" },
-      { label: "Grupo de Evangelização", href: "/grupo-de-evangelizacao" },
+      { label: 'Grupo de Evangelização', href: "/grupo-de-evangelizacao" },
       { label: "Pastoral da Sobriedade", href: "/pastoral-da-sobriedade" },
       { label: "Pastoral do Dízimo", href: "/pastoral-do-dizimo" },
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },
