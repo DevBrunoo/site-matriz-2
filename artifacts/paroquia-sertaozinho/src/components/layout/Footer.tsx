@@ -53,8 +53,14 @@ export function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-xs font-light tracking-wide text-white/50">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-light tracking-wide text-white/50">
           <p>&copy; {new Date().getFullYear()} Paróquia Nossa Senhora Aparecida. Sertãozinho - SP.</p>
+          <p>
+            Feito por{" "}
+            <a href="https://engcre.com.br" target="_blank" rel="noopener noreferrer" className="text-secondary/80 hover:text-secondary transition-colors">
+              EngCre
+            </a>
+          </p>
         </div>
       </div>
     </footer>
