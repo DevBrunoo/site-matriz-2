@@ -44,6 +44,7 @@ import RenovacaoCarismatica from "@/pages/RenovacaoCarismatica";
 import Contato from "@/pages/Contato";
 import Dizimo from "@/pages/Dizimo";
 import Cartazes from "@/pages/Cartazes";
+import ReformaParoquia from "@/pages/ReformaParoquia";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -103,6 +104,7 @@ function Router() {
       <Route path="/renovacao-carismatica"><Layout><RenovacaoCarismatica /></Layout></Route>
 
       {/* Outros */}
+      <Route path="/reforma-da-paroquia"><Layout><ReformaParoquia /></Layout></Route>
       <Route path="/contato"><Layout><Contato /></Layout></Route>
       <Route path="/dizimo"><Layout><Dizimo /></Layout></Route>
       <Route path="/cartazes"><Layout><Cartazes /></Layout></Route>

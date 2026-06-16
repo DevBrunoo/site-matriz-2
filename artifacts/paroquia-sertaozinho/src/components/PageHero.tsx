@@ -6,7 +6,7 @@ interface PageHeroProps {
 
 export function PageHero({ category, title, subtitle }: PageHeroProps) {
   return (
-    <section className="relative pt-20 overflow-hidden">
+    <section className="relative pt-14 overflow-hidden">
       <div
         className="relative py-28 md:py-36"
         style={{

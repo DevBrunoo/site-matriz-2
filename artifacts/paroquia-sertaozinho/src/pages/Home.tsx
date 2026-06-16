@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full pt-16 sm:pt-20">
+    <main className="w-full pt-12 sm:pt-14">
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center justify-center overflow-hidden">
@@ -61,19 +61,18 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20 sm:py-28">
           <motion.div initial="hidden" animate="show" variants={stagger}>
 
-            {/* Ornament */}
+            {/* Crown ornament */}
             <motion.div variants={fadeUp} className="flex justify-center mb-7 sm:mb-9">
               <div className="relative">
                 <div
-                  className="absolute inset-0 -m-8 rounded-full blur-3xl opacity-20"
+                  className="absolute inset-0 -m-10 rounded-full blur-3xl opacity-25"
                   style={{ background: "radial-gradient(circle, #D4AF37, transparent 65%)" }}
                 />
-                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" className="relative">
-                  <line x1="0" y1="23" x2="46" y2="23" stroke="#D4AF37" strokeWidth="0.7" opacity="0.45" />
-                  <line x1="23" y1="0" x2="23" y2="46" stroke="#D4AF37" strokeWidth="0.7" opacity="0.45" />
-                  <rect x="14" y="14" width="18" height="18" transform="rotate(45 23 23)" fill="none" stroke="#D4AF37" strokeWidth="1.2" opacity="0.75" />
-                  <circle cx="23" cy="23" r="3" fill="#D4AF37" opacity="0.95" />
-                </svg>
+                <img
+                  src={`${import.meta.env.BASE_URL}coroa.png`}
+                  alt="Coroa de Nossa Senhora"
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-[0_2px_16px_rgba(212,175,55,0.5)]"
+                />
               </div>
             </motion.div>
 
@@ -140,7 +139,7 @@ export default function Home() {
 
       {/* ── Quick Info ────────────────────────────────────────────── */}
       <motion.section
-        className="py-16 sm:py-24 bg-background border-b border-gray-100"
+        className="py-8 sm:py-14 bg-background border-b border-gray-100"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}

@@ -7,12 +7,13 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   {
     label: "Matriz",
-    href: "/historia",
+    href: "/missas",
     children: [
+      { label: "Programação da Paróquia", href: "/missas" },
+      { label: "Secretaria", href: "/secretaria" },
       { label: "História", href: "/historia" },
       { label: "Brasão", href: "/brasao" },
-      { label: "Secretaria", href: "/secretaria" },
-      { label: "Horários", href: "/missas" },
+      { label: "Reforma da Paróquia", href: "/reforma-da-paroquia" },
     ],
   },
   { label: "Capelas e Setores", href: "/capelas", children: [] },
@@ -24,9 +25,9 @@ const NAV_ITEMS = [
       { label: "Batismo", href: "/batismo" },
       { label: "Eucaristia / 1ª Comunhão", href: "/eucaristia" },
       { label: "Crisma", href: "/crisma" },
-      { label: "Confissão", href: "/confissao" },
       { label: "Matrimônio", href: "/matrimonio" },
       { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
+      { label: "Confissão", href: "/confissao" },
     ],
   },
   {
@@ -57,13 +58,13 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+        <div className="flex justify-between items-center h-12 sm:h-14">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
-            <div className="w-9 h-9 sm:w-12 sm:h-12 shrink-0">
+            <div className="w-11 h-11 sm:w-14 sm:h-14 shrink-0">
               <img
-                src={`${import.meta.env.BASE_URL}logo.png`}
+                src={`${import.meta.env.BASE_URL}logo.webp`}
                 alt="Paróquia Logo"
                 className="w-full h-full object-contain"
                 onError={(e) => {
@@ -92,7 +93,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-[13px] font-medium text-foreground hover:text-secondary transition-colors py-8"
+                  className="flex items-center gap-1 text-[13px] font-medium text-foreground hover:text-secondary transition-colors py-4"
                 >
                   {item.label}
                   {item.children.length > 0 && (
@@ -128,7 +129,7 @@ export function Navbar() {
 
             <Link
               href="/contato"
-              className="text-[13px] font-medium text-foreground hover:text-secondary transition-colors py-8 relative after:absolute after:bottom-[30px] after:left-0 after:h-[1px] after:w-full after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-bottom-left after:transition-transform"
+              className="text-[13px] font-medium text-foreground hover:text-secondary transition-colors py-4 relative after:absolute after:bottom-[14px] after:left-0 after:h-[1px] after:w-full after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-bottom-left after:transition-transform"
             >
               Contato
             </Link>

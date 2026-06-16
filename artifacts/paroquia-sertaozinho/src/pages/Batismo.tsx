@@ -67,15 +67,15 @@ export default function Batismo() {
         </motion.section>
 
         {/* CTA */}
-        <motion.section variants={fadeUp} className="flex items-center justify-between gap-6 p-7 border border-secondary/30 bg-secondary/5">
+        <motion.section variants={fadeUp} className="p-7 border border-secondary/30 bg-secondary/5">
           <p className="text-sm text-primary font-light leading-relaxed">
-            Para mais informações sobre datas, documentação e o encontro de preparação, fale com a nossa secretaria.
+            Para verificar o início da próxima turma, entre em contato com a secretaria paroquial pelo{" "}
+            <a href="https://wa.me/5516994648668" target="_blank" rel="noopener noreferrer" className="text-secondary font-medium hover:underline">
+              WhatsApp (16) 99464-8668
+            </a>{" "}
+            ou telefone{" "}
+            <span className="font-medium text-primary">(16) 3947-6524</span>.
           </p>
-          <Link href="/secretaria">
-            <span className="inline-flex items-center gap-2 shrink-0 text-xs font-bold tracking-wider uppercase text-primary hover:text-secondary transition-colors group">
-              Secretaria <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </Link>
         </motion.section>
       </motion.div>
     </main>
