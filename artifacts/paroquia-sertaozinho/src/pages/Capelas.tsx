@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
 };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
 const CAPELAS = [
   { nome: "São Vicente de Paulo", endereco: "R: Frederico Ozanan, 931 – Centro", cep: "CEP: 14160-640" },

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Clock, MapPin, Phone, Mail, Instagram, Star } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
 };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 const FESTAS = [
   {
@@ -31,6 +32,7 @@ export default function Agenda() {
   return (
     <main className="pt-16 sm:pt-20 pb-24">
       <PageHero
+        category="Agenda"
         title="Agenda Paroquial"
         subtitle="Festas e informações de contato da Paróquia Nossa Senhora Aparecida."
       />

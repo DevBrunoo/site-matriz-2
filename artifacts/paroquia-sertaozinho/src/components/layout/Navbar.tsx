@@ -13,7 +13,6 @@ const NAV_ITEMS = [
       { label: "Secretaria", href: "/secretaria" },
       { label: "História", href: "/historia" },
       { label: "Brasão", href: "/brasao" },
-      { label: "Reforma da Paróquia", href: "/reforma-da-paroquia" },
     ],
   },
   { label: "Capelas e Setores", href: "/capelas", children: [] },
@@ -42,7 +41,11 @@ const NAV_ITEMS = [
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },
     ],
   },
-  { label: "Agenda", href: "/agenda", children: [] },
+  {
+    label: "Reforma da Paróquia",
+    href: "/reforma-da-paroquia",
+    children: [],
+  },
 ];
 
 export function Navbar() {
@@ -127,12 +130,6 @@ export function Navbar() {
               </div>
             ))}
 
-            <Link
-              href="/contato"
-              className="text-[13px] font-medium text-foreground hover:text-secondary transition-colors py-4 relative after:absolute after:bottom-[14px] after:left-0 after:h-[1px] after:w-full after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-bottom-left after:transition-transform"
-            >
-              Contato
-            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -207,14 +204,6 @@ export function Navbar() {
                   )}
                 </div>
               ))}
-              <div className="pt-2 pb-1 px-3">
-                <Link
-                  href="/contato"
-                  className="block py-3 text-[14px] font-semibold text-secondary border-t border-gray-100"
-                >
-                  Contato
-                </Link>
-              </div>
             </div>
           </motion.div>
         )}
