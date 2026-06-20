@@ -62,27 +62,41 @@ export default function Capelas() {
             </div>
           </motion.div>
 
-          <motion.a
-            variants={fadeUp}
-            href="https://maps.app.goo.gl/ScQ5er7tC3tPE2E9A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex gap-4 bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-md transition-all p-7 w-full sm:w-auto sm:inline-flex"
-          >
-            <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
-              <MapPin className="w-4 h-4 text-secondary stroke-[1.5]" />
+          <motion.div variants={fadeUp} className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-md transition-all overflow-hidden max-w-sm">
+            <div className="relative aspect-[4/3] overflow-hidden bg-primary/10">
+              <img
+                src={`${BASE}capelas/matriz.jpg`}
+                alt="Igreja Matriz Nossa Senhora Aparecida"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
             </div>
-            <div className="flex-1">
-              <h3 className="font-display font-semibold text-primary text-[16px] mb-1 group-hover:text-secondary transition-colors">
-                Nossa Senhora Aparecida — Matriz
-              </h3>
-              <p className="text-sm text-muted-foreground font-light">Largo da Matriz Cônego Antônio de Oliveira – Centro</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">CEP: 14160-000</p>
-              <span className="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold tracking-wider uppercase text-secondary">
-                Ver no Google Maps <ExternalLink className="w-3 h-3" />
-              </span>
+            <div className="p-6">
+              <div className="flex gap-3 mb-4">
+                <div className="w-8 h-8 bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5 text-secondary stroke-[1.5]" />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-primary text-[15px] mb-1 leading-snug">Nossa Senhora Aparecida — Matriz</h3>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">Largo da Matriz Cônego Antônio de Oliveira – Centro</p>
+                  <p className="text-xs text-muted-foreground/60 mt-1">CEP: 14160-000</p>
+                </div>
+              </div>
+              <div className="pt-4 border-t border-gray-50">
+                <a
+                  href="https://maps.app.goo.gl/ScQ5er7tC3tPE2E9A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-secondary hover:text-secondary/80 transition-colors"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  Ver no Google Maps
+                  <ExternalLink className="w-3 h-3 opacity-70" />
+                </a>
+              </div>
             </div>
-          </motion.a>
+          </motion.div>
         </motion.section>
 
         {/* Capelas */}
