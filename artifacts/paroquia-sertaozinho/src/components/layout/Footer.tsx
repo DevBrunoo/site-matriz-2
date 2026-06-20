@@ -14,8 +14,7 @@ export function Footer() {
             </h3>
             <div className="w-8 h-px bg-secondary"></div>
             <p className="text-white/70 text-sm font-light leading-relaxed">
-              Sertãozinho - SP<br/>
-              "Fazei tudo o que Ele vos disser" (Jo 2,5)
+              Uma comunidade de fé, esperança e caridade, caminhando juntos com Maria.
             </p>
           </div>
 

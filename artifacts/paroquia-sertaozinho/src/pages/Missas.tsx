@@ -38,13 +38,11 @@ export default function Missas() {
           <DayBlock day="Domingo" items={[
             "07h00 — Igreja Matriz · Nossa Senhora Aparecida",
             "09h00 — Igreja Matriz · Nossa Senhora Aparecida",
-            "09h00 — Setor Sagrado Coração de Jesus (1° Domingo)",
-            "10h00 — Setor Santo Antônio de Pádua (3° Domingo)",
             "17h00 — Capela São Vicente de Paulo",
             "19h00 — Igreja Matriz · Nossa Senhora Aparecida",
           ]} />
           <DayBlock day="Segunda-feira" items={[
-            "Não haverá missa (salvo alguma exceção)",
+            "Não há missa",
           ]} />
           <DayBlock day="Terça-feira" items={[
             "19h00 — Igreja Matriz · Nossa Senhora Aparecida",
@@ -61,16 +59,6 @@ export default function Missas() {
           <DayBlock day="Sábado" items={[
             "17h00 — Capela Nossa Senhora do Rosário",
             "19h00 — Igreja Matriz · Nossa Senhora Aparecida",
-          ]} />
-        </Section>
-
-        {/* Horários Excepcionais */}
-        <Section title="Horários Excepcionais">
-          <DayBlock day="1° Domingo do mês" items={[
-            "09h00 — Setor Sagrado Coração de Jesus",
-          ]} />
-          <DayBlock day="3° Domingo do mês" items={[
-            "10h00 — Setor Santo Antônio de Pádua (Paty)",
           ]} />
         </Section>
 

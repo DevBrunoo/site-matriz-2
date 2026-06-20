@@ -77,10 +77,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.p variants={fadeUp} className="text-secondary/90 text-[10px] sm:text-[11px] font-bold tracking-[0.35em] uppercase mb-4 sm:mb-5">
-              Sertãozinho &nbsp;·&nbsp; SP
-            </motion.p>
-
             <motion.h1
               variants={fadeUp}
               className="font-display font-bold text-white leading-[1.1] mb-5 sm:mb-6

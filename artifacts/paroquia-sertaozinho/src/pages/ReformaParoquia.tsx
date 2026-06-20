@@ -200,44 +200,6 @@ export default function ReformaParoquia() {
         </div>
       </section>
 
-      {/* Vídeo */}
-      <section className="bg-background border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">
-              Registro em Vídeo
-            </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-primary">
-              Veja o progresso das obras
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative aspect-video overflow-hidden rounded-sm shadow-xl border border-gray-100 bg-primary"
-          >
-            <video
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              preload="metadata"
-              poster={`${BASE}reforma/fachada-obras.png`}
-            >
-              <source src={`${BASE}reforma/andamento-obras.mp4`} type="video/mp4" />
-              Seu navegador não suporta a reprodução de vídeo.
-            </video>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Conteúdo */}
       <motion.div
         initial="hidden"
