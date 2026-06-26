@@ -86,7 +86,7 @@ export default function Home() {
               Senhora <span className="text-secondary">Aparecida</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-white/60 text-[20px] sm:text-[23px] font-light leading-relaxed mb-8 sm:mb-10 max-w-md sm:max-w-lg mx-auto">
+            <motion.p variants={fadeUp} className="text-white/60 text-[27px] sm:text-[30px] font-light leading-relaxed mb-8 sm:mb-10 max-w-md sm:max-w-lg mx-auto">
               Bem-vindo à Casa do Senhor. Uma comunidade de fé, esperança e caridade, caminhando juntos com Maria.
             </motion.p>
 
