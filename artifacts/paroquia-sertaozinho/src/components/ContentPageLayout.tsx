@@ -31,8 +31,20 @@ export function ContentPageLayout({
       <PageHero category={category} title={b.titulo} subtitle={b.subtitulo} />
 
       {imageSrc && (
-        <div className="flex justify-center py-10 bg-white border-b border-gray-100">
-          <img src={imageSrc} alt="" className="h-40 w-auto object-contain" />
+        <div className="bg-gradient-to-b from-primary/5 to-white py-14 border-b border-gray-100">
+          <div className="flex flex-col items-center gap-5">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-secondary/40" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
+              <div className="w-12 h-px bg-secondary/40" />
+            </div>
+            <img src={imageSrc} alt="" className="h-44 w-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.12)]" />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-px bg-secondary/40" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
+              <div className="w-12 h-px bg-secondary/40" />
+            </div>
+          </div>
         </div>
       )}
 

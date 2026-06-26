@@ -52,7 +52,7 @@ const queryClient = new QueryClient();
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col w-full relative">
+    <div className="min-h-dvh flex flex-col w-full relative">
       <Navbar />
       <div className="flex-grow">{children}</div>
       <Footer />

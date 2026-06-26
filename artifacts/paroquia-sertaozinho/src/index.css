@@ -5,6 +5,10 @@ p {
   font-size: 1.0625rem;
 }
 
+html {
+  background-color: hsl(224, 64%, 15%);
+}
+
 @theme inline {
   --font-sans: 'Open Sans', sans-serif;
   --font-display: 'Montserrat', sans-serif;

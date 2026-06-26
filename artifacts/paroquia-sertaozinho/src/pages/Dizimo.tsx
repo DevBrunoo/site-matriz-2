@@ -94,9 +94,9 @@ export default function Dizimo() {
                 Realize sua contribuição via transferência bancária diretamente para a conta da paróquia. Guarde o comprovante e informe à secretaria.
               </p>
               <div className="text-sm text-muted-foreground space-y-1">
-                <p><span className="font-medium text-primary">Banco:</span> <span className="font-light">Bradesco</span></p>
-                <p><span className="font-medium text-primary">Agência:</span> <span className="font-light">0001-1</span></p>
-                <p><span className="font-medium text-primary">Conta:</span> <span className="font-light">12345-6</span></p>
+                <p><span className="font-medium text-primary">Banco:</span> <span className="font-light">000</span></p>
+                <p><span className="font-medium text-primary">Agência:</span> <span className="font-light">0000-0</span></p>
+                <p><span className="font-medium text-primary">Conta:</span> <span className="font-light">000000-0</span></p>
                 <p><span className="font-medium text-primary">CNPJ:</span> <span className="font-light">00.000.000/0001-00</span></p>
               </div>
             </div>
