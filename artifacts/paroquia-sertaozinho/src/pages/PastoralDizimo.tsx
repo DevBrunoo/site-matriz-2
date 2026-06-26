@@ -14,22 +14,24 @@ export default function PastoralDizimo() {
       />
 
       {/* Logo */}
-      <div className="bg-gradient-to-b from-primary/5 to-white py-14 border-b border-gray-100">
-        <div className="flex flex-col items-center gap-5">
+      <div className="bg-gradient-to-b from-primary/5 to-white py-16 border-b border-gray-100">
+        <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-px bg-secondary/40" />
+            <div className="w-16 h-px bg-secondary/40" />
             <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
-            <div className="w-12 h-px bg-secondary/40" />
+            <div className="w-16 h-px bg-secondary/40" />
           </div>
-          <img
-            src={`${BASE}logos/logo-dizimo.png`}
-            alt="Logo Pastoral do Dízimo"
-            className="h-36 w-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.12)]"
-          />
+          <div className="bg-white rounded-2xl shadow-[0_8px_48px_rgba(0,0,0,0.10)] border border-gray-100/80 px-14 py-10">
+            <img
+              src={`${BASE}logos/logo-dizimo.png`}
+              alt="Logo Pastoral do Dízimo"
+              className="h-40 w-auto object-contain"
+            />
+          </div>
           <div className="flex items-center gap-4">
-            <div className="w-12 h-px bg-secondary/40" />
+            <div className="w-16 h-px bg-secondary/40" />
             <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
-            <div className="w-12 h-px bg-secondary/40" />
+            <div className="w-16 h-px bg-secondary/40" />
           </div>
         </div>
       </div>

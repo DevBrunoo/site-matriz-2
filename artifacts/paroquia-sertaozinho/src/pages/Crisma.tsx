@@ -34,7 +34,7 @@ export default function Crisma() {
             <p>A Crisma, também chamada de Sacramento da Confirmação, é o sacramento que fortalece a graça recebida no Batismo e torna o cristão mais plenamente comprometido com a missão da Igreja. Por meio da unção com o Santo Crisma e da oração do bispo ou de seu representante, o fiel recebe de maneira especial os dons do Espírito Santo para viver e testemunhar a fé com maturidade.</p>
             <p>A preparação para a Crisma é um tempo de formação, crescimento espiritual e aprofundamento da vida cristã. É uma oportunidade para conhecer melhor a fé da Igreja, fortalecer a amizade com Deus e assumir de forma consciente o compromisso de seguir Jesus Cristo.</p>
           </div>
-          <blockquote className="mt-7 border-l-2 border-secondary pl-6 text-muted-foreground font-light italic text-sm leading-relaxed">
+          <blockquote className="mt-7 border-l-2 border-secondary pl-6 text-muted-foreground font-light italic text-base leading-relaxed">
             "Recebereis a força do Espírito Santo que descerá sobre vós." — At 1,8
           </blockquote>
         </motion.section>
@@ -56,8 +56,8 @@ export default function Crisma() {
               <div key={item.label} className={`flex items-start gap-5 px-7 py-5 ${i < arr.length - 1 ? "border-b border-gray-100" : ""} hover:bg-muted/20 transition-colors`}>
                 <div className="w-1.5 h-1.5 rotate-45 bg-secondary shrink-0 mt-2" />
                 <div className="flex-1">
-                  <span className="text-xs font-bold tracking-wider uppercase text-muted-foreground block mb-1">{item.label}</span>
-                  <span className="text-sm text-primary font-light">{item.info}</span>
+                  <span className="text-sm font-bold tracking-wider uppercase text-muted-foreground block mb-1">{item.label}</span>
+                  <span className="text-base text-primary font-light">{item.info}</span>
                 </div>
               </div>
             ))}

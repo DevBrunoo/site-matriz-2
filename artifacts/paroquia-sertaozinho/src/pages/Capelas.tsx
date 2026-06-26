@@ -202,7 +202,7 @@ export default function Capelas() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
             {CENTROS.map((c) => (
               <motion.div
                 key={c.nome}
