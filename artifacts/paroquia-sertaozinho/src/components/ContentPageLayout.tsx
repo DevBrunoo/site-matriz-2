@@ -11,6 +11,7 @@ interface ContentPageLayoutProps {
   rightTitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  imageSrc?: string;
 }
 
 export function ContentPageLayout({
@@ -20,6 +21,7 @@ export function ContentPageLayout({
   rightTitle = "Informações",
   ctaLabel = "Fale com a Secretaria",
   ctaHref = "/secretaria",
+  imageSrc,
 }: ContentPageLayoutProps) {
   const [b, setB] = useState<ContentBlock>(() => getContentBlock(blockKey));
   useEffect(() => { setB(getContentBlock(blockKey)); }, [blockKey]);
@@ -27,6 +29,12 @@ export function ContentPageLayout({
   return (
     <main className="w-full">
       <PageHero category={category} title={b.titulo} subtitle={b.subtitulo} />
+
+      {imageSrc && (
+        <div className="flex justify-center py-10 bg-white border-b border-gray-100">
+          <img src={imageSrc} alt="" className="h-40 w-auto object-contain" />
+        </div>
+      )}
 
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

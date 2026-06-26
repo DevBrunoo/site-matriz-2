@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function PastoralFamiliar() {
   return (
     <main className="w-full">
@@ -10,6 +12,11 @@ export default function PastoralFamiliar() {
         title="Pastoral Familiar"
         subtitle="Cuidando, acompanhando e fortalecendo as famílias na fé e no amor"
       />
+
+      {/* Logo */}
+      <div className="flex justify-center py-10 bg-white border-b border-gray-100">
+        <img src={`${BASE}logos/logo-familiar.png`} alt="Logo Pastoral Familiar" className="h-28 w-auto object-contain" />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

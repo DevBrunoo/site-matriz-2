@@ -11,6 +11,15 @@ export default function GrupoEvangelizacao() {
         subtitle="Vivendo o Evangelho no cotidiano com simplicidade e amor"
       />
 
+      {/* Imagem Santa Teresinha */}
+      <div className="flex justify-center py-10 bg-white border-b border-gray-100">
+        <img
+          src={`${import.meta.env.BASE_URL}pastorais/santa-teresinha.png`}
+          alt="Santa Terezinha do Menino Jesus"
+          className="h-44 w-auto object-contain"
+        />
+      </div>
+
       {/* Descrição principal */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

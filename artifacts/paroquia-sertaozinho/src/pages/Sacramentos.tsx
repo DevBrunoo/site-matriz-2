@@ -32,6 +32,12 @@ export default function Sacramentos() {
       title: "Matrimônio",
       desc: "A aliança matrimonial, pela qual o homem e a mulher constituem entre si uma comunhão da vida toda, é ordenada ao bem dos cônjuges.",
       info: "Agendar com no mínimo 6 meses de antecedência. Curso de noivos obrigatório."
+    },
+    {
+      id: "pastoral-do-batismo",
+      title: "Pastoral do Batismo",
+      desc: "Pastoral dedicada a acolher e preparar os pais e padrinhos para a celebração do Batismo, o primeiro sacramento da vida cristã.",
+      info: "Catequese batismal: 1° domingo às 09h, 2° e 3° sábado às 17h. Data do batismo costuma ser no 4° domingo."
     }
   ];
 

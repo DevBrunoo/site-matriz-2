@@ -8,7 +8,7 @@ export function PageHero({ category, title, subtitle }: PageHeroProps) {
   return (
     <section className="relative pt-12 sm:pt-14 overflow-hidden">
       <div
-        className="relative py-28 md:py-36"
+        className="relative py-14 md:py-20"
         style={{
           background: "linear-gradient(160deg, #0c1736 0%, #152358 45%, #1E3A8A 100%)",
         }}

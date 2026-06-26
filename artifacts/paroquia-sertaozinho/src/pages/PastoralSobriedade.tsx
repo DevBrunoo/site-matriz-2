@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function PastoralSobriedade() {
   return (
     <main className="w-full">
@@ -10,6 +12,11 @@ export default function PastoralSobriedade() {
         title="Pastoral da Sobriedade"
         subtitle="Um caminho de transformação interior, fé e dignidade da pessoa humana"
       />
+
+      {/* Logo */}
+      <div className="flex justify-center py-10 bg-white border-b border-gray-100">
+        <img src={`${BASE}logos/logo-sobriedade.png`} alt="Logo Pastoral da Sobriedade" className="h-28 w-auto object-contain" />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

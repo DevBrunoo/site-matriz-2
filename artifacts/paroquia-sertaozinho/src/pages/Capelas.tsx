@@ -24,7 +24,7 @@ const CAPELAS = [
     endereco: "Setor Santo Antônio de Pádua – Sertãozinho",
     cep: "",
     foto: `${BASE}capelas/santo-antonio.jpg`,
-    mapsUrl: null,
+    mapsUrl: "https://maps.app.goo.gl/Yxs9U1FjQs6jMMbt6",
   },
   {
     nome: "São Vicente de Paulo",
@@ -41,7 +41,13 @@ const SETORES = [
 ];
 
 const CENTROS = [
-  { nome: "Centro Catequético Joaninha Gilberti", endereco: "R. Epitácio Pessoa, 1408 – Centro", cep: "CEP: 14160-180" },
+  {
+    nome: "Centro Catequético Joaninha Gilberti",
+    endereco: "R. Epitácio Pessoa, 1408 – Centro",
+    cep: "CEP: 14160-180",
+    foto: `${BASE}capelas/centro-catequetico.jpg`,
+    mapsUrl: "https://maps.app.goo.gl/6W42EAKximnmNW8i7",
+  },
 ];
 
 export default function Capelas() {
@@ -196,20 +202,47 @@ export default function Capelas() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-sm">
             {CENTROS.map((c) => (
               <motion.div
                 key={c.nome}
                 variants={fadeUp}
-                className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-sm transition-all p-7 flex gap-4"
+                className="bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-md transition-all overflow-hidden flex flex-col"
               >
-                <div className="w-9 h-9 bg-secondary/8 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-secondary stroke-[1.5]" />
+                <div className="relative aspect-[4/3] overflow-hidden bg-primary/10">
+                  <img
+                    src={c.foto}
+                    alt={c.nome}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
                 </div>
-                <div>
-                  <h3 className="font-display font-semibold text-primary text-[16px] mb-1">{c.nome}</h3>
-                  <p className="text-sm text-muted-foreground font-light">{c.endereco}</p>
-                  <p className="text-xs text-muted-foreground/70 mt-1">{c.cep}</p>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex gap-3 mb-4">
+                    <div className="w-8 h-8 bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin className="w-3.5 h-3.5 text-secondary stroke-[1.5]" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-semibold text-primary text-[15px] mb-1 leading-snug">{c.nome}</h3>
+                      <p className="text-sm text-muted-foreground font-light">{c.endereco}</p>
+                      {c.cep && <p className="text-xs text-muted-foreground/60 mt-1">{c.cep}</p>}
+                    </div>
+                  </div>
+                  {c.mapsUrl && (
+                    <div className="mt-auto pt-4 border-t border-gray-50">
+                      <a
+                        href={c.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-secondary hover:text-secondary/80 transition-colors"
+                      >
+                        <MapPin className="w-3.5 h-3.5" />
+                        Ver no Google Maps
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

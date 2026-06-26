@@ -16,7 +16,6 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Capelas e Setores", href: "/capelas", children: [] },
-  { label: "Padres e Diáconos", href: "/padres", children: [] },
   {
     label: "Sacramentos",
     href: "/sacramentos",
@@ -27,6 +26,7 @@ const NAV_ITEMS = [
       { label: "Matrimônio", href: "/matrimonio" },
       { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
       { label: "Confissão", href: "/confissao" },
+      { label: "Pastoral do Batismo", href: "/pastoral-do-batismo" },
     ],
   },
   {
@@ -35,12 +35,13 @@ const NAV_ITEMS = [
     children: [
       { label: "Pastoral Familiar", href: "/pastoral-familiar" },
       { label: "Associação do Rosário", href: "/associacao-do-rosario" },
-      { label: "Grupo de Evangelização", href: "/grupo-de-evangelizacao" },
+      { label: "Grupo de Evangelização Santa Teresinha", href: "/grupo-de-evangelizacao" },
       { label: "Pastoral da Sobriedade", href: "/pastoral-da-sobriedade" },
       { label: "Pastoral do Dízimo", href: "/pastoral-do-dizimo" },
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },
     ],
   },
+  { label: "Padres e Diáconos", href: "/padres", children: [] },
   {
     label: "Reforma da Paróquia",
     href: "/reforma-da-paroquia",

@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function PastoralDizimo() {
   return (
     <main className="w-full">
@@ -10,6 +12,11 @@ export default function PastoralDizimo() {
         title="Pastoral do Dízimo"
         subtitle="Um caminho de fé, gratidão e compromisso com a missão evangelizadora"
       />
+
+      {/* Logo */}
+      <div className="flex justify-center py-10 bg-white border-b border-gray-100">
+        <img src={`${BASE}logos/logo-dizimo.png`} alt="Logo Pastoral do Dízimo" className="h-28 w-auto object-contain" />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

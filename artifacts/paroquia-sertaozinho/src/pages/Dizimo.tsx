@@ -84,21 +84,6 @@ export default function Dizimo() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="doacoes">
-            {/* Pessoalmente */}
-            <div className="p-8 border border-gray-100">
-              <div className="text-secondary mb-4">
-                <Building2 className="w-6 h-6 stroke-[1.5]" />
-              </div>
-              <h3 className="font-display text-xl text-primary mb-3">Na Secretaria</h3>
-              <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                Compareça à secretaria paroquial e cadastre-se como dizimista. Você poderá entregar seu dízimo pessoalmente de terça a sexta das 08h às 17h30 e aos sábados até 12h.
-              </p>
-              <div className="text-sm text-muted-foreground">
-                <p className="font-medium text-primary mb-1">Endereço:</p>
-                <p className="font-light">Rua Cel. Quito Junqueira, Sertãozinho - SP</p>
-              </div>
-            </div>
-
             {/* Transferência */}
             <div className="p-8 border border-gray-100">
               <div className="text-secondary mb-4">
@@ -117,7 +102,7 @@ export default function Dizimo() {
             </div>
 
             {/* PIX */}
-            <div className="p-8 border border-gray-100 md:col-span-2">
+            <div className="p-8 border border-gray-100">
               <div className="text-secondary mb-4">
                 <QrCode className="w-6 h-6 stroke-[1.5]" />
               </div>
