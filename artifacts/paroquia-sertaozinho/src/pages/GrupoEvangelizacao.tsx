@@ -11,37 +11,61 @@ export default function GrupoEvangelizacao() {
         subtitle="Vivendo o Evangelho no cotidiano com simplicidade e amor"
       />
 
-      {/* Imagem Santa Teresinha */}
-      <div className="bg-gradient-to-b from-primary/5 to-white py-16 border-b border-gray-100">
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-px bg-secondary/40" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
-            <div className="w-16 h-px bg-secondary/40" />
-          </div>
-          <div className="bg-white rounded-2xl shadow-[0_8px_48px_rgba(0,0,0,0.10)] border border-gray-100/80 px-12 py-10">
-            <img
-              src={`${import.meta.env.BASE_URL}pastorais/santa-teresinha.png`}
-              alt="Santa Terezinha do Menino Jesus"
-              className="h-48 w-auto object-contain"
-            />
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-px bg-secondary/40" />
-            <div className="w-1.5 h-1.5 rotate-45 bg-secondary/40" />
-            <div className="w-16 h-px bg-secondary/40" />
-          </div>
-        </div>
-      </div>
+      {/* ── FEATURE: imagem + apresentação ── */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      {/* Descrição principal */}
-      <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-muted-foreground font-light leading-relaxed text-[15px]">
-            Inspirado na espiritualidade simples e profunda de Santa Teresinha do Menino Jesus, este grupo nasce
-            com o desejo de viver o Evangelho no cotidiano, levando o amor de Deus às pessoas de forma concreta,
-            por meio da oração, da amizade e do serviço.
-          </p>
+            {/* Lado esquerdo: imagem com decoração */}
+            <div className="relative flex justify-center lg:justify-start">
+              <div className="absolute -top-5 -left-5 w-20 h-20 border-l-2 border-t-2 border-secondary/40 pointer-events-none" />
+              <div className="absolute -bottom-5 -right-5 w-20 h-20 border-r-2 border-b-2 border-secondary/40 pointer-events-none" />
+
+              <div className="relative w-full max-w-sm">
+                <div className="bg-white rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.13)] border border-gray-100 flex items-center justify-center py-16 px-10">
+                  <img
+                    src={`${import.meta.env.BASE_URL}pastorais/santa-teresinha.png`}
+                    alt="Santa Terezinha do Menino Jesus"
+                    className="w-full max-h-80 object-contain drop-shadow-xl"
+                  />
+                </div>
+
+                {/* Badge flutuante */}
+                <div className="absolute -bottom-5 -right-5 bg-white border border-gray-100 shadow-lg px-5 py-3">
+                  <p className="text-[9px] font-bold tracking-[0.24em] uppercase text-secondary mb-0.5">Padroeira do Grupo</p>
+                  <p className="font-display text-base font-bold text-primary leading-none">Santa Terezinha</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lado direito: texto */}
+            <div className="lg:pl-4">
+              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-5">
+                O Grupo
+              </span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-primary leading-snug mb-6">
+                Vivendo o Evangelho no cotidiano
+              </h2>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-px bg-secondary" />
+                <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+              </div>
+              <div className="space-y-5 text-muted-foreground font-light leading-relaxed text-[15px]">
+                <p>
+                  Inspirado na espiritualidade simples e profunda de{" "}
+                  <span className="text-primary font-medium">Santa Terezinha do Menino Jesus</span>, este grupo
+                  nasce com o desejo de viver o Evangelho no cotidiano.
+                </p>
+                <p>
+                  Levando o amor de Deus às pessoas de forma concreta, por meio da{" "}
+                  <span className="font-medium text-primary">oração</span>, da{" "}
+                  <span className="font-medium text-primary">amizade</span> e do{" "}
+                  <span className="font-medium text-primary">serviço</span>.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
