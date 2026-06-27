@@ -11,6 +11,10 @@ export default function Tlc() {
         category="Pastorais"
         title="TLC — Treinamento de Liderança Cristã"
         subtitle="Uma experiência da Graça de Deus em dois dias e meio de alegria, música e oração"
+        images={[
+          { src: `${BASE}logos/logo-tlc.png`, alt: "Logo TLC" },
+          { src: tlcPhoto, alt: "TLC Sertãozinho" },
+        ]}
       />
 
       {/* ── FEATURE: imagem + apresentação ── */}
