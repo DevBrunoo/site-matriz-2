@@ -18,7 +18,7 @@ export default function Tlc() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Lado esquerdo: foto com decoração */}
+            {/* Lado esquerdo: imagem com decoração */}
             <div className="relative flex justify-center lg:justify-start">
               {/* Cantos decorativos */}
               <div className="absolute -top-5 -left-5 w-20 h-20 border-l-2 border-t-2 border-secondary/40 pointer-events-none" />
@@ -27,10 +27,9 @@ export default function Tlc() {
               {/* Imagem */}
               <div className="relative w-full max-w-sm">
                 <img
-                  src={tlcPhoto}
-                  alt="TLC Sertãozinho — jovens celebrando"
-                  className="w-full rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.20)] object-cover"
-                  style={{ aspectRatio: "9/16", maxHeight: "540px", objectPosition: "center top" }}
+                  src={`${BASE}logos/logo-tlc.png`}
+                  alt="TLC Sertãozinho"
+                  className="w-full rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.16)]"
                 />
 
                 {/* Badge flutuante */}
@@ -125,38 +124,6 @@ export default function Tlc() {
               <div className="w-14 h-px bg-secondary/50" />
               <div className="w-2 h-2 rotate-45 bg-secondary/60" />
               <div className="w-14 h-px bg-secondary/50" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOTO FULL-WIDTH ── */}
-      <section className="relative h-[480px] md:h-[580px] overflow-hidden">
-        <img
-          src={tlcPhoto}
-          alt="TLC Sertãozinho"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-          style={{ objectPosition: "center 30%" }}
-        />
-        {/* Overlay gradiente azul escuro */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
-        {/* Conteúdo sobre a foto */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-lg">
-              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary/80 block mb-4">
-                Comunidade Viva
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-snug mb-6">
-                Jovens transformados pela fé
-              </h2>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-px bg-secondary" />
-                <div className="w-2 h-2 rotate-45 bg-secondary/60" />
-              </div>
-              <p className="text-white/80 font-light text-[15px] leading-relaxed">
-                O TLC reúne jovens e adultos em uma experiência única de fé, alegria e liderança cristã em Sertãozinho.
-              </p>
             </div>
           </div>
         </div>
@@ -281,6 +248,36 @@ export default function Tlc() {
             Saiba Mais no Instagram
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
+        </div>
+      </section>
+
+      {/* ── FOTO FULL-WIDTH (final) ── */}
+      <section className="relative h-[480px] md:h-[580px] overflow-hidden">
+        <img
+          src={tlcPhoto}
+          alt="TLC Sertãozinho — jovens celebrando"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "center 30%" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-lg">
+              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary/80 block mb-4">
+                Comunidade Viva
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-snug mb-6">
+                Jovens transformados pela fé
+              </h2>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-px bg-secondary" />
+                <div className="w-2 h-2 rotate-45 bg-secondary/60" />
+              </div>
+              <p className="text-white/80 font-light text-[15px] leading-relaxed">
+                O TLC reúne jovens e adultos em uma experiência única de fé, alegria e liderança cristã em Sertãozinho.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
