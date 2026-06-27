@@ -89,7 +89,7 @@ export function Footer() {
                 <span className="text-sm font-light">Instagram</span>
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/1GKHJbka4e/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
