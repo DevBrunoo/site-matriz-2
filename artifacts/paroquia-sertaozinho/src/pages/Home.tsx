@@ -12,7 +12,14 @@ import photo4 from "@assets/05642895-2056-44c5-97ea-b2553f40b228_1782522399377.J
 import photo5 from "@assets/de8dc0f6-7d60-40ae-b748-ee301a6d85ea_1782522399378.JPG";
 import photo6 from "@assets/f9d845bb-b479-47f3-9d0e-47e64fc5747e_1782522399378.JPG";
 
-const SLIDES = [photo1, photo2, photo3, photo4, photo5, photo6];
+const SLIDES = [
+  { src: photo1, pos: "object-center" },
+  { src: photo2, pos: "object-top" },
+  { src: photo3, pos: "object-center" },
+  { src: photo4, pos: "object-center" },
+  { src: photo5, pos: "object-top" },
+  { src: photo6, pos: "object-center" },
+];
 const INTERVAL = 5500;
 
 const fadeUp: Variants = {
@@ -76,23 +83,24 @@ export default function Home() {
             transition={{ duration: 1.4, ease: "easeInOut" }}
           >
             <motion.img
-              src={SLIDES[current]}
+              src={SLIDES[current].src}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className={`absolute inset-0 w-full h-full object-cover ${SLIDES[current].pos}`}
+              style={{ imageRendering: "auto", willChange: "transform" }}
               initial={{ scale: 1 }}
-              animate={{ scale: 1.1 }}
+              animate={{ scale: 1.08 }}
               transition={{ duration: 7, ease: "linear" }}
             />
           </motion.div>
         </AnimatePresence>
 
         {/* ── Overlays ── */}
-        {/* Left-side dark panel for text readability (desktop) */}
+        {/* Left-side dark panel for text readability (desktop) — lighter so photos breathe */}
         <div className="absolute inset-0 pointer-events-none hidden sm:block"
-          style={{ background: "linear-gradient(to right, rgba(4,8,22,0.85) 0%, rgba(4,8,22,0.70) 38%, rgba(4,8,22,0.25) 65%, transparent 100%)" }} />
+          style={{ background: "linear-gradient(to right, rgba(4,8,22,0.78) 0%, rgba(4,8,22,0.58) 35%, rgba(4,8,22,0.18) 60%, transparent 100%)" }} />
         {/* Mobile: bottom-to-top */}
         <div className="absolute inset-0 pointer-events-none sm:hidden"
-          style={{ background: "linear-gradient(to top, rgba(4,8,22,0.92) 0%, rgba(4,8,22,0.65) 50%, rgba(4,8,22,0.35) 100%)" }} />
+          style={{ background: "linear-gradient(to top, rgba(4,8,22,0.88) 0%, rgba(4,8,22,0.55) 48%, rgba(4,8,22,0.20) 100%)" }} />
 
         {/* ── Text content — left-aligned Nike style ── */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-20 sm:py-0 flex items-center min-h-[88vh] sm:min-h-[92vh]">
@@ -139,13 +147,13 @@ export default function Home() {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/historia"
-                className="px-7 py-3.5 bg-secondary text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-secondary/90 transition-all hover:shadow-lg hover:shadow-secondary/25 text-center"
+                className="px-7 py-3 rounded-full bg-secondary border-2 border-secondary text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-secondary/85 hover:border-secondary/85 transition-all hover:shadow-lg hover:shadow-secondary/30 text-center"
               >
                 Conheça a Paróquia
               </Link>
               <Link
                 href="/missas"
-                className="px-7 py-3.5 border border-white/30 text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white/50 transition-all text-center"
+                className="px-7 py-3 rounded-full bg-transparent border-2 border-white/60 text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white transition-all text-center backdrop-blur-sm"
               >
                 Horários de Missa
               </Link>
