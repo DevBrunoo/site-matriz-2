@@ -1,9 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { Clock, Calendar, Heart, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Clock, Calendar, Heart, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { getAvisos, Aviso } from "@/lib/adminData";
+
+import photo1 from "@assets/5d75f078-bebd-4e71-a048-a0b2d64ac628_1782522399374.JPG";
+import photo2 from "@assets/465f859d-64d1-4fff-969e-13aad3a9398b_1782522399375.JPG";
+import photo3 from "@assets/0618ff30-91fb-4d08-8228-18216b8837de_1782522399377.JPG";
+import photo4 from "@assets/05642895-2056-44c5-97ea-b2553f40b228_1782522399377.JPG";
+import photo5 from "@assets/de8dc0f6-7d60-40ae-b748-ee301a6d85ea_1782522399378.JPG";
+import photo6 from "@assets/f9d845bb-b479-47f3-9d0e-47e64fc5747e_1782522399378.JPG";
+
+const SLIDES = [photo1, photo2, photo3, photo4, photo5, photo6];
+const INTERVAL = 5500;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -17,80 +27,101 @@ const stagger: Variants = {
 
 export default function Home() {
   const [avisos, setAvisos] = useState<Aviso[]>([]);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const touchStartX = useRef(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     setAvisos(getAvisos().filter((a) => a.ativo).slice(0, 2));
   }, []);
 
+  const advance = (dir: 1 | -1 = 1) => {
+    setCurrent((c) => (c + dir + SLIDES.length) % SLIDES.length);
+  };
+
+  useEffect(() => {
+    if (paused) return;
+    intervalRef.current = setInterval(() => advance(1), INTERVAL);
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [paused, current]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) advance(diff > 0 ? 1 : -1);
+  };
+
   return (
     <main className="w-full pt-12 sm:pt-14">
 
-      {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] sm:min-h-[88vh] flex items-center justify-center overflow-hidden">
-        {/* Background gradient */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(155deg, #0b1535 0%, #132257 35%, #1a3580 65%, #1E3A8A 100%)" }}
-        />
-        {/* Dot grid */}
-        <div
-          className="absolute inset-0 opacity-60"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.12) 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        {/* Top glow */}
-        <div
-          className="absolute top-0 inset-x-0 h-[55%] pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,175,55,0.07) 0%, transparent 100%)" }}
-        />
-        {/* Vignette */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 90% 90% at 50% 50%, transparent 30%, rgba(6,11,32,0.7) 100%)" }}
-        />
+      {/* ── Hero Carousel ─────────────────────────────────────────── */}
+      <section
+        className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* ── Slides (photos with Ken Burns) ── */}
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={current}
+            className="absolute inset-0 will-change-transform"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
+          >
+            <motion.img
+              src={SLIDES[current]}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              transition={{ duration: 7, ease: "linear" }}
+            />
+          </motion.div>
+        </AnimatePresence>
 
-        {/* Decorative large cross (very subtle) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.025]">
-          <svg viewBox="0 0 200 200" className="w-[500px] h-[500px]" fill="none">
-            <rect x="88" y="0" width="24" height="200" rx="4" fill="#D4AF37" />
-            <rect x="0" y="72" width="200" height="24" rx="4" fill="#D4AF37" />
-          </svg>
-        </div>
+        {/* ── Overlays ── */}
+        {/* Strong bottom-to-top dark gradient for text readability */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to top, rgba(6,11,32,0.88) 0%, rgba(6,11,32,0.55) 45%, rgba(6,11,32,0.25) 100%)" }} />
+        {/* Subtle side vignette */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(4,8,22,0.5) 100%)" }} />
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-20 sm:py-28">
+        {/* ── Text content ── */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-20 sm:py-28">
           <motion.div initial="hidden" animate="show" variants={stagger}>
 
-            {/* Crown ornament */}
-            <motion.div variants={fadeUp} className="flex justify-center mb-7 sm:mb-9">
-              <div className="relative">
-                <div
-                  className="absolute inset-0 -m-10 rounded-full blur-3xl opacity-25"
-                  style={{ background: "radial-gradient(circle, #D4AF37, transparent 65%)" }}
-                />
-                <img
-                  src={`${import.meta.env.BASE_URL}coroa.png`}
-                  alt="Coroa de Nossa Senhora"
-                  className="relative w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-[0_2px_16px_rgba(212,175,55,0.5)]"
-                />
-              </div>
+            <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-10 h-px bg-secondary/60" />
+              <span className="text-[9px] font-bold tracking-[0.35em] uppercase text-secondary/90">
+                Sertãozinho · SP
+              </span>
+              <div className="w-10 h-px bg-secondary/60" />
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="font-display font-bold text-white leading-[1.1] mb-5 sm:mb-6
+              className="font-display font-bold text-white leading-[1.08] mb-5 sm:mb-6
                          text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
             >
               Paróquia Nossa<br className="hidden sm:block" />{" "}
               Senhora <span className="text-secondary">Aparecida</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-white/60 text-[27px] sm:text-[30px] font-light leading-relaxed mb-8 sm:mb-10 max-w-md sm:max-w-lg mx-auto">
+            <motion.p
+              variants={fadeUp}
+              className="text-white/65 text-base sm:text-lg font-light leading-relaxed mb-8 sm:mb-10 max-w-md sm:max-w-lg mx-auto"
+            >
               Bem-vindo à Casa do Senhor. Uma comunidade de fé, esperança e caridade, caminhando juntos com Maria.
             </motion.p>
 
-            {/* Divider */}
             <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-8 sm:mb-10">
               <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-transparent to-secondary/60" />
               <div className="w-1.5 h-1.5 rotate-45 bg-secondary/70" />
@@ -100,13 +131,13 @@ export default function Home() {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <Link
                 href="/historia"
-                className="w-full sm:w-auto px-7 sm:px-9 py-3.5 bg-secondary text-white text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-secondary/90 transition-all hover:shadow-lg hover:shadow-secondary/20 text-center"
+                className="w-full sm:w-auto px-7 sm:px-9 py-3.5 bg-secondary text-white text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-secondary/90 transition-all hover:shadow-lg hover:shadow-secondary/25 text-center"
               >
                 Conheça a Paróquia
               </Link>
               <Link
                 href="/missas"
-                className="w-full sm:w-auto px-7 sm:px-9 py-3.5 border border-white/25 text-white text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white/40 transition-all text-center"
+                className="w-full sm:w-auto px-7 sm:px-9 py-3.5 border border-white/30 text-white text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white/50 transition-all text-center backdrop-blur-sm"
               >
                 Horários de Missa
               </Link>
@@ -114,8 +145,53 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-white/[0.04] to-transparent" />
+        {/* ── Prev / Next arrows (desktop) ── */}
+        <button
+          onClick={() => advance(-1)}
+          className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20
+                     w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center
+                     border border-white/20 text-white/70 hover:text-white hover:border-white/50
+                     hover:bg-white/10 transition-all backdrop-blur-sm rounded-full
+                     opacity-0 group-hover:opacity-100"
+          aria-label="Anterior"
+          style={{ opacity: 0.6 }}
+          onMouseEnter={() => setPaused(true)}
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => advance(1)}
+          className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20
+                     w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center
+                     border border-white/20 text-white/70 hover:text-white hover:border-white/50
+                     hover:bg-white/10 transition-all backdrop-blur-sm rounded-full"
+          aria-label="Próxima"
+          style={{ opacity: 0.6 }}
+          onMouseEnter={() => setPaused(true)}
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* ── Dots navigation ── */}
+        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setCurrent(i); setPaused(true); setTimeout(() => setPaused(false), 8000); }}
+              className={`transition-all duration-400 rounded-full ${
+                i === current
+                  ? "w-6 h-1.5 bg-secondary"
+                  : "w-1.5 h-1.5 bg-white/40 hover:bg-white/70"
+              }`}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Slide counter */}
+        <div className="absolute bottom-7 right-5 sm:right-8 z-20 text-[10px] font-bold tracking-widest text-white/35">
+          {String(current + 1).padStart(2, "0")} / {String(SLIDES.length).padStart(2, "0")}
+        </div>
       </section>
 
       {/* ── Avisos ────────────────────────────────────────────────── */}
@@ -169,7 +245,6 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
-
 
       {/* ── Quote strip ───────────────────────────────────────────── */}
       <motion.section
