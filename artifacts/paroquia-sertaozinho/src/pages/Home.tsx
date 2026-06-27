@@ -103,9 +103,9 @@ export default function Home() {
             className="text-left max-w-xl sm:max-w-2xl"
           >
             {/* Eyebrow */}
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6 sm:mb-8">
-              <div className="w-8 h-px bg-white/70" />
-              <span className="text-[11px] sm:text-[12px] font-black tracking-[0.4em] uppercase text-white">
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-5 sm:mb-6">
+              <div className="w-6 h-px bg-secondary" />
+              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-white/80">
                 Sertãozinho · SP
               </span>
             </motion.div>
@@ -113,40 +113,39 @@ export default function Home() {
             {/* Main heading */}
             <motion.h1
               variants={fadeUp}
-              className="font-display font-black text-white leading-[0.96] mb-6 sm:mb-8
-                         text-[clamp(3rem,10vw,7rem)] uppercase tracking-tight"
+              className="font-display font-bold text-white leading-[1.08] mb-5 sm:mb-6
+                         text-3xl sm:text-5xl md:text-6xl"
             >
-              Paróquia<br />
-              Nossa<br />
-              Senhora<br />
+              Paróquia Nossa<br />
+              Senhora{" "}
               <span className="text-secondary">Aparecida</span>
             </motion.h1>
 
             {/* Divider */}
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-5 sm:mb-7">
-              <div className="w-12 h-0.5 bg-secondary" />
-              <div className="w-2 h-2 rotate-45 bg-secondary" />
+            <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-4 sm:mb-5">
+              <div className="w-10 h-px bg-secondary/70" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-secondary/70" />
             </motion.div>
 
             {/* Subtitle */}
             <motion.p
               variants={fadeUp}
-              className="text-white/75 text-sm sm:text-base font-light leading-relaxed mb-8 sm:mb-10 max-w-sm"
+              className="text-white/60 text-sm font-light leading-relaxed mb-8 sm:mb-9 max-w-xs"
             >
               Uma comunidade de fé, esperança e caridade, caminhando juntos com Maria.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/historia"
-                className="px-8 sm:px-10 py-4 bg-secondary text-white text-[11px] font-black tracking-[0.2em] uppercase hover:bg-secondary/90 transition-all hover:shadow-xl hover:shadow-secondary/30 text-center"
+                className="px-7 py-3.5 bg-secondary text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-secondary/90 transition-all hover:shadow-lg hover:shadow-secondary/25 text-center"
               >
                 Conheça a Paróquia
               </Link>
               <Link
                 href="/missas"
-                className="px-8 sm:px-10 py-4 border border-white/40 text-white text-[11px] font-black tracking-[0.2em] uppercase hover:bg-white/10 hover:border-white/60 transition-all text-center"
+                className="px-7 py-3.5 border border-white/30 text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white/50 transition-all text-center"
               >
                 Horários de Missa
               </Link>
