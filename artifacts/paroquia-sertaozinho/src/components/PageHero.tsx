@@ -2,10 +2,11 @@ interface PageHeroProps {
   category: string;
   title: string;
   subtitle?: string;
+  logo?: string;
   images?: { src: string; alt: string }[];
 }
 
-export function PageHero({ category, title, subtitle, images }: PageHeroProps) {
+export function PageHero({ category, title, subtitle, logo, images }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden"
@@ -37,11 +38,21 @@ export function PageHero({ category, title, subtitle, images }: PageHeroProps) {
         style={{ background: "linear-gradient(to right, transparent, rgba(212,175,55,0.2), transparent)" }}
       />
 
+      {/* Glow suave atrás do logo */}
+      {logo && (
+        <div
+          className="absolute right-0 top-0 bottom-0 w-80 pointer-events-none hidden sm:block"
+          style={{
+            background: "radial-gradient(ellipse 60% 80% at 80% 50%, rgba(212,175,55,0.08) 0%, transparent 70%)",
+          }}
+        />
+      )}
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6
                       pt-[calc(3.5rem+23px)] pb-[23px]
-                      sm:pt-[calc(4rem+27px)] sm:pb-[27px]">
+                      sm:pt-[calc(4rem+32px)] sm:pb-[32px]">
         {/* Texto */}
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 mb-1.5">
             <div className="w-3 h-px bg-secondary/60" />
             <span className="text-secondary/85 font-bold tracking-[0.3em] uppercase text-[9px]">
@@ -66,8 +77,30 @@ export function PageHero({ category, title, subtitle, images }: PageHeroProps) {
           </div>
         </div>
 
-        {/* Imagens opcionais lado a lado */}
-        {images && images.length > 0 && (
+        {/* Logo em destaque na faixa azul */}
+        {logo && (
+          <div className="hidden sm:flex shrink-0 items-center justify-center">
+            <div className="relative flex items-center justify-center">
+              <div
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background: "radial-gradient(circle, rgba(212,175,55,0.18) 0%, transparent 70%)",
+                  filter: "blur(20px)",
+                  transform: "scale(1.6)",
+                }}
+              />
+              <img
+                src={logo}
+                alt=""
+                className="relative h-32 md:h-40 lg:h-44 w-auto max-w-[180px] object-contain drop-shadow-[0_8px_32px_rgba(0,0,0,0.55)]"
+                style={{ filter: "drop-shadow(0 0 18px rgba(212,175,55,0.25))" }}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Imagens opcionais lado a lado (fallback legado) */}
+        {!logo && images && images.length > 0 && (
           <div className="hidden sm:flex items-center gap-3 shrink-0">
             {images.map((img) => (
               <div

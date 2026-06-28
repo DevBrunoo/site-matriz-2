@@ -47,62 +47,61 @@ export default function Sacramentos() {
   ];
 
   return (
-    <main className="pt-12 sm:pt-14 pb-20">
-      <section className="bg-primary py-16 text-center text-white relative overflow-hidden">
+    <main className="pt-12 sm:pt-14 pb-16">
+      <section className="bg-primary py-12 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/damask-seamless.png')]"></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display text-white">Sacramentos</h1>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
-          <p className="text-lg text-white/90">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3 font-display text-white">Sacramentos</h1>
+          <div className="w-16 h-0.5 bg-secondary mx-auto mb-4"></div>
+          <p className="text-base text-white/85 max-w-xl mx-auto">
             "Os sete sacramentos tocam todas as etapas e todos os momentos importantes da vida do cristão." (CIC 1210)
           </p>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-10">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col gap-6">
         {sacramentos.map((s, index) => {
           const imgRight = index % 2 === 1;
           return (
             <div
               key={s.id}
               id={s.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-md border border-border flex flex-col sm:flex-row"
-              style={{ minHeight: 0 }}
+              className="bg-white rounded-xl overflow-hidden shadow-sm border border-border flex flex-col sm:flex-row"
             >
-              {/* Imagem — alterna lado */}
+              {/* Imagem — alterna lado, inteira e responsiva */}
               <div
-                className={`sm:w-64 md:w-72 lg:w-80 shrink-0 flex items-stretch ${imgRight ? "sm:order-last" : ""}`}
+                className={`sm:w-40 md:w-48 shrink-0 bg-gray-50 flex items-center justify-center ${imgRight ? "sm:order-last" : ""}`}
               >
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="w-full h-60 sm:h-full object-contain object-center bg-gray-50"
+                  className="w-full h-44 sm:h-full object-contain p-3"
                   loading="lazy"
                 />
               </div>
 
               {/* Conteúdo */}
-              <div className="flex flex-col flex-1 p-7 sm:p-8">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-6 h-px bg-secondary shrink-0" />
-                  <h2 className="text-xl sm:text-2xl font-bold text-primary font-display leading-tight">
+              <div className="flex flex-col flex-1 p-5 sm:p-6">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-5 h-px bg-secondary shrink-0" />
+                  <h2 className="text-lg font-bold text-primary font-display leading-tight">
                     {s.title}
                   </h2>
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-1 text-[15px]">
+                <p className="text-muted-foreground leading-relaxed mb-4 flex-1 text-sm">
                   {s.desc}
                 </p>
-                <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-                  <h4 className="font-semibold text-foreground mb-1 text-sm uppercase tracking-wider">
+                <div className="bg-primary/5 p-3 rounded-lg border border-primary/10">
+                  <h4 className="font-semibold text-foreground mb-1 text-xs uppercase tracking-wider">
                     Informações Práticas
                   </h4>
-                  <p className="text-sm text-muted-foreground">{s.info}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{s.info}</p>
                 </div>
-                <div className="mt-5 pt-5 border-t border-gray-100 flex justify-between items-center">
-                  <span className="text-sm font-medium text-foreground">Precisa de ajuda?</span>
+                <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                  <span className="text-xs font-medium text-foreground">Precisa de ajuda?</span>
                   <a
                     href="/contato"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground hover:bg-gray-100 transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 border border-border rounded-md text-xs font-medium text-foreground hover:bg-gray-100 transition-colors"
                   >
                     Falar com a Secretaria
                   </a>

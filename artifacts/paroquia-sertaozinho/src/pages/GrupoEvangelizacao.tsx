@@ -9,6 +9,7 @@ export default function GrupoEvangelizacao() {
         category="Pastorais"
         title='Grupo de Evangelização "Santa Terezinha do Menino Jesus"'
         subtitle="Vivendo o Evangelho no cotidiano com simplicidade e amor"
+        logo={`${import.meta.env.BASE_URL}pastorais/santa-teresinha.png`}
       />
 
       {/* ── FEATURE: imagem + apresentação ── */}

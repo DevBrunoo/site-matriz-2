@@ -11,6 +11,7 @@ export default function AssociacaoRosario() {
         category="Pastorais"
         title="Associação do Rosário"
         subtitle="Caminhando com Nossa Senhora pela oração do Santo Rosário"
+        logo={`${BASE}rosario-associacao.png`}
       />
 
       {/* Imagem de destaque */}
