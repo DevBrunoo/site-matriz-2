@@ -59,49 +59,58 @@ export default function Sacramentos() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {sacramentos.map((s) => (
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-10">
+        {sacramentos.map((s, index) => {
+          const imgRight = index % 2 === 1;
+          return (
             <div
               key={s.id}
               id={s.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col"
+              className="bg-white rounded-2xl overflow-hidden shadow-md border border-border flex flex-col sm:flex-row"
+              style={{ minHeight: 0 }}
             >
-              {/* Imagem do sacramento */}
-              <div className="relative h-56 overflow-hidden">
+              {/* Imagem — alterna lado */}
+              <div
+                className={`sm:w-64 md:w-72 lg:w-80 shrink-0 flex items-stretch ${imgRight ? "sm:order-last" : ""}`}
+              >
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                  className="w-full h-60 sm:h-full object-contain object-center bg-gray-50"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-                <h2 className="absolute bottom-0 left-0 right-0 px-6 py-4 text-white text-xl font-bold font-display">
-                  {s.title}
-                </h2>
               </div>
 
-              <div className="p-8 flex-1">
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+              {/* Conteúdo */}
+              <div className="flex flex-col flex-1 p-7 sm:p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-6 h-px bg-secondary shrink-0" />
+                  <h2 className="text-xl sm:text-2xl font-bold text-primary font-display leading-tight">
+                    {s.title}
+                  </h2>
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-1 text-[15px]">
                   {s.desc}
                 </p>
                 <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-                  <h4 className="font-semibold text-foreground mb-1 text-sm uppercase tracking-wider">Informações Práticas</h4>
+                  <h4 className="font-semibold text-foreground mb-1 text-sm uppercase tracking-wider">
+                    Informações Práticas
+                  </h4>
                   <p className="text-sm text-muted-foreground">{s.info}</p>
                 </div>
-              </div>
-              <div className="bg-gray-50 p-6 border-t border-border mt-auto flex justify-between items-center">
-                <span className="text-sm font-medium text-foreground">Precisa de ajuda?</span>
-                <a
-                  href="/contato"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground hover:bg-gray-100 transition-colors"
-                >
-                  Falar com a Secretaria
-                </a>
+                <div className="mt-5 pt-5 border-t border-gray-100 flex justify-between items-center">
+                  <span className="text-sm font-medium text-foreground">Precisa de ajuda?</span>
+                  <a
+                    href="/contato"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground hover:bg-gray-100 transition-colors"
+                  >
+                    Falar com a Secretaria
+                  </a>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </section>
     </main>
   );
