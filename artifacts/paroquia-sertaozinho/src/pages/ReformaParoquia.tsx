@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Heart, Paintbrush, Sparkles, Building2 } from "lucide-react";
+import { ArrowRight, Heart, Paintbrush, Sparkles, Building2, Phone } from "lucide-react";
+
 import { PageHero } from "@/components/PageHero";
 import {
   Carousel,
@@ -15,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const BASE = import.meta.env.BASE_URL;
+const PHONE_DIZIMISTA = "5516991012308";
 
 const CAROUSEL_IMAGES = [
   {
@@ -173,6 +175,19 @@ function ReformaCarousel() {
 export default function ReformaParoquia() {
   return (
     <main className="w-full">
+      {/* Botão flutuante fixo no topo — Torne-se um Dizimista */}
+      <a
+        href={`https://wa.me/${PHONE_DIZIMISTA}?text=Ol%C3%A1%2C%20gostaria%20de%20me%20tornar%20um%20dizimista!`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-16 right-4 z-50 flex items-center gap-2 bg-secondary text-white px-4 py-2.5 shadow-lg rounded-full text-xs font-bold tracking-wider uppercase hover:bg-secondary/90 transition-all hover:shadow-xl hover:scale-105"
+        style={{ boxShadow: "0 4px 24px rgba(212,175,55,0.35)" }}
+      >
+        <Phone className="w-3.5 h-3.5 shrink-0" />
+        <span className="hidden sm:inline">Torne-se Dizimista</span>
+        <span className="sm:hidden">Dizimista</span>
+      </a>
+
       <PageHero
         category="Paróquia Nossa Senhora Aparecida"
         title="Reforma da Paróquia"

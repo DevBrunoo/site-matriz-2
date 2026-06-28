@@ -4,7 +4,7 @@ const PHONE_DIZIMISTA = "5516991012308";
 
 export default function Dizimo() {
   return (
-    <main className="w-full pt-20">
+    <main className="w-full pt-12 sm:pt-14">
 
       {/* Botão flutuante fixo no topo — Torne-se um Dizimista */}
       <a

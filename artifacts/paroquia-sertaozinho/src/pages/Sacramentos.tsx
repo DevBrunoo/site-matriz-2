@@ -47,7 +47,7 @@ export default function Sacramentos() {
   ];
 
   return (
-    <main className="pt-24 pb-20">
+    <main className="pt-12 sm:pt-14 pb-20">
       <section className="bg-primary py-16 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/damask-seamless.png')]"></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10">
