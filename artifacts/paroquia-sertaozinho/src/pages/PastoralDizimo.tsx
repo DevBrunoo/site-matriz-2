@@ -1,12 +1,26 @@
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
 const BASE = import.meta.env.BASE_URL;
+const PHONE_DIZIMISTA = "5516991012308";
 
 export default function PastoralDizimo() {
   return (
     <main className="w-full">
+      {/* Botão flutuante fixo no topo — Torne-se um Dizimista */}
+      <a
+        href={`https://wa.me/${PHONE_DIZIMISTA}?text=Ol%C3%A1%2C%20gostaria%20de%20me%20tornar%20um%20dizimista!`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-16 right-4 z-50 flex items-center gap-2 bg-secondary text-white px-4 py-2.5 shadow-lg rounded-full text-xs font-bold tracking-wider uppercase hover:bg-secondary/90 transition-all hover:shadow-xl hover:scale-105 group"
+        style={{ boxShadow: "0 4px 24px rgba(212,175,55,0.35)" }}
+      >
+        <Phone className="w-3.5 h-3.5 shrink-0" />
+        <span className="hidden sm:inline">Torne-se Dizimista</span>
+        <span className="sm:hidden">Dizimista</span>
+      </a>
+
       <PageHero
         category="Pastorais"
         title="Pastoral do Dízimo"
@@ -200,13 +214,15 @@ export default function PastoralDizimo() {
                 generosidade!
               </p>
             </div>
-            <Link
-              href="/contato"
-              className="flex items-center gap-2 shrink-0 bg-primary text-white px-6 py-2.5 text-xs font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors group"
+            <a
+              href={`https://wa.me/${PHONE_DIZIMISTA}?text=Ol%C3%A1%2C%20gostaria%20de%20me%20tornar%20um%20dizimista!`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 shrink-0 bg-secondary text-white px-6 py-2.5 text-xs font-semibold tracking-wider uppercase hover:bg-secondary/90 transition-colors group"
             >
-              Entrar em Contato
+              Torne-se Dizimista
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

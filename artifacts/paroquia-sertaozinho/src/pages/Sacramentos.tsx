@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+const BASE = import.meta.env.BASE_URL;
 
 export default function Sacramentos() {
   const sacramentos = [
@@ -7,38 +6,44 @@ export default function Sacramentos() {
       id: "batismo",
       title: "Batismo",
       desc: "O Batismo é o fundamento de toda a vida cristã, a porta da vida no Espírito e a porta que abre o acesso aos demais sacramentos.",
-      info: "Cursos de preparação todo 2º sábado do mês. Inscrições na secretaria paroquial com antecedência."
-    },
-    {
-      id: "confissao",
-      title: "Confissão (Penitência)",
-      desc: "O sacramento da Reconciliação concede o perdão dos pecados cometidos após o Batismo.",
-      info: "Atendimento de confissões: Quintas-feiras das 15h às 17h e Sextas-feiras após a missa das 19h."
+      info: "Cursos de preparação todo 2º sábado do mês. Inscrições na secretaria paroquial com antecedência.",
+      img: `${BASE}sacramento-batismo.png`,
     },
     {
       id: "eucaristia",
       title: "Eucaristia",
       desc: "A Eucaristia é o coração e o cume da vida da Igreja, pois nela Cristo associa sua Igreja e todos os seus membros ao seu sacrifício.",
-      info: "Inscrições para catequese infantil abertas em Fevereiro. Jovens e adultos procurar a secretaria."
+      info: "Inscrições para catequese infantil abertas em Fevereiro. Jovens e adultos procurar a secretaria.",
+      img: `${BASE}sacramento-eucaristia.png`,
     },
     {
       id: "crisma",
       title: "Crisma (Confirmação)",
       desc: "A Confirmação aperfeiçoa a graça batismal; é o sacramento que dá o Espírito Santo para enraizar-nos mais profundamente na filiação divina.",
-      info: "Preparação para jovens a partir de 14 anos. Encontros aos domingos pela manhã."
+      info: "Preparação para jovens a partir de 14 anos. Encontros aos domingos pela manhã.",
+      img: `${BASE}sacramento-crisma.png`,
     },
     {
       id: "matrimonio",
       title: "Matrimônio",
       desc: "A aliança matrimonial, pela qual o homem e a mulher constituem entre si uma comunhão da vida toda, é ordenada ao bem dos cônjuges.",
-      info: "Agendar com no mínimo 6 meses de antecedência. Curso de noivos obrigatório."
+      info: "Agendar com no mínimo 6 meses de antecedência. Curso de noivos obrigatório.",
+      img: `${BASE}sacramento-matrimonio.png`,
     },
     {
-      id: "pastoral-do-batismo",
-      title: "Pastoral do Batismo",
-      desc: "Pastoral dedicada a acolher e preparar os pais e padrinhos para a celebração do Batismo, o primeiro sacramento da vida cristã.",
-      info: "Catequese batismal: 1° domingo às 09h, 2° e 3° sábado às 17h. Data do batismo costuma ser no 4° domingo."
-    }
+      id: "uncao-dos-enfermos",
+      title: "Unção dos Enfermos",
+      desc: "A Unção dos Enfermos é o sacramento que une o doente ao sofrimento redentor de Cristo, para seu próprio bem e para o bem de toda a Igreja.",
+      info: "Para chamar o padre em casos de enfermidade grave, entre em contato com a secretaria paroquial.",
+      img: `${BASE}sacramento-uncao.png`,
+    },
+    {
+      id: "confissao",
+      title: "Confissão (Penitência)",
+      desc: "O sacramento da Reconciliação concede o perdão dos pecados cometidos após o Batismo.",
+      info: "Atendimento de confissões: Quintas-feiras das 15h às 17h e Sextas-feiras após a missa das 19h.",
+      img: `${BASE}sacramento-confissao.png`,
+    },
   ];
 
   return (
@@ -56,14 +61,27 @@ export default function Sacramentos() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {sacramentos.map((s, index) => (
-            <div 
-              key={s.id} 
+          {sacramentos.map((s) => (
+            <div
+              key={s.id}
               id={s.id}
-              className={`bg-white rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col ${index === sacramentos.length - 1 && sacramentos.length % 2 !== 0 ? 'md:col-span-2 md:max-w-3xl md:mx-auto' : ''}`}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col"
             >
+              {/* Imagem do sacramento */}
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+                <h2 className="absolute bottom-0 left-0 right-0 px-6 py-4 text-white text-xl font-bold font-display">
+                  {s.title}
+                </h2>
+              </div>
+
               <div className="p-8 flex-1">
-                <h2 className="text-2xl font-bold text-primary mb-4 font-display">{s.title}</h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {s.desc}
                 </p>
@@ -74,9 +92,12 @@ export default function Sacramentos() {
               </div>
               <div className="bg-gray-50 p-6 border-t border-border mt-auto flex justify-between items-center">
                 <span className="text-sm font-medium text-foreground">Precisa de ajuda?</span>
-                <Link href="/contato">
-                  <Button variant="outline" size="sm">Falar com a Secretaria</Button>
-                </Link>
+                <a
+                  href="/contato"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 border border-border rounded-md text-sm font-medium text-foreground hover:bg-gray-100 transition-colors"
+                >
+                  Falar com a Secretaria
+                </a>
               </div>
             </div>
           ))}

@@ -10,7 +10,6 @@ import photo2 from "@assets/465f859d-64d1-4fff-969e-13aad3a9398b_1782522399375.J
 import photo3 from "@assets/0618ff30-91fb-4d08-8228-18216b8837de_1782522399377.JPG";
 import photo4 from "@assets/05642895-2056-44c5-97ea-b2553f40b228_1782522399377.JPG";
 import photo5 from "@assets/de8dc0f6-7d60-40ae-b748-ee301a6d85ea_1782522399378.JPG";
-import photo6 from "@assets/f9d845bb-b479-47f3-9d0e-47e64fc5747e_1782522399378.JPG";
 
 const SLIDES = [
   { src: photo1, pos: "object-center" },
@@ -18,9 +17,8 @@ const SLIDES = [
   { src: photo3, pos: "object-center" },
   { src: photo4, pos: "object-center" },
   { src: photo5, pos: "object-top" },
-  { src: photo6, pos: "object-center" },
 ];
-const INTERVAL = 5500;
+const INTERVAL = 3000;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -152,10 +150,10 @@ export default function Home() {
                 Conheça a Paróquia
               </Link>
               <Link
-                href="/missas"
+                href="/sacramentos"
                 className="px-7 py-3 rounded-full bg-transparent border-2 border-white/60 text-white text-[10px] font-bold tracking-[0.18em] uppercase hover:bg-white/10 hover:border-white transition-all text-center backdrop-blur-sm"
               >
-                Horários de Missa
+                Sacramentos
               </Link>
             </motion.div>
           </motion.div>

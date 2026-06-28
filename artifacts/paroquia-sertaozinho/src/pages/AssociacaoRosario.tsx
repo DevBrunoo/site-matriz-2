@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function AssociacaoRosario() {
   return (
     <main className="w-full">
@@ -11,22 +13,51 @@ export default function AssociacaoRosario() {
         subtitle="Caminhando com Nossa Senhora pela oração do Santo Rosário"
       />
 
-      {/* Descrição principal */}
-      <section className="py-20 bg-background">
+      {/* Imagem de destaque */}
+      <section className="py-16 bg-gradient-to-b from-primary/6 to-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-muted-foreground font-light leading-relaxed text-[15px] mb-5">
-            A Associação do Rosário é um grupo de fiéis que caminha com Nossa Senhora por meio da oração do Santo
-            Rosário, buscando crescer na fé, na humildade e na fidelidade a Deus.
-          </p>
-          <p className="text-muted-foreground font-light leading-relaxed text-[15px]">
-            Inspirados pelo exemplo de Maria, os membros são chamados a viver uma espiritualidade simples e
-            profunda, marcada pela oração, pelo serviço e pela presença ativa na vida da Igreja.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="shrink-0 flex flex-col items-center">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-full bg-secondary/10 blur-xl" />
+                <img
+                  src={`${BASE}rosario-associacao.png`}
+                  alt="Associação do Rosário - Sertãozinho"
+                  className="relative w-56 h-56 sm:w-64 sm:h-64 object-contain drop-shadow-2xl"
+                />
+              </div>
+              <div className="flex items-center gap-3 mt-6">
+                <div className="w-10 h-px bg-secondary/50" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-secondary/50" />
+                <div className="w-10 h-px bg-secondary/50" />
+              </div>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-secondary block mb-3">
+                Pastoral Mariana
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-primary mb-4 leading-snug">
+                Unidos pela Oração<br className="hidden sm:block" /> do Santo Rosário
+              </h2>
+              <div className="flex items-center gap-3 mb-5 md:justify-start justify-center">
+                <div className="w-10 h-px bg-secondary" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-secondary/60" />
+              </div>
+              <p className="text-muted-foreground font-light leading-relaxed text-[15px] mb-4">
+                A Associação do Rosário é um grupo de fiéis que caminha com Nossa Senhora por meio da oração do Santo
+                Rosário, buscando crescer na fé, na humildade e na fidelidade a Deus.
+              </p>
+              <p className="text-muted-foreground font-light leading-relaxed text-[15px]">
+                Inspirados pelo exemplo de Maria, os membros são chamados a viver uma espiritualidade simples e
+                profunda, marcada pela oração, pelo serviço e pela presença ativa na vida da Igreja.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Cards de informação */}
-      <section className="pb-16 bg-background">
+      <section className="pb-16 bg-background pt-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* Coordenação */}

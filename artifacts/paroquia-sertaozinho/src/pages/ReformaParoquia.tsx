@@ -324,19 +324,11 @@ export default function ReformaParoquia() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              href="/dizimo"
-              onClick={() => setTimeout(() => window.scrollTo(0, 0), 0)}
+              href="/dizimo#doacoes"
+              onClick={() => setTimeout(() => { const el = document.getElementById("doacoes"); el?.scrollIntoView({ behavior: "smooth" }); }, 100)}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-secondary text-white text-sm font-semibold tracking-wider uppercase hover:bg-secondary/90 transition-colors"
             >
-              Fazer uma Doação
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/dizimo"
-              onClick={() => setTimeout(() => window.scrollTo(0, 0), 0)}
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-secondary text-secondary text-sm font-semibold tracking-wider uppercase hover:bg-secondary/10 transition-colors"
-            >
-              Contribuir para a Reforma
+              Doe para a Reforma
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

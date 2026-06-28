@@ -26,7 +26,6 @@ const NAV_ITEMS = [
       { label: "Matrimônio", href: "/matrimonio" },
       { label: "Unção dos Enfermos", href: "/uncao-dos-enfermos" },
       { label: "Confissão", href: "/confissao" },
-      { label: "Pastoral do Batismo", href: "/pastoral-do-batismo" },
     ],
   },
   {
