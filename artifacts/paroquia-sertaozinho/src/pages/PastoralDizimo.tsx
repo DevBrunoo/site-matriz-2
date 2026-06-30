@@ -28,7 +28,7 @@ export default function PastoralDizimo() {
         title="Pastoral do Dízimo"
         subtitle="Um caminho de fé, gratidão e compromisso com a missão evangelizadora"
         sideImage={dizimoBanner}
-        sideImagePosition="center right"
+        sideImagePosition="center bottom"
       />
 
       {/* Descrição principal */}
