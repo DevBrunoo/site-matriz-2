@@ -1,8 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-
-const BASE = import.meta.env.BASE_URL;
+import sobriedadeBanner from "@assets/Gemini_Generated_Image_pxfbipxfbipxfbip_1782848850780.png";
 
 export default function PastoralSobriedade() {
   return (
@@ -11,7 +10,7 @@ export default function PastoralSobriedade() {
         category="Pastorais"
         title="Pastoral da Sobriedade"
         subtitle="Um caminho de transformação interior, fé e dignidade da pessoa humana"
-        logo={`${BASE}logos/logo-sobriedade.png`}
+        sideImage={sobriedadeBanner}
       />
 
       {/* Descrição principal */}

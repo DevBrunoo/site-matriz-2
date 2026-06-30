@@ -25,7 +25,6 @@ export default function PastoralDizimo() {
         category="Pastorais"
         title="Pastoral do Dízimo"
         subtitle="Um caminho de fé, gratidão e compromisso com a missão evangelizadora"
-        logo={`${BASE}logos/logo-dizimo.png`}
       />
 
       {/* Descrição principal */}
