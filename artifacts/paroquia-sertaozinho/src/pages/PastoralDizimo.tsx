@@ -128,54 +128,48 @@ export default function PastoralDizimo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">💡 O que é o dízimo?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">O que é o Dízimo</h2>
           </div>
-          <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
-            O dízimo é uma expressão concreta de fé e gratidão a Deus. É a devolução generosa de uma parte
-            daquilo que recebemos, reconhecendo que tudo vem d'Ele. Mais do que uma obrigação, o dízimo é:
+          <p className="text-[15px] text-muted-foreground font-light mb-8 leading-relaxed">
+            O dízimo é uma expressão de fé, gratidão, pertença e corresponsabilidade, por meio da qual os fiéis
+            sustentam a comunidade e a missão evangelizadora da Igreja, promovem a caridade e participam
+            ativamente da construção da comunhão eclesial.
           </p>
-          <div className="flex flex-col gap-3">
-            {[
-              "Um ato de amor",
-              "Um gesto de confiança na Providência de Deus",
-              "Um sinal de pertença à comunidade",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-                <div className="w-1 self-stretch bg-secondary/30 shrink-0 rounded-full" />
-                <span className="text-sm text-primary font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
+          <blockquote className="relative pl-6 border-l-2 border-secondary/50 bg-primary/[0.025] py-5 pr-6 rounded-r-sm">
+            <p className="text-[14px] text-primary/75 font-light leading-relaxed italic mb-3">
+              "O dízimo é uma contribuição sistemática e periódica dos fiéis, por meio da qual cada comunidade
+              assume, corresponsavelmente, sua sustentação e a da Igreja. Ele pressupõe pessoas evangelizadas
+              e comprometidas com a evangelização."
+            </p>
+            <cite className="text-[11px] font-bold tracking-[0.2em] uppercase text-secondary not-italic">
+              Documento 106 da CNBB, n.º 6
+            </cite>
+          </blockquote>
         </div>
       </section>
 
-      {/* Por que o dízimo é importante */}
+      {/* Missão da Pastoral do Dízimo */}
       <section className="py-16 bg-primary/3 border-y border-primary/8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-secondary" />
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">🌾 Por que o dízimo é importante?</h2>
+            <h2 className="text-sm font-semibold text-primary uppercase tracking-widest">Missão da Pastoral do Dízimo</h2>
           </div>
-          <p className="text-[15px] text-muted-foreground font-light mb-6 leading-relaxed">
-            Através do dízimo, a Igreja pode:
-          </p>
-          <div className="flex flex-col gap-3 mb-8">
-            {[
-              "Manter suas atividades pastorais e missionárias",
-              "Cuidar da evangelização",
-              "Ajudar os mais necessitados",
-              "Sustentar a estrutura da comunidade",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-                <div className="w-1 self-stretch bg-secondary/30 shrink-0 rounded-full" />
-                <span className="text-sm text-primary font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
+          <blockquote className="relative pl-6 border-l-2 border-secondary/50 bg-white py-5 pr-6 rounded-r-sm mb-8 shadow-sm">
+            <p className="text-[14px] text-primary/75 font-light leading-relaxed italic mb-3">
+              "A Pastoral do Dízimo é a ação eclesial que tem por finalidade motivar, planejar, organizar e
+              executar iniciativas para a implantação e o funcionamento do dízimo, e acompanhar os membros da
+              comunidade no que diz respeito à sua colaboração, em sintonia com a Pastoral de Conjunto na
+              Igreja particular."
+            </p>
+            <cite className="text-[11px] font-bold tracking-[0.2em] uppercase text-secondary not-italic">
+              Documento 106 da CNBB, n.º 36
+            </cite>
+          </blockquote>
           <p className="text-[15px] text-muted-foreground font-light leading-relaxed">
-            Por isso, a Pastoral do Dízimo não é apenas arrecadar dinheiro, mas{" "}
-            <span className="text-primary font-medium">formar consciências</span> e despertar nos fiéis o sentido
-            de responsabilidade com a Igreja.
+            A missão da Pastoral do Dízimo é{" "}
+            <span className="text-primary font-medium">evangelizar os fiéis</span> para que compreendam, assumam
+            e vivam o dízimo como expressão de fé, gratidão, pertença e corresponsabilidade na missão da Igreja.
           </p>
         </div>
       </section>

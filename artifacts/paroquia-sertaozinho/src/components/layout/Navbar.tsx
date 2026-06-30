@@ -60,7 +60,7 @@ export function Navbar() {
   }, [location]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-12 sm:h-14">
 
