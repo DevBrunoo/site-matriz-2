@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import dizimoBanner from "@assets/Gemini_Generated_Image_jyn7s2jyn7s2jyn7_1782852265068.png";
+import dizimoLogo from "@assets/Gemini_Generated_Image_8cr9k38cr9k38cr9_1782852303409.png";
 
 const BASE = import.meta.env.BASE_URL;
 const PHONE_DIZIMISTA = "5516991012308";
@@ -25,7 +27,24 @@ export default function PastoralDizimo() {
         category="Pastorais"
         title="Pastoral do Dízimo"
         subtitle="Um caminho de fé, gratidão e compromisso com a missão evangelizadora"
+        sideImage={dizimoBanner}
+        sideImagePosition="center right"
       />
+
+      {/* Logo destaque */}
+      <section
+        className="py-12 flex flex-col items-center justify-center"
+        style={{
+          background: "linear-gradient(180deg, #0f1a3e 0%, #162860 60%, #ffffff 100%)",
+        }}
+      >
+        <img
+          src={dizimoLogo}
+          alt="Logo Pastoral do Dízimo"
+          className="w-56 sm:w-72 object-contain drop-shadow-2xl"
+          draggable={false}
+        />
+      </section>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

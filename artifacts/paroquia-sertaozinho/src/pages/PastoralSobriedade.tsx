@@ -11,6 +11,7 @@ export default function PastoralSobriedade() {
         title="Pastoral da Sobriedade"
         subtitle="Um caminho de transformação interior, fé e dignidade da pessoa humana"
         sideImage={sobriedadeBanner}
+        sideImagePosition="center bottom"
       />
 
       {/* Descrição principal */}

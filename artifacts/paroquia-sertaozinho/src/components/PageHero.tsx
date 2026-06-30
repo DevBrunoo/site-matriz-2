@@ -4,10 +4,11 @@ interface PageHeroProps {
   subtitle?: string;
   logo?: string;
   sideImage?: string;
+  sideImagePosition?: string;
   images?: { src: string; alt: string }[];
 }
 
-export function PageHero({ category, title, subtitle, logo, sideImage, images }: PageHeroProps) {
+export function PageHero({ category, title, subtitle, logo, sideImage, sideImagePosition = "center", images }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden"
@@ -47,7 +48,8 @@ export function PageHero({ category, title, subtitle, logo, sideImage, images }:
           <img
             src={sideImage}
             alt=""
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover"
+            style={{ objectPosition: sideImagePosition }}
             draggable={false}
           />
           {/* Fade left so image melts into blue */}
@@ -99,8 +101,8 @@ export function PageHero({ category, title, subtitle, logo, sideImage, images }:
           <div
             className="hidden sm:flex shrink-0 items-center justify-center"
             style={{
-              width: 160,
-              height: 160,
+              width: 120,
+              height: 120,
               borderRadius: "50%",
               overflow: "hidden",
               boxShadow: "0 0 0 1.5px rgba(212,175,55,0.30), 0 8px 40px rgba(0,0,0,0.55)",
@@ -112,7 +114,7 @@ export function PageHero({ category, title, subtitle, logo, sideImage, images }:
               alt=""
               className="object-contain"
               draggable={false}
-              style={{ width: "90%", height: "90%" }}
+              style={{ width: "95%", height: "95%" }}
             />
           </div>
         )}
