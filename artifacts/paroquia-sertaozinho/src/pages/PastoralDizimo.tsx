@@ -31,21 +31,6 @@ export default function PastoralDizimo() {
         sideImagePosition="center right"
       />
 
-      {/* Logo destaque */}
-      <section
-        className="py-12 flex flex-col items-center justify-center"
-        style={{
-          background: "linear-gradient(180deg, #0f1a3e 0%, #162860 60%, #ffffff 100%)",
-        }}
-      >
-        <img
-          src={dizimoLogo}
-          alt="Logo Pastoral do Dízimo"
-          className="w-56 sm:w-72 object-contain drop-shadow-2xl"
-          draggable={false}
-        />
-      </section>
-
       {/* Descrição principal */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,6 +200,70 @@ export default function PastoralDizimo() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* ── Logo showcase final ── */}
+      <section
+        className="relative overflow-hidden py-20 flex flex-col items-center justify-center"
+        style={{
+          background: "linear-gradient(160deg, #080f22 0%, #0f1a3e 45%, #162860 100%)",
+        }}
+      >
+        {/* dot grid */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        {/* faixa dourada topo */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{
+            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.4) 35%, rgba(212,175,55,0.4) 65%, transparent 95%)",
+          }}
+        />
+
+        {/* Ornamento de entrada */}
+        <div className="relative flex items-center gap-3 mb-10">
+          <div className="w-12 h-px bg-secondary/50" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-secondary/60" />
+          <span className="text-secondary/70 font-bold tracking-[0.35em] uppercase text-[9px]">
+            Pastoral do Dízimo
+          </span>
+          <div className="w-1.5 h-1.5 rotate-45 bg-secondary/60" />
+          <div className="w-12 h-px bg-secondary/50" />
+        </div>
+
+        {/* Logo card */}
+        <div
+          className="relative flex items-center justify-center rounded-2xl p-6"
+          style={{
+            background: "rgba(255,255,255,0.96)",
+            boxShadow: "0 0 0 1px rgba(212,175,55,0.35), 0 0 60px rgba(212,175,55,0.18), 0 24px 80px rgba(0,0,0,0.55)",
+          }}
+        >
+          <img
+            src={dizimoLogo}
+            alt="Logo Pastoral do Dízimo"
+            className="w-64 sm:w-80 object-contain"
+            draggable={false}
+          />
+        </div>
+
+        {/* Frase abaixo */}
+        <p className="relative mt-10 text-white/40 font-light text-[12px] tracking-[0.2em] uppercase">
+          Fé · Gratidão · Corresponsabilidade
+        </p>
+
+        {/* faixa dourada base */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{
+            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.25) 50%, transparent 95%)",
+          }}
+        />
       </section>
     </main>
   );
