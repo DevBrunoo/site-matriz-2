@@ -1,0 +1,116 @@
+2026-06-30T21:57:23.068469Z	Cloning repository...
+2026-06-30T21:57:32.753267Z	From https://github.com/DevBrunoo/site-matriz-2
+2026-06-30T21:57:32.753741Z	 * branch            3823a053d9d978a78a3cf4ed7eca1863aba8f299 -> FETCH_HEAD
+2026-06-30T21:57:32.75386Z	
+2026-06-30T21:57:34.900173Z	HEAD is now at 3823a05 Update images on the Dízimo and Sobriedade pastoral pages
+2026-06-30T21:57:34.900536Z	
+2026-06-30T21:57:34.97909Z	
+2026-06-30T21:57:34.97973Z	Using v2 root directory strategy
+2026-06-30T21:57:35.011691Z	Success: Finished cloning repository files
+2026-06-30T21:57:37.22201Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-06-30T21:57:37.222471Z	
+2026-06-30T21:57:37.445571Z	No Wrangler configuration file found. Continuing.
+2026-06-30T21:57:37.690016Z	Detected the following tools from environment: pnpm@10.11.1, nodejs@22.16.0, npm@10.9.2
+2026-06-30T21:57:39.150068Z	Installing project dependencies: pnpm install
+2026-06-30T21:57:39.739004Z	Scope: all 9 workspace projects
+2026-06-30T21:57:39.867339Z	../..                                    | Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-06-30T21:57:39.966127Z	../..                                    | +458 ++++++++++++++++++++++++++++++++
+2026-06-30T21:57:40.873782Z	../..                                    | Progress: resolved 458, reused 0, downloaded 110, added 66
+2026-06-30T21:57:41.873133Z	../..                                    | Progress: resolved 458, reused 0, downloaded 278, added 222
+2026-06-30T21:57:42.873303Z	../..                                    | Progress: resolved 458, reused 0, downloaded 346, added 253
+2026-06-30T21:57:43.874805Z	../..                                    | Progress: resolved 458, reused 0, downloaded 453, added 312
+2026-06-30T21:57:44.733397Z	../..                                    | Progress: resolved 458, reused 0, downloaded 458, added 458, done
+2026-06-30T21:57:44.985089Z	.../esbuild@0.27.3/node_modules/esbuild postinstall$ node install.js
+2026-06-30T21:57:45.090087Z	.../esbuild@0.27.3/node_modules/esbuild postinstall: Done
+2026-06-30T21:57:45.493053Z	
+2026-06-30T21:57:45.493296Z	devDependencies:
+2026-06-30T21:57:45.493347Z	+ @hookform/resolvers 3.10.0
+2026-06-30T21:57:45.49339Z	+ @radix-ui/react-accordion 1.2.12
+2026-06-30T21:57:45.493427Z	+ @radix-ui/react-alert-dialog 1.1.15
+2026-06-30T21:57:45.493478Z	+ @radix-ui/react-aspect-ratio 1.1.8
+2026-06-30T21:57:45.49354Z	+ @radix-ui/react-avatar 1.1.11
+2026-06-30T21:57:45.493591Z	+ @radix-ui/react-checkbox 1.3.3
+2026-06-30T21:57:45.49368Z	+ @radix-ui/react-collapsible 1.1.12
+2026-06-30T21:57:45.493726Z	+ @radix-ui/react-context-menu 2.2.16
+2026-06-30T21:57:45.493772Z	+ @radix-ui/react-dialog 1.1.15
+2026-06-30T21:57:45.493816Z	+ @radix-ui/react-dropdown-menu 2.1.16
+2026-06-30T21:57:45.493866Z	+ @radix-ui/react-hover-card 1.1.15
+2026-06-30T21:57:45.493915Z	+ @radix-ui/react-label 2.1.8
+2026-06-30T21:57:45.493962Z	+ @radix-ui/react-menubar 1.1.16
+2026-06-30T21:57:45.494008Z	+ @radix-ui/react-navigation-menu 1.2.14
+2026-06-30T21:57:45.494041Z	+ @radix-ui/react-popover 1.1.15
+2026-06-30T21:57:45.494079Z	+ @radix-ui/react-progress 1.1.8
+2026-06-30T21:57:45.494116Z	+ @radix-ui/react-radio-group 1.3.8
+2026-06-30T21:57:45.49419Z	+ @radix-ui/react-scroll-area 1.2.10
+2026-06-30T21:57:45.494244Z	+ @radix-ui/react-select 2.2.6
+2026-06-30T21:57:45.494292Z	+ @radix-ui/react-separator 1.1.8
+2026-06-30T21:57:45.494336Z	+ @radix-ui/react-slider 1.3.6
+2026-06-30T21:57:45.494384Z	+ @radix-ui/react-slot 1.2.4
+2026-06-30T21:57:45.494422Z	+ @radix-ui/react-switch 1.2.6
+2026-06-30T21:57:45.494473Z	+ @radix-ui/react-tabs 1.1.13
+2026-06-30T21:57:45.49451Z	+ @radix-ui/react-toast 1.2.15
+2026-06-30T21:57:45.494619Z	+ @radix-ui/react-toggle 1.1.10
+2026-06-30T21:57:45.494722Z	+ @radix-ui/react-toggle-group 1.1.11
+2026-06-30T21:57:45.494774Z	+ @radix-ui/react-tooltip 1.2.8
+2026-06-30T21:57:45.494828Z	+ @replit/vite-plugin-cartographer 0.5.0
+2026-06-30T21:57:45.494867Z	+ @replit/vite-plugin-dev-banner 0.1.2
+2026-06-30T21:57:45.494902Z	+ @replit/vite-plugin-runtime-error-modal 0.0.6
+2026-06-30T21:57:45.494938Z	+ @tailwindcss/typography 0.5.19
+2026-06-30T21:57:45.494995Z	+ @tailwindcss/vite 4.2.1
+2026-06-30T21:57:45.495065Z	+ @tanstack/react-query 5.90.21
+2026-06-30T21:57:45.495103Z	+ @types/node 25.3.5
+2026-06-30T21:57:45.495135Z	+ @types/react 19.2.14
+2026-06-30T21:57:45.495165Z	+ @types/react-dom 19.2.3
+2026-06-30T21:57:45.495198Z	+ @vitejs/plugin-react 5.1.4
+2026-06-30T21:57:45.495237Z	+ @workspace/api-client-react 0.0.0 <- ../../lib/api-client-react
+2026-06-30T21:57:45.495268Z	+ class-variance-authority 0.7.1
+2026-06-30T21:57:45.495303Z	+ clsx 2.1.1
+2026-06-30T21:57:45.495335Z	+ cmdk 1.1.1
+2026-06-30T21:57:45.495365Z	+ date-fns 3.6.0
+2026-06-30T21:57:45.495395Z	+ embla-carousel-react 8.6.0
+2026-06-30T21:57:45.495425Z	+ framer-motion 12.35.1
+2026-06-30T21:57:45.495455Z	+ input-otp 1.4.2
+2026-06-30T21:57:45.495488Z	+ lucide-react 0.545.0
+2026-06-30T21:57:45.495521Z	+ next-themes 0.4.6
+2026-06-30T21:57:45.49555Z	+ react 19.1.0
+2026-06-30T21:57:45.495584Z	+ react-day-picker 9.14.0
+2026-06-30T21:57:45.495632Z	+ react-dom 19.1.0
+2026-06-30T21:57:45.495687Z	+ react-hook-form 7.71.2
+2026-06-30T21:57:45.495749Z	+ react-icons 5.6.0
+2026-06-30T21:57:45.495805Z	+ react-resizable-panels 2.1.9
+2026-06-30T21:57:45.495857Z	+ recharts 2.15.4
+2026-06-30T21:57:45.495892Z	+ sonner 2.0.7
+2026-06-30T21:57:45.495923Z	+ tailwind-merge 3.5.0
+2026-06-30T21:57:45.495965Z	+ tailwindcss 4.2.1
+2026-06-30T21:57:45.49605Z	+ tw-animate-css 1.4.0
+2026-06-30T21:57:45.496103Z	+ vaul 1.1.2
+2026-06-30T21:57:45.496161Z	+ vite 7.3.1
+2026-06-30T21:57:45.496209Z	+ wouter 3.9.0
+2026-06-30T21:57:45.496263Z	+ zod 3.25.76
+2026-06-30T21:57:45.496333Z	
+2026-06-30T21:57:45.561397Z	../.. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-06-30T21:57:45.585034Z	../.. preinstall: Done
+2026-06-30T21:57:45.76834Z	Done in 6.4s using pnpm v10.11.1
+2026-06-30T21:57:45.820395Z	Executing user command: pnpm build
+2026-06-30T21:57:46.318152Z	
+2026-06-30T21:57:46.31843Z	> @workspace/paroquia-sertaozinho@0.0.0 build /opt/buildhome/repo/artifacts/paroquia-sertaozinho
+2026-06-30T21:57:46.318526Z	> vite build --config vite.config.ts
+2026-06-30T21:57:46.318587Z	
+2026-06-30T21:57:46.86852Z	[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+2026-06-30T21:57:46.962356Z	transforming...
+2026-06-30T21:57:47.550034Z	[33msrc/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.[39m
+2026-06-30T21:57:49.229283Z	[32m✓[39m 1146 modules transformed.
+2026-06-30T21:57:49.236141Z	[31m✗[39m Build failed in 2.32s
+2026-06-30T21:57:49.236763Z	[31merror during build:
+2026-06-30T21:57:49.236879Z	[31m[vite:asset] Could not load /opt/buildhome/repo/attached_assets/Captura_de_Tela_2026-06-30_às_18.54.05_1782856450572.png (imported by src/pages/PastoralSobriedade.tsx): ENOENT: no such file or directory, open '/opt/buildhome/repo/attached_assets/Captura_de_Tela_2026-06-30_às_18.54.05_1782856450572.png'[31m
+2026-06-30T21:57:49.237605Z	    at async open (node:internal/fs/promises:633:25)
+2026-06-30T21:57:49.237954Z	    at async Object.readFile (node:internal/fs/promises:1237:14)
+2026-06-30T21:57:49.23808Z	    at async fileToBuiltUrl (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:8777:18)
+2026-06-30T21:57:49.23819Z	    at async Object.handler (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:8671:17)
+2026-06-30T21:57:49.238323Z	    at async PluginDriver.hookFirstAndGetPlugin (file:///opt/buildhome/repo/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:22453:28)
+2026-06-30T21:57:49.238412Z	    at async file:///opt/buildhome/repo/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:21445:33
+2026-06-30T21:57:49.238478Z	    at async Queue.work (file:///opt/buildhome/repo/node_modules/.pnpm/rollup@4.59.0/node_modules/rollup/dist/es/shared/node-entry.js:22681:32)[39m
+2026-06-30T21:57:49.30034Z	 ELIFECYCLE  Command failed with exit code 1.
+2026-06-30T21:57:49.337613Z	Failed: Error while executing user command. Exited with error code: 1
+2026-06-30T21:57:49.344632Z	Failed: build command exited with code: 1
+2026-06-30T21:57:50.134259Z	Failed: error occurred while running build command
