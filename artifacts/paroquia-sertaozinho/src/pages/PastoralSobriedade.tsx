@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import sobriedadeBanner from "@assets/Gemini_Generated_Image_5pia9l5pia9l5pia_1782854250042.png";
+import sobriedadeBanner from "@assets/Gemini_Generated_Image_u4l3fqu4l3fqu4l3_(1)_1782854389628.png";
 
 export default function PastoralSobriedade() {
   return (
