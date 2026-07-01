@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import dizimoBanner from "@assets/Gemini_Generated_Image_3n38p63n38p63n38_(1)_1782856302017.png";
+import dizimoBanner from "@assets/pastoral_dizimo_banner_1782857397028.png";
 import dizimoLogo from "@assets/Gemini_Generated_Image_8cr9k38cr9k38cr9_1782852303409.png";
 
 const BASE = import.meta.env.BASE_URL;
