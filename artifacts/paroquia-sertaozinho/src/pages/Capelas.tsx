@@ -14,7 +14,7 @@ const stagger: Variants = { hidden: {}, show: { transition: { staggerChildren: 0
 const CAPELAS = [
   {
     nome: "Nossa Senhora do Rosário",
-    endereco: "R. João Mossin, 337 – Jardim dos Bandeirantes",
+    endereco: "Rua João Nilson Mossin, 337 – Jardim dos Bandeirantes",
     cep: "CEP: 14170-800",
     foto: `${BASE}capelas/rosario.png`,
     mapsUrl: "https://maps.app.goo.gl/uKHKuypCcyzEcN6S8",
@@ -86,7 +86,7 @@ export default function Capelas() {
                 <div>
                   <h3 className="font-display font-semibold text-primary text-[15px] mb-1 leading-snug">Nossa Senhora Aparecida — Matriz</h3>
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">Largo da Matriz Cônego Antônio de Oliveira – Centro</p>
-                  <p className="text-xs text-muted-foreground/60 mt-1">CEP: 14160-000</p>
+                  <p className="text-xs text-muted-foreground/60 mt-1">CEP: 14160-035</p>
                 </div>
               </div>
               <div className="pt-4 border-t border-gray-50">

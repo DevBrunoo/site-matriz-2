@@ -43,7 +43,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Endereço</h4>
-                  <p className="text-sm text-muted-foreground">Rua Cel. Quito Junqueira, S/N<br/>Centro, Sertãozinho - SP<br/>CEP: 14160-000</p>
+                  <p className="text-sm text-muted-foreground">Largo da Matriz Cônego Antônio de Oliveira<br/>Centro, Sertãozinho - SP<br/>CEP: 14160-035</p>
                 </div>
               </div>
 
@@ -53,7 +53,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Telefone</h4>
-                  <p className="text-sm text-muted-foreground">(16) 3942-0000</p>
+                  <p className="text-sm text-muted-foreground">(16) 3947-6524</p>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">E-mail</h4>
-                  <p className="text-sm text-muted-foreground">secretaria@paroquiaaparecida.org.br</p>
+                  <p className="text-sm text-muted-foreground">secret.matriz@hotmail.com</p>
                 </div>
               </div>
 
@@ -73,7 +73,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Secretaria</h4>
-                  <p className="text-sm text-muted-foreground">Ter a Sex: 08h - 17h30<br/>Sáb: 08h - 12h</p>
+                  <p className="text-sm text-muted-foreground">Ter a Sex: 08h - 17h30<br/>Sáb: 08h - 12h · 15h - 18h30</p>
                 </div>
               </div>
             </div>

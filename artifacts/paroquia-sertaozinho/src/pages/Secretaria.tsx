@@ -29,7 +29,8 @@ export default function Secretaria() {
               <div className="flex flex-col gap-4 mb-10">
                 {[
                   { dia: "Terça a Sexta", horario: "08h00 às 12h00 e 13h30 às 17h30" },
-                  { dia: "Sábado", horario: "08h00 às 12h00" },
+                  { dia: "Sábado (manhã)", horario: "08h00 às 12h00" },
+                  { dia: "Sábado (tarde)", horario: "15h00 às 18h30" },
                 ].map((item) => (
                   <div key={item.dia} className="flex items-start gap-4 py-4 border-b border-gray-100">
                     <Clock className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -49,11 +50,11 @@ export default function Secretaria() {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-secondary shrink-0" />
-                  <span className="text-muted-foreground font-light">(16) 3947-6524 / 3041-6221</span>
+                  <span className="text-muted-foreground font-light">(16) 3947-6524</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5 text-secondary shrink-0" />
-                  <span className="text-muted-foreground font-light">matrizstz@gmail.com</span>
+                  <span className="text-muted-foreground font-light">secret.matriz@hotmail.com</span>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-secondary shrink-0 mt-0.5" />

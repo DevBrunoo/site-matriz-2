@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Clock, ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
 const fadeUp: Variants = {
@@ -74,6 +74,18 @@ export default function Confissao() {
             <p>
               Sua importância está no fato de que não apenas apaga os pecados, mas também restaura nossa amizade com Deus, fortalece a alma contra futuras quedas e traz paz à consciência. A Confissão é um encontro pessoal com a misericórdia de Deus, que nunca se cansa de acolher e renovar aqueles que retornam a Ele com coração humilde.
             </p>
+          </motion.div>
+
+          <motion.div variants={fadeUp}>
+            <a
+              href="https://padrerafaelcosta.com/o-que-e-a-confissao-e-como-se-confessar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-4 border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all group"
+            >
+              <ExternalLink className="w-4 h-4 shrink-0" />
+              <span className="font-semibold text-sm tracking-wide">Como se confessar — passo a passo</span>
+            </a>
           </motion.div>
         </motion.section>
 
