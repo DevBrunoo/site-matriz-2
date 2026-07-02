@@ -1,7 +1,4 @@
-import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
-import { PageHero } from "@/components/PageHero";
-import dizimoBanner from "@assets/pastoral_dizimo_banner_1782857397028.png";
 
 const BASE = import.meta.env.BASE_URL;
 const PHONE_DIZIMISTA = "5516991012308";
@@ -22,13 +19,111 @@ export default function PastoralDizimo() {
         <span className="sm:hidden">Dizimista</span>
       </a>
 
-      <PageHero
-        category="Pastorais"
-        title="Pastoral do Dízimo"
-        subtitle="Um caminho de fé, gratidão e compromisso com a missão evangelizadora"
-        sideImage={dizimoBanner}
-        sideImagePosition="center bottom"
-      />
+      {/* ── Hero customizado — Pastoral do Dízimo ── */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #080f22 0%, #0f1a3e 50%, #162860 100%)",
+        }}
+      >
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.06) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+
+        {/* Faixa dourada esquerda — aumentada em 3px (3 → 6px) */}
+        <div
+          className="absolute left-0 top-0 bottom-0 pointer-events-none"
+          style={{
+            width: "6px",
+            background: "linear-gradient(to bottom, transparent, #D4AF37 20%, #D4AF37 80%, transparent)",
+            opacity: 0.5,
+          }}
+        />
+
+        {/* Borda inferior dourada */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+          style={{
+            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.35) 35%, rgba(212,175,55,0.35) 65%, transparent 95%)",
+          }}
+        />
+
+        {/* Imagem 2K como fundo da metade direita — reduzida 2px */}
+        <div
+          className="absolute top-0 right-0 bottom-0 hidden sm:block pointer-events-none"
+          style={{ width: "calc(48% - 2px)" }}
+        >
+          <img
+            src={`${BASE}dizimo-hero-bg.jpg`}
+            alt=""
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center center" }}
+            draggable={false}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to right, #0f1a3e 0%, rgba(15,26,62,0.55) 28%, transparent 60%)",
+            }}
+          />
+        </div>
+
+        {/* Conteúdo */}
+        <div
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6"
+          style={{
+            paddingTop: "calc(3.5rem + 25px)",
+            paddingBottom: "25px",
+          }}
+        >
+          {/* Bloco de texto */}
+          <div className="min-w-0 flex-1 flex flex-col justify-center py-2">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-4 h-px bg-secondary/55" />
+              <span className="text-secondary/80 font-bold tracking-[0.32em] uppercase text-[9px]">
+                Pastorais
+              </span>
+            </div>
+            <h1 className="font-display text-xl sm:text-2xl md:text-[1.85rem] font-semibold text-white leading-tight tracking-tight">
+              Pastoral do Dízimo
+            </h1>
+            <p className="text-white/40 font-light text-[11px] sm:text-[12px] mt-2 max-w-sm leading-relaxed">
+              Um caminho de fé, gratidão e compromisso com a missão evangelizadora
+            </p>
+            <div className="flex items-center gap-2 mt-4">
+              <div className="w-7 h-px bg-secondary/55" />
+              <div className="w-1 h-1 rotate-45 bg-secondary/35" />
+              <div className="w-3 h-px bg-secondary/18" />
+            </div>
+          </div>
+
+          {/* Logo do coração — exibido dentro do hero */}
+          <div
+            className="hidden sm:flex shrink-0 items-center justify-center"
+            style={{
+              width: 130,
+              height: 130,
+              borderRadius: "50%",
+              overflow: "hidden",
+              boxShadow: "0 0 0 1.5px rgba(212,175,55,0.40), 0 8px 48px rgba(0,0,0,0.65)",
+              background: "rgba(7,17,43,0.55)",
+            }}
+          >
+            <img
+              src={`${BASE}dizimo-logo-heart.png`}
+              alt="Logo Pastoral do Dízimo"
+              className="object-contain"
+              draggable={false}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">
@@ -201,32 +296,6 @@ export default function PastoralDizimo() {
         </div>
       </section>
 
-      {/* ── Banner final ── */}
-      <section className="relative w-full overflow-hidden" style={{ background: "#07112b" }}>
-        {/* faixa dourada topo */}
-        <div
-          className="absolute top-0 left-0 right-0 h-px z-10"
-          style={{
-            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.45) 35%, rgba(212,175,55,0.45) 65%, transparent 95%)",
-          }}
-        />
-
-        <img
-          src={`${import.meta.env.BASE_URL}pastoral-dizimo-banner.jpg`}
-          alt="Pastoral do Dízimo"
-          className="w-full object-cover"
-          style={{ display: "block", maxHeight: "420px", objectPosition: "center center" }}
-          draggable={false}
-        />
-
-        {/* faixa dourada base */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-px z-10"
-          style={{
-            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.3) 50%, transparent 95%)",
-          }}
-        />
-      </section>
     </main>
   );
 }
