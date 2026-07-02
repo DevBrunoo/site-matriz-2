@@ -13,7 +13,7 @@ export default function PastoralFamiliar() {
         subtitle="Cuidando, acompanhando e fortalecendo as famílias na fé e no amor"
         sideImage={`${import.meta.env.BASE_URL}logos/logo-familiar.png`}
         sideImagePosition="center center"
-        sideImageWidth="calc(48% - 56px)"
+        sideImageWidth="38%"
       />
 
       {/* Descrição principal */}

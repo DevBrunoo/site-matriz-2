@@ -50,7 +50,7 @@ export function PageHero({ category, title, subtitle, logo, logoSize = 120, side
           <img
             src={sideImage}
             alt=""
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
             style={{ objectPosition: sideImagePosition }}
             draggable={false}
           />
