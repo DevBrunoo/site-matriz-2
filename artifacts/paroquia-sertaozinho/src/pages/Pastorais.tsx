@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Droplets, Heart, Coins } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+
+const BASE = import.meta.env.BASE_URL;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 22 },
@@ -15,56 +17,56 @@ const PASTORAIS = [
     id: "pastoral-familiar",
     nome: "Pastoral Familiar",
     desc: "Cuida, acompanha e fortalece as famílias na fé e no amor. Coordenada por Agnes e Fernando Liboni. Encontros na última segunda-feira de cada mês, nas casas dos integrantes.",
-    icon: Heart,
+    img: `${BASE}logos/logo-familiar.png`,
     href: "/pastoral-familiar",
   },
   {
     id: "associacao-do-rosario",
     nome: "Associação do Rosário",
     desc: "Grupo dedicado à devoção e rezar o Santo Rosário, fortalecendo a fé e a comunhão mariana na paróquia.",
-    icon: Heart,
+    img: `${BASE}rosario-associacao.png`,
     href: "/associacao-do-rosario",
   },
   {
     id: "grupo-de-evangelizacao",
     nome: 'Grupo de Evangelização "Santa Terezinha do Menino Jesus"',
     desc: "Movimento de evangelização que leva a Palavra de Deus às famílias e comunidades, inspirado no carisma da pequena Santa Terezinha.",
-    icon: BookOpen,
+    img: `${BASE}pastorais/santa-teresinha.png`,
     href: "/grupo-de-evangelizacao",
   },
   {
     id: "terco-dos-homens",
     nome: "Terço dos Homens",
     desc: "Movimento mariano que reúne homens para rezar o Santo Terço, fortalecer a fé e crescer na vida cristã.",
-    icon: Heart,
+    img: `${BASE}pastorais/terco-dos-homens.jpeg`,
     href: "/terco-dos-homens",
   },
   {
     id: "sagrado-coracao-de-jesus",
     nome: "Sagrado Coração de Jesus",
     desc: "Apostolado da Oração dedicado à espiritualidade do Sagrado Coração de Jesus, à oração pela Igreja e ao serviço fraterno.",
-    icon: Heart,
+    img: `${BASE}pastorais/sagrado-coracao-de-jesus.jpg`,
     href: "/sagrado-coracao-de-jesus",
   },
   {
     id: "pastoral-da-sobriedade",
     nome: "Pastoral da Sobriedade",
     desc: "Pastoral voltada ao acolhimento e apoio de pessoas e famílias afetadas pelo alcoolismo e outras dependências químicas.",
-    icon: Droplets,
+    img: `${BASE}logos/logo-sobriedade.png`,
     href: "/pastoral-da-sobriedade",
   },
   {
     id: "pastoral-do-dizimo",
     nome: "Pastoral do Dízimo",
     desc: "Promove a cultura do dízimo como ato de fé e gratidão, sustentando a missão evangelizadora da paróquia.",
-    icon: Coins,
+    img: `${BASE}logos/logo-dizimo.png`,
     href: "/pastoral-do-dizimo",
   },
   {
     id: "renovacao-carismatica",
     nome: "Renovação Carismática Católica (RCC)",
     desc: "Grupo de oração focado no louvor, adoração e batismo no Espírito Santo. Clique para saber os horários e participar.",
-    icon: ArrowRight,
+    img: `${BASE}pastorais/rcc.png`,
     href: "/renovacao-carismatica",
     destaque: true,
   },
@@ -89,13 +91,17 @@ export default function Pastorais() {
             className="flex flex-col gap-4"
           >
             {PASTORAIS.map((p) => {
-              const Icon = p.icon;
               return (
                 <motion.div key={p.id} variants={fadeUp}>
                   <Link href={p.href}>
                     <div className={`group flex items-start gap-5 p-7 border transition-all cursor-pointer ${p.destaque ? "border-secondary/40 bg-secondary/5 hover:bg-secondary/10" : "border-gray-100 bg-white hover:border-secondary/30 hover:shadow-sm"}`}>
-                      <div className={`w-10 h-10 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${p.destaque ? "bg-secondary/20 group-hover:bg-secondary/30" : "bg-primary/8 group-hover:bg-primary/15"}`}>
-                        <Icon className={`w-4 h-4 stroke-[1.5] ${p.destaque ? "text-secondary" : "text-primary"}`} />
+                      <div className={`w-16 h-16 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border transition-colors ${p.destaque ? "bg-secondary/10 border-secondary/30 group-hover:border-secondary/50" : "bg-gray-50 border-gray-100 group-hover:border-secondary/30"}`}>
+                        <img
+                          src={p.img}
+                          alt={p.nome}
+                          className="w-full h-full object-contain p-1.5"
+                          loading="lazy"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="w-6 h-px bg-secondary mb-2" />
