@@ -64,12 +64,22 @@ export function PageHero({ category, title, subtitle, logo, logoSize = 120, side
           />
           {/* White overlay cobrindo lado direito + base — só quando ativado */}
           {sideWhiteOverlay && (
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "radial-gradient(ellipse 120% 90% at 110% 110%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 40%, transparent 70%)",
-              }}
-            />
+            <>
+              {/* Brilho branco vindo da base direita */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "radial-gradient(ellipse 130% 100% at 105% 115%, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.7) 35%, rgba(255,255,255,0.2) 60%, transparent 75%)",
+                }}
+              />
+              {/* Fade branco cobrindo a borda inferior inteira do lado direito */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(to top, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.3) 35%, transparent 65%)",
+                }}
+              />
+            </>
           )}
         </div>
       )}
