@@ -12,8 +12,8 @@ export default function PastoralFamiliar() {
         title="Pastoral Familiar"
         subtitle="Cuidando, acompanhando e fortalecendo as famílias na fé e no amor"
         sideImage={`${import.meta.env.BASE_URL}logos/logo-familiar.png`}
-        sideImagePosition="center 65%"
-        sideImageWidth="28%"
+        sideImagePosition="center center"
+        sideImageWidth="30%"
       />
 
       {/* Descrição principal */}
