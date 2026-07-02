@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import sobriedadeBanner from "@assets/pastoral_sobriedade_banner_1782874762708.png";
+import sobriedadeLogoMobile from "@assets/Gemini_Generated_Image__(1).png_2K_202607021703_1783022630119.jpeg";
 
 export default function PastoralSobriedade() {
   return (
@@ -13,6 +14,15 @@ export default function PastoralSobriedade() {
         sideImage={sobriedadeBanner}
         sideImagePosition="center bottom"
       />
+
+      {/* Logo — visível apenas no celular */}
+      <div className="sm:hidden flex justify-center py-8 bg-white border-b border-gray-100">
+        <img
+          src={sobriedadeLogoMobile}
+          alt="Pastoral da Sobriedade Sertãozinho"
+          className="w-56 rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.15)] object-contain"
+        />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

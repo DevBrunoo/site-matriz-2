@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import familiarLogoMobile from "@assets/unnamed_1783022427203.jpg";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -16,6 +17,15 @@ export default function PastoralFamiliar() {
         sideImageWidth="26.5%"
         sideWhiteOverlay={true}
       />
+
+      {/* Logo — visível apenas no celular */}
+      <div className="sm:hidden flex justify-center py-8 bg-white border-b border-gray-100">
+        <img
+          src={familiarLogoMobile}
+          alt="Pastoral Familiar Sertãozinho"
+          className="w-40 h-40 rounded-full shadow-[0_16px_48px_rgba(0,0,0,0.15)] object-contain"
+        />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">

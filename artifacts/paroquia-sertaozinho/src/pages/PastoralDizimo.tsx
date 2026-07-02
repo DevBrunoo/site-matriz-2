@@ -1,4 +1,5 @@
 import { ArrowRight, Phone } from "lucide-react";
+import dizimoLogoMobile from "@assets/Gemini_Generated_Image_8cr9k38cr9k38cr9_1783022678059.png";
 
 const BASE = import.meta.env.BASE_URL;
 const PHONE_DIZIMISTA = "5516991012308";
@@ -111,6 +112,15 @@ export default function PastoralDizimo() {
           </div>
         </div>
       </section>
+
+      {/* Logo — visível apenas no celular */}
+      <div className="sm:hidden flex justify-center py-8 bg-white border-b border-gray-100">
+        <img
+          src={dizimoLogoMobile}
+          alt="Pastoral do Dízimo Sertãozinho"
+          className="w-44 rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.15)] object-contain"
+        />
+      </div>
 
       {/* Descrição principal */}
       <section className="py-20 bg-background">
