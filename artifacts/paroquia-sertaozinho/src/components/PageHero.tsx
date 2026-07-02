@@ -3,12 +3,13 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   logo?: string;
+  logoSize?: number;
   sideImage?: string;
   sideImagePosition?: string;
   images?: { src: string; alt: string }[];
 }
 
-export function PageHero({ category, title, subtitle, logo, sideImage, sideImagePosition = "center", images }: PageHeroProps) {
+export function PageHero({ category, title, subtitle, logo, logoSize = 120, sideImage, sideImagePosition = "center", images }: PageHeroProps) { // eslint-disable-line
   return (
     <section
       className="relative overflow-hidden"
@@ -101,8 +102,8 @@ export function PageHero({ category, title, subtitle, logo, sideImage, sideImage
           <div
             className="hidden sm:flex shrink-0 items-center justify-center"
             style={{
-              width: 120,
-              height: 120,
+              width: logoSize,
+              height: logoSize,
               borderRadius: "50%",
               overflow: "hidden",
               boxShadow: "0 0 0 1.5px rgba(212,175,55,0.30), 0 8px 40px rgba(0,0,0,0.55)",
@@ -114,7 +115,7 @@ export function PageHero({ category, title, subtitle, logo, sideImage, sideImage
               alt=""
               className="object-contain"
               draggable={false}
-              style={{ width: "95%", height: "95%" }}
+              style={{ width: "100%", height: "100%" }}
             />
           </div>
         )}
