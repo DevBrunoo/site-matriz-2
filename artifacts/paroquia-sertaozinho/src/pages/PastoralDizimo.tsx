@@ -53,9 +53,37 @@ export default function PastoralDizimo() {
           }}
         />
 
+        {/* Imagem 2K integrada à faixa azul — cobre a metade direita e funde com gradiente */}
+        <div
+          className="absolute top-0 right-0 bottom-0 hidden sm:block pointer-events-none"
+          style={{ width: "55%" }}
+        >
+          <img
+            src={`${BASE}dizimo-hero-bg.jpg`}
+            alt=""
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center center" }}
+            draggable={false}
+          />
+          {/* Fade forte da esquerda para integrar ao azul */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to right, #0c1538 0%, rgba(12,21,56,0.82) 22%, rgba(12,21,56,0.4) 50%, transparent 80%)",
+            }}
+          />
+          {/* Fade sutil de baixo para cima */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to top, rgba(8,15,34,0.55) 0%, transparent 50%)",
+            }}
+          />
+        </div>
+
         {/* Conteúdo */}
         <div
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6"
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center"
           style={{
             paddingTop: "calc(3.5rem + 25px)",
             paddingBottom: "25px",
@@ -80,25 +108,6 @@ export default function PastoralDizimo() {
               <div className="w-1 h-1 rotate-45 bg-secondary/35" />
               <div className="w-3 h-px bg-secondary/18" />
             </div>
-          </div>
-
-          {/* Imagem 2K em quadrado com border-radius */}
-          <div
-            className="hidden sm:flex shrink-0 items-center justify-center overflow-hidden"
-            style={{
-              width: 160,
-              height: 160,
-              borderRadius: "18px",
-              boxShadow: "0 0 0 1.5px rgba(212,175,55,0.45), 0 8px 48px rgba(0,0,0,0.7)",
-            }}
-          >
-            <img
-              src={`${BASE}dizimo-hero-bg.jpg`}
-              alt="Pastoral do Dízimo"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: "center center" }}
-              draggable={false}
-            />
           </div>
         </div>
       </section>
