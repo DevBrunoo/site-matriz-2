@@ -56,7 +56,7 @@ export default function PastoralDizimo() {
         {/* Imagem 2K integrada à faixa azul — cobre a metade direita e funde com gradiente */}
         <div
           className="absolute top-0 right-0 bottom-0 hidden sm:block pointer-events-none"
-          style={{ width: "calc(55% - 12px)" }}
+          style={{ width: "calc(55% - 28px)" }}
         >
           <img
             src={`${BASE}dizimo-hero-bg.jpg`}

@@ -6,10 +6,11 @@ interface PageHeroProps {
   logoSize?: number;
   sideImage?: string;
   sideImagePosition?: string;
+  sideImageWidth?: string;
   images?: { src: string; alt: string }[];
 }
 
-export function PageHero({ category, title, subtitle, logo, logoSize = 120, sideImage, sideImagePosition = "center", images }: PageHeroProps) { // eslint-disable-line
+export function PageHero({ category, title, subtitle, logo, logoSize = 120, sideImage, sideImagePosition = "center", sideImageWidth = "48%", images }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden"
@@ -45,7 +46,7 @@ export function PageHero({ category, title, subtitle, logo, logoSize = 120, side
 
       {/* ── Side image (blends naturally into blue) ── */}
       {sideImage && (
-        <div className="absolute top-0 right-0 bottom-0 hidden sm:block pointer-events-none" style={{ width: "48%" }}>
+        <div className="absolute top-0 right-0 bottom-0 hidden sm:block pointer-events-none" style={{ width: sideImageWidth }}>
           <img
             src={sideImage}
             alt=""
