@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { ArrowRight, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import dizimoBanner from "@assets/pastoral_dizimo_banner_1782857397028.png";
-import dizimoLogo from "@assets/Gemini_Generated_Image_8cr9k38cr9k38cr9_1782852303409.png";
 
 const BASE = import.meta.env.BASE_URL;
 const PHONE_DIZIMISTA = "5516991012308";
@@ -202,66 +201,29 @@ export default function PastoralDizimo() {
         </div>
       </section>
 
-      {/* ── Logo showcase final ── */}
-      <section
-        className="relative overflow-hidden py-20 flex flex-col items-center justify-center"
-        style={{
-          background: "linear-gradient(160deg, #080f22 0%, #0f1a3e 45%, #162860 100%)",
-        }}
-      >
-        {/* dot grid */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px)",
-            backgroundSize: "22px 22px",
-          }}
-        />
+      {/* ── Banner final ── */}
+      <section className="relative w-full overflow-hidden" style={{ background: "#07112b" }}>
         {/* faixa dourada topo */}
         <div
-          className="absolute top-0 left-0 right-0 h-px"
+          className="absolute top-0 left-0 right-0 h-px z-10"
           style={{
-            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.4) 35%, rgba(212,175,55,0.4) 65%, transparent 95%)",
+            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.45) 35%, rgba(212,175,55,0.45) 65%, transparent 95%)",
           }}
         />
 
-        {/* Ornamento de entrada */}
-        <div className="relative flex items-center gap-3 mb-10">
-          <div className="w-12 h-px bg-secondary/50" />
-          <div className="w-1.5 h-1.5 rotate-45 bg-secondary/60" />
-          <span className="text-secondary/70 font-bold tracking-[0.35em] uppercase text-[9px]">
-            Pastoral do Dízimo
-          </span>
-          <div className="w-1.5 h-1.5 rotate-45 bg-secondary/60" />
-          <div className="w-12 h-px bg-secondary/50" />
-        </div>
-
-        {/* Logo card */}
-        <div
-          className="relative flex items-center justify-center rounded-2xl p-6"
-          style={{
-            background: "rgba(255,255,255,0.96)",
-            boxShadow: "0 0 0 1px rgba(212,175,55,0.35), 0 0 60px rgba(212,175,55,0.18), 0 24px 80px rgba(0,0,0,0.55)",
-          }}
-        >
-          <img
-            src={dizimoLogo}
-            alt="Logo Pastoral do Dízimo"
-            className="w-64 sm:w-80 object-contain"
-            draggable={false}
-          />
-        </div>
-
-        {/* Frase abaixo */}
-        <p className="relative mt-10 text-white/40 font-light text-[12px] tracking-[0.2em] uppercase">
-          Fé · Gratidão · Corresponsabilidade
-        </p>
+        <img
+          src={`${import.meta.env.BASE_URL}pastoral-dizimo-banner.jpg`}
+          alt="Pastoral do Dízimo"
+          className="w-full object-cover"
+          style={{ display: "block", maxHeight: "420px", objectPosition: "center center" }}
+          draggable={false}
+        />
 
         {/* faixa dourada base */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-px"
+          className="absolute bottom-0 left-0 right-0 h-px z-10"
           style={{
-            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.25) 50%, transparent 95%)",
+            background: "linear-gradient(to right, transparent 5%, rgba(212,175,55,0.3) 50%, transparent 95%)",
           }}
         />
       </section>
