@@ -14,6 +14,7 @@ export default function PastoralFamiliar() {
         sideImage={`${import.meta.env.BASE_URL}logos/logo-familiar.png`}
         sideImagePosition="center center"
         sideImageWidth="30%"
+        sideWhiteOverlay={true}
       />
 
       {/* Descrição principal */}

@@ -7,10 +7,11 @@ interface PageHeroProps {
   sideImage?: string;
   sideImagePosition?: string;
   sideImageWidth?: string;
+  sideWhiteOverlay?: boolean;
   images?: { src: string; alt: string }[];
 }
 
-export function PageHero({ category, title, subtitle, logo, logoSize = 120, sideImage, sideImagePosition = "center", sideImageWidth = "48%", images }: PageHeroProps) {
+export function PageHero({ category, title, subtitle, logo, logoSize = 120, sideImage, sideImagePosition = "center", sideImageWidth = "48%", sideWhiteOverlay = false, images }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden"
@@ -61,6 +62,15 @@ export function PageHero({ category, title, subtitle, logo, logoSize = 120, side
               background: "linear-gradient(to right, #0f1a3e 0%, rgba(15,26,62,0.6) 30%, transparent 65%)",
             }}
           />
+          {/* White overlay cobrindo lado direito + base — só quando ativado */}
+          {sideWhiteOverlay && (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "radial-gradient(ellipse 120% 90% at 110% 110%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 40%, transparent 70%)",
+              }}
+            />
+          )}
         </div>
       )}
 
