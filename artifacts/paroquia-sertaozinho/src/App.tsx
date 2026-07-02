@@ -38,6 +38,7 @@ import Coral from "@/pages/Coral";
 import AssociacaoRosario from "@/pages/AssociacaoRosario";
 import PastoralFamiliar from "@/pages/PastoralFamiliar";
 import GrupoEvangelizacao from "@/pages/GrupoEvangelizacao";
+import SagradoCoracaoDeJesus from "@/pages/SagradoCoracaoDeJesus";
 import PastoralSobriedade from "@/pages/PastoralSobriedade";
 import PastoralDizimo from "@/pages/PastoralDizimo";
 import RenovacaoCarismatica from "@/pages/RenovacaoCarismatica";
@@ -101,6 +102,7 @@ function Router() {
       <Route path="/associacao-do-rosario"><Layout><AssociacaoRosario /></Layout></Route>
       <Route path="/pastoral-familiar"><Layout><PastoralFamiliar /></Layout></Route>
       <Route path="/grupo-de-evangelizacao"><Layout><GrupoEvangelizacao /></Layout></Route>
+      <Route path="/sagrado-coracao-de-jesus"><Layout><SagradoCoracaoDeJesus /></Layout></Route>
       <Route path="/pastoral-da-sobriedade"><Layout><PastoralSobriedade /></Layout></Route>
       <Route path="/pastoral-do-dizimo"><Layout><PastoralDizimo /></Layout></Route>
       <Route path="/renovacao-carismatica"><Layout><RenovacaoCarismatica /></Layout></Route>

@@ -35,6 +35,7 @@ const NAV_ITEMS = [
       { label: "Pastoral Familiar", href: "/pastoral-familiar" },
       { label: "Associação do Rosário", href: "/associacao-do-rosario" },
       { label: "Grupo de Evangelização Santa Teresinha", href: "/grupo-de-evangelizacao" },
+      { label: "Sagrado Coração de Jesus", href: "/sagrado-coracao-de-jesus" },
       { label: "Pastoral da Sobriedade", href: "/pastoral-da-sobriedade" },
       { label: "Pastoral do Dízimo", href: "/pastoral-do-dizimo" },
       { label: "Renovação Carismática", href: "/renovacao-carismatica" },

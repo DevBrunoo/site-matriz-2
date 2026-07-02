@@ -33,6 +33,20 @@ const PASTORAIS = [
     href: "/grupo-de-evangelizacao",
   },
   {
+    id: "terco-dos-homens",
+    nome: "Terço dos Homens",
+    desc: "Movimento mariano que reúne homens para rezar o Santo Terço, fortalecer a fé e crescer na vida cristã.",
+    icon: Heart,
+    href: "/terco-dos-homens",
+  },
+  {
+    id: "sagrado-coracao-de-jesus",
+    nome: "Sagrado Coração de Jesus",
+    desc: "Apostolado da Oração dedicado à espiritualidade do Sagrado Coração de Jesus, à oração pela Igreja e ao serviço fraterno.",
+    icon: Heart,
+    href: "/sagrado-coracao-de-jesus",
+  },
+  {
     id: "pastoral-da-sobriedade",
     nome: "Pastoral da Sobriedade",
     desc: "Pastoral voltada ao acolhimento e apoio de pessoas e famílias afetadas pelo alcoolismo e outras dependências químicas.",

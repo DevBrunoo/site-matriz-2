@@ -233,11 +233,12 @@ export default function Home() {
         variants={stagger}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-100">
             {[
               { icon: Clock, label: "Horários de Missa", desc: "Celebrações diárias na Matriz e semanais nas capelas da paróquia.", href: "/missas", cta: "Ver horários" },
               { icon: Heart, label: "Dízimo e Doações", desc: "Seja um dizimista fiel e contribua com a obra evangelizadora da nossa paróquia.", href: "/dizimo", cta: "Como participar" },
               { icon: Calendar, label: "Secretaria", desc: "Atendimento de terça a sexta das 08h às 17h30 e sábados das 08h às 12h.", href: "/secretaria", cta: "Fale conosco" },
+              { icon: Heart, label: "Terço dos Homens", desc: "Homens reunidos em oração mariana, fraternidade e testemunho de fé na comunidade.", href: "/terco-dos-homens", cta: "Conhecer" },
             ].map(({ icon: Icon, label, desc, href, cta }) => (
               <motion.div
                 key={label}

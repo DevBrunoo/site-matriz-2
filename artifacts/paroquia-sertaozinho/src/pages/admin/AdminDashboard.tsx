@@ -437,11 +437,12 @@ const SIDEBAR: SidebarGroup[] = [
     { id:"rcc", label:"RCC" }, { id:"tlc", label:"TLC" }, { id:"terco-dos-homens", label:"Terço dos Homens" },
     { id:"catequese", label:"Catequese" }, { id:"pascom", label:"PASCOM" },
     { id:"liturgia", label:"Liturgia" }, { id:"coral", label:"Coral" },
+    { id:"sagrado-coracao-de-jesus", label:"Sagrado Coração de Jesus" },
   ]},
 ];
 
 const SACRAMENTOS_KEYS = ["batismo","confissao","eucaristia","crisma","matrimonio"];
-const PASTORAIS_KEYS = ["rcc","tlc","terco-dos-homens","catequese","pascom","liturgia","coral"];
+const PASTORAIS_KEYS = ["rcc","tlc","terco-dos-homens","catequese","pascom","liturgia","coral","sagrado-coracao-de-jesus"];
 
 function SidebarGroup({ group, active, setActive }: { group: SidebarGroup; active: string; setActive: (s: string) => void }) {
   const [open, setOpen] = useState(() => group.items.some(i => i.id === active));

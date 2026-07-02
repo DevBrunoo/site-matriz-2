@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/PageHero";
+import { ExternalLink } from "lucide-react";
 
 const WA_LINK = "https://wa.me/5516994648668";
 
@@ -75,6 +76,15 @@ export default function Missas() {
             "10h00 – 12h00",
             "16h00 – 17h00",
           ]} />
+          <a
+            href="https://padrerafaelcosta.com/o-que-e-a-confissao-e-como-se-confessar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 mt-4 px-5 py-3 border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all group"
+          >
+            <ExternalLink className="w-4 h-4 shrink-0" />
+            <span className="font-semibold text-sm tracking-wide">Como se confessar</span>
+          </a>
         </Section>
 
         {/* Encontro das Pastorais */}
