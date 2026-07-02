@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import rainhaDaPaz from "@assets/Gemini_Generated_Image_tuv8n4tuv8n4tuv8_1783023162023.png";
 
 export default function RenovacaoCarismatica() {
   return (
@@ -11,14 +12,58 @@ export default function RenovacaoCarismatica() {
         subtitle="Um espaço de oração, louvor e fraternidade"
       />
 
-      {/* Descrição principal */}
-      <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-muted-foreground font-light leading-relaxed text-[15px]">
-            A Renovação Carismática Católica (RCC) é um movimento da Igreja que convida cada pessoa a fazer uma
-            experiência viva e pessoal com Jesus Cristo, por meio da ação do Espírito Santo. É um espaço de oração,
-            louvor e fraternidade, onde buscamos crescer na fé e na intimidade com Deus.
-          </p>
+      {/* ── FEATURE: imagem + apresentação ── */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Lado esquerdo: imagem com decoração */}
+            <div className="relative flex justify-center lg:justify-start">
+              <div className="absolute -top-5 -left-5 w-20 h-20 border-l-2 border-t-2 border-secondary/40 pointer-events-none" />
+              <div className="absolute -bottom-5 -right-5 w-20 h-20 border-r-2 border-b-2 border-secondary/40 pointer-events-none" />
+
+              <div className="relative w-full max-w-sm">
+                <div className="bg-white rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.13)] border border-gray-100 overflow-hidden">
+                  <img
+                    src={rainhaDaPaz}
+                    alt="Nossa Senhora Rainha da Paz"
+                    className="w-full max-h-96 object-cover"
+                  />
+                </div>
+
+                {/* Badge flutuante */}
+                <div className="absolute -bottom-5 -right-5 bg-white border border-gray-100 shadow-lg px-5 py-3">
+                  <p className="text-[9px] font-bold tracking-[0.24em] uppercase text-secondary mb-0.5">Padroeira do Movimento</p>
+                  <p className="font-display text-base font-bold text-primary leading-none">Rainha da Paz</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Lado direito: texto */}
+            <div className="lg:pl-4">
+              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-5">
+                O Movimento
+              </span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-primary leading-snug mb-6">
+                Uma experiência viva com Jesus
+              </h2>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-px bg-secondary" />
+                <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+              </div>
+              <div className="space-y-5 text-muted-foreground font-light leading-relaxed text-[15px]">
+                <p>
+                  A <span className="text-primary font-medium">Renovação Carismática Católica (RCC)</span> é um
+                  movimento da Igreja que convida cada pessoa a fazer uma experiência viva e pessoal com Jesus
+                  Cristo, por meio da ação do Espírito Santo.
+                </p>
+                <p>
+                  É um espaço de oração, louvor e fraternidade, onde buscamos crescer na fé e na intimidade com
+                  Deus.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
