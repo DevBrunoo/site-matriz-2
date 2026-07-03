@@ -94,12 +94,12 @@ export default function Pastorais() {
               return (
                 <motion.div key={p.id} variants={fadeUp}>
                   <Link href={p.href}>
-                    <div className={`group flex items-start gap-5 p-7 border transition-all cursor-pointer ${p.destaque ? "border-secondary/40 bg-secondary/5 hover:bg-secondary/10" : "border-gray-100 bg-white hover:border-secondary/30 hover:shadow-sm"}`}>
-                      <div className={`w-16 h-16 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border transition-colors ${p.destaque ? "bg-secondary/10 border-secondary/30 group-hover:border-secondary/50" : "bg-gray-50 border-gray-100 group-hover:border-secondary/30"}`}>
+                    <div className={`group flex flex-col sm:flex-row items-start gap-5 p-7 border transition-all cursor-pointer ${p.destaque ? "border-secondary/40 bg-secondary/5 hover:bg-secondary/10" : "border-gray-100 bg-white hover:border-secondary/30 hover:shadow-sm"}`}>
+                      <div className={`w-full h-44 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border transition-colors ${p.destaque ? "bg-secondary/10 border-secondary/30 group-hover:border-secondary/50" : "bg-gray-50 border-gray-100 group-hover:border-secondary/30"}`}>
                         <img
                           src={p.img}
                           alt={p.nome}
-                          className="w-full h-full object-contain p-1.5"
+                          className="w-full h-full object-contain p-3"
                           loading="lazy"
                         />
                       </div>
