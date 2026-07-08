@@ -104,7 +104,10 @@ export default function Missas() {
             "20h00 — Ensaio do Coral (exceto a 3ª quinta do mês)",
           ]} />
           <DayBlock day="Toda 3ª quinta-feira do mês" items={[
-            "20h00 — Adoração ao Santíssimo Sacramento",
+            "20h00 — Hora Santa",
+          ]} />
+          <DayBlock day="Toda quinta-feira (Capela)" items={[
+            "08h30 às 18h30 — Exposição do Santíssimo Sacramento",
           ]} />
           <DayBlock day="Sexta-feira" items={[
             "20h00 — Pastoral da Sobriedade (Centro Catequético)",

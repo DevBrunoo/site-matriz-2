@@ -93,8 +93,8 @@ export default function Historia() {
             <p className="text-primary font-medium">Ribeirão Preto</p>
           </div>
           <div className="sm:border-l sm:border-gray-200 sm:pl-6">
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-1">Fundação</p>
-            <p className="text-primary font-medium">1900</p>
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-1">Eregida</p>
+            <p className="text-primary font-medium">18.05.1900</p>
           </div>
         </motion.section>
 
