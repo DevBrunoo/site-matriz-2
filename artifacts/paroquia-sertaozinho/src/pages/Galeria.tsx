@@ -26,6 +26,8 @@ import img_ss_ressurreicao from "@assets/20260405_053841_1783481518444.jpg";
 import img_ss_grupo from "@assets/20260401_220953(0)_1783481525733.jpg";
 import img_tlc1 from "@assets/20250817_203552_1783481983366.jpg";
 
+const POR_PAGINA = 12;
+
 interface GaleriaItem {
   id: number;
   src: string;
@@ -69,20 +71,26 @@ const FOTOS: GaleriaItem[] = [
   { id: 34, src: "/galeria/cc21.png", alt: "Padres reunidos na celebração" },
 ];
 
+const TOTAL_PAGINAS = Math.ceil(FOTOS.length / POR_PAGINA);
+
 export default function Galeria() {
+  const [pagina, setPagina] = useState(1);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const inicio = (pagina - 1) * POR_PAGINA;
+  const fotosPagina = FOTOS.slice(inicio, inicio + POR_PAGINA);
 
   const closeLightbox = () => setLightboxIndex(null);
 
   const prevPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex - 1 + FOTOS.length) % FOTOS.length);
-  }, [lightboxIndex]);
+    setLightboxIndex((lightboxIndex - 1 + fotosPagina.length) % fotosPagina.length);
+  }, [lightboxIndex, fotosPagina.length]);
 
   const nextPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex + 1) % FOTOS.length);
-  }, [lightboxIndex]);
+    setLightboxIndex((lightboxIndex + 1) % fotosPagina.length);
+  }, [lightboxIndex, fotosPagina.length]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -95,6 +103,12 @@ export default function Galeria() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [lightboxIndex, prevPhoto, nextPhoto]);
 
+  const irParaPagina = (p: number) => {
+    setPagina(p);
+    setLightboxIndex(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <main className="w-full">
       <PageHero
@@ -105,8 +119,10 @@ export default function Galeria() {
 
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 space-y-3">
-            {FOTOS.map((foto, idx) => (
+            {fotosPagina.map((foto, idx) => (
               <div
                 key={foto.id}
                 className="break-inside-avoid group relative overflow-hidden cursor-pointer bg-gray-100"
@@ -115,13 +131,50 @@ export default function Galeria() {
                 <img
                   src={foto.src}
                   alt={foto.alt}
-                  loading={idx < 8 ? "eager" : "lazy"}
+                  loading={idx < 4 ? "eager" : "lazy"}
                   decoding="async"
+                  width={600}
                   className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
             ))}
           </div>
+
+          {/* Paginação */}
+          {TOTAL_PAGINAS > 1 && (
+            <div className="mt-12 flex items-center justify-center gap-2">
+              <button
+                disabled={pagina === 1}
+                onClick={() => irParaPagina(pagina - 1)}
+                className="p-2 text-gray-400 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              {Array.from({ length: TOTAL_PAGINAS }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  onClick={() => irParaPagina(p)}
+                  className={[
+                    "w-9 h-9 text-sm font-medium border transition-all",
+                    p === pagina
+                      ? "bg-primary text-white border-primary"
+                      : "bg-white text-foreground border-gray-200 hover:border-primary hover:text-primary",
+                  ].join(" ")}
+                >
+                  {p}
+                </button>
+              ))}
+
+              <button
+                disabled={pagina === TOTAL_PAGINAS}
+                onClick={() => irParaPagina(pagina + 1)}
+                className="p-2 text-gray-400 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -159,8 +212,8 @@ export default function Galeria() {
 
             <motion.img
               key={lightboxIndex}
-              src={FOTOS[lightboxIndex].src}
-              alt={FOTOS[lightboxIndex].alt}
+              src={fotosPagina[lightboxIndex].src}
+              alt={fotosPagina[lightboxIndex].alt}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.12 }}
@@ -169,7 +222,7 @@ export default function Galeria() {
             />
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/40 text-[11px] tracking-widest">
-              {lightboxIndex + 1} / {FOTOS.length}
+              {lightboxIndex + 1} / {fotosPagina.length}
             </div>
           </motion.div>
         )}
