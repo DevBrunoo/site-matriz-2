@@ -14,6 +14,9 @@ import img_sem2 from "@assets/IMG-20260531-WA0125_1783480660965.jpg";
 import img_dc1 from "@assets/20260522_151900_1783480660961.jpg";
 import img_ss_quaresma2 from "@assets/IMG-20260308-WA0067_1783480653257.jpg";
 import img_ss_procissao1 from "@assets/IMG_20260402_080608_811_1783480718511.jpg";
+import img_svp1 from "@assets/20260111_174919_(1)_1783538694746.jpg";
+import img_svp2 from "@assets/IMG_20251130_210403_645_1783538694747.jpg";
+import img_svp3 from "@assets/IMG_20260402_080608_882_1783538694748.jpg";
 import img_ss_vigilia1 from "@assets/20260404_221646_1783480653251.jpg";
 import img_ss_vigilia2 from "@assets/20260404_223853_1783480755257.jpg";
 import img_ss_procissao2 from "@assets/20260401_201346_1783481518442.jpg";
@@ -38,15 +41,15 @@ interface GaleriaItem {
 }
 
 const FOTOS: GaleriaItem[] = [
-  { id: 1,  src: img_missa1,           alt: "Celebração eucarística",               cat: "matriz" },
-  { id: 2,  src: img_missa2,           alt: "Padre distribuindo comunhão",           cat: "matriz" },
+  { id: 1,  src: img_missa1,           alt: "Celebração eucarística",               cat: "capelas" },
+  { id: 2,  src: img_missa2,           alt: "Padre distribuindo comunhão",           cat: "capelas" },
   { id: 3,  src: img_padre1,           alt: "Padre celebrando missa",                cat: "matriz" },
   { id: 4,  src: img_padre2,           alt: "Padre com microfone",                   cat: "matriz" },
   { id: 5,  src: img_padre3,           alt: "Padre na elevação",                     cat: "matriz" },
   { id: 6,  src: img_sem1,             alt: "Seminarista com padre",                 cat: "matriz" },
   { id: 7,  src: img_sem2,             alt: "Seminarista na celebração",             cat: "matriz" },
   { id: 8,  src: img_dc1,              alt: "Diácono no ambão",                      cat: "matriz" },
-  { id: 9,  src: img_ss_quaresma2,    alt: "Elevação na Quaresma",                  cat: "semana-santa" },
+  { id: 9,  src: img_ss_quaresma2,    alt: "Elevação na Quaresma",                  cat: "capelas" },
   { id: 10, src: img_ss_procissao1,   alt: "Procissão noturna",                     cat: "semana-santa" },
   { id: 11, src: img_ss_vigilia1,     alt: "Vigília Pascal",                        cat: "semana-santa" },
   { id: 12, src: img_ss_vigilia2,     alt: "Coroinhas na Vigília Pascal",           cat: "semana-santa" },
@@ -71,6 +74,9 @@ const FOTOS: GaleriaItem[] = [
   { id: 31, src: "/galeria/cc19.png", alt: "Crucifixo e Nossa Senhora Aparecida",   cat: "celebracoes" },
   { id: 32, src: "/galeria/cc20.png", alt: "Celebração em arena — padres no altar", cat: "celebracoes" },
   { id: 33, src: "/galeria/cc21.png", alt: "Padres reunidos na celebração",          cat: "celebracoes" },
+  { id: 34, src: img_svp1,            alt: "Celebração na Capela São Vicente",       cat: "capelas" },
+  { id: 35, src: img_svp2,            alt: "Adoração na Capela São Vicente",         cat: "capelas" },
+  { id: 36, src: img_svp3,            alt: "Crucifixo — São Vicente de Paulo",       cat: "capelas" },
 ];
 
 const CATEGORIAS: { key: Categoria; label: string }[] = [
