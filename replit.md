@@ -55,7 +55,7 @@ O app é servido pelo Vite. Para iniciar no Replit:
 
 - `PORT` — porta do servidor de desenvolvimento (usar `5000` no Replit para o preview webview funcionar).
 - `BASE_PATH` — caminho base para deploy em subdiretório (padrão: `/`).
-- `SESSION_SECRET` — segredo para autenticação do painel administrativo (já configurado nos secrets do Replit).
+- `SESSION_SECRET` — disponível nos secrets do Replit para uso futuro (por exemplo, autenticação server-side do painel administrativo).
 
 ## Deployment
 
