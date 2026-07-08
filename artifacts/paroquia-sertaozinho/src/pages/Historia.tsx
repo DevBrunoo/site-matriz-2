@@ -40,6 +40,51 @@ export default function Historia() {
           </motion.div>
         </motion.section>
 
+        {/* Jubileu 125 Anos */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }} variants={stagger}>
+          <motion.div variants={fadeUp} className="mb-8">
+            <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-secondary block mb-3">1900 – 2025</span>
+            <h2 className="font-display text-3xl font-bold text-primary mb-4">Jubileu Paroquial · 125 Anos</h2>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-secondary" />
+              <div className="w-2 h-2 rotate-45 bg-secondary/50" />
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+            {/* Logo */}
+            <motion.div variants={fadeUp} className="flex justify-center sm:justify-start">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-300/30 via-blue-900/10 to-yellow-400/20 blur-2xl scale-110" />
+                <img
+                  src={`${import.meta.env.BASE_URL}logo-jubileu.jpg`}
+                  alt="Logo do Jubileu 125 Anos – Paróquia Nossa Senhora Aparecida"
+                  className="relative w-64 h-64 sm:w-72 sm:h-72 object-cover rounded-full shadow-2xl border-4 border-yellow-400/60"
+                />
+              </div>
+            </motion.div>
+
+            {/* Descrição */}
+            <motion.div variants={fadeUp} className="space-y-4 text-muted-foreground font-light leading-relaxed text-sm">
+              <p className="italic text-secondary font-medium text-base">
+                "Plantando a fé, espalhando esperança e buscando a caridade."
+              </p>
+              <p>
+                Todo logo é circundado por uma <strong className="text-primary font-medium">faixa amarela (dourada)</strong> que quer lembrar a majestade divina do nosso Deus, criador de todas as coisas. Também em amarelo dourado, compondo o centro do logo, uma <strong className="text-primary font-medium">espiga de trigo</strong> — cujos grãos representam todos os paroquianos que dão vida à comunidade.
+              </p>
+              <p>
+                Fazendo parte do círculo, aparecem o <strong className="text-primary font-medium">Jubileu – 125 anos</strong> e o nome da paróquia, lembrando que ela faz parte deste divino círculo criador, que é infinito, não tem começo nem fim, tal qual a obra da criação.
+              </p>
+              <p>
+                Bem no centro está a silhueta do <strong className="text-primary font-medium">Templo Matriz</strong>, local de encontro dos irmãos, encimada pela imagem da Padroeira, <strong className="text-primary font-medium">Nossa Senhora Aparecida</strong>. Abaixo, em azul claro, as águas do Rio Paraíba do Sul — onde foi encontrada em 1717 a pequena Imagem da Imaculada Conceição — trazem a frase de Maria: <em>"Fazei tudo o que ele vos disser" (Jo 2,5)</em>.
+              </p>
+              <p>
+                Por fim, todo o logo é preenchido pelo <strong className="text-primary font-medium">Azul Marinho</strong>, a cor do Manto da Padroeira, da Senhora e Mãe Aparecida.
+              </p>
+            </motion.div>
+          </div>
+        </motion.section>
+
         {/* O Brasão */}
         <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }} variants={stagger}>
           <motion.div variants={fadeUp} className="mb-8">

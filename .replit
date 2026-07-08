@@ -32,8 +32,8 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd artifacts/paroquia-sertaozinho && pnpm dev"
-waitForPort = 5173
+args = "cd artifacts/paroquia-sertaozinho && PORT=5000 pnpm dev"
+waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
