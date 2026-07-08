@@ -11,7 +11,6 @@ import img_padre3 from "@assets/20260612_160233_1783480660964.jpg";
 import img_sem1 from "@assets/IMG-20260423-WA0078_1783480660965.jpg";
 import img_sem2 from "@assets/IMG-20260531-WA0125_1783480660965.jpg";
 import img_dc1 from "@assets/20260522_151900_1783480660961.jpg";
-import img_ss_quaresma1 from "@assets/IMG_20260308_101345_514_1783480653254.jpg";
 import img_ss_quaresma2 from "@assets/IMG-20260308-WA0067_1783480653257.jpg";
 import img_ss_procissao1 from "@assets/IMG_20260402_080608_811_1783480718511.jpg";
 import img_ss_vigilia1 from "@assets/20260404_221646_1783480653251.jpg";
@@ -43,7 +42,6 @@ const FOTOS: GaleriaItem[] = [
   { id: 6,  src: img_sem1,             alt: "Seminarista com padre" },
   { id: 7,  src: img_sem2,             alt: "Seminarista na celebração" },
   { id: 8,  src: img_dc1,              alt: "Diácono no ambão" },
-  { id: 9,  src: img_ss_quaresma1,    alt: "Missa da Quaresma" },
   { id: 10, src: img_ss_quaresma2,    alt: "Elevação na Quaresma" },
   { id: 11, src: img_ss_procissao1,   alt: "Procissão noturna" },
   { id: 12, src: img_ss_vigilia1,     alt: "Vigília Pascal" },
