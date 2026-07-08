@@ -44,6 +44,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Padres e Diáconos", href: "/padres", children: [] },
+  { label: "Galeria", href: "/galeria", children: [] },
   {
     label: "Reforma da Paróquia",
     href: "/reforma-da-paroquia",

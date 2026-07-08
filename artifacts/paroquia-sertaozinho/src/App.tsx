@@ -47,6 +47,7 @@ import Dizimo from "@/pages/Dizimo";
 import Cartazes from "@/pages/Cartazes";
 import ReformaParoquia from "@/pages/ReformaParoquia";
 import PastoralBatismo from "@/pages/PastoralBatismo";
+import Galeria from "@/pages/Galeria";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -106,6 +107,9 @@ function Router() {
       <Route path="/pastoral-da-sobriedade"><Layout><PastoralSobriedade /></Layout></Route>
       <Route path="/pastoral-do-dizimo"><Layout><PastoralDizimo /></Layout></Route>
       <Route path="/renovacao-carismatica"><Layout><RenovacaoCarismatica /></Layout></Route>
+
+      {/* Galeria */}
+      <Route path="/galeria"><Layout><Galeria /></Layout></Route>
 
       {/* Outros */}
       <Route path="/reforma-da-paroquia"><Layout><ReformaParoquia /></Layout></Route>
