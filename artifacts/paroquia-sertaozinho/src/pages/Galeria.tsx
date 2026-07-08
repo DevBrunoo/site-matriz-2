@@ -78,6 +78,8 @@ const FOTOS: GaleriaItem[] = [
   { id: 30, src: "/galeria/cc16.png", alt: "Padre pregando em arena",              categoria: "corpus-christi", descricao: "Homilia durante o evento" },
   { id: 31, src: "/galeria/cc18.png", alt: "Celebração em arena",                  categoria: "corpus-christi", descricao: "Celebração Eucarística" },
   { id: 32, src: "/galeria/cc19.png", alt: "Crucifixo e Nossa Senhora Aparecida",  categoria: "corpus-christi", descricao: "Crucifixo e imagem de Nossa Senhora Aparecida" },
+  { id: 33, src: "/galeria/cc20.png", alt: "Celebração em arena — padres no altar", categoria: "corpus-christi", descricao: "Celebração na arena" },
+  { id: 34, src: "/galeria/cc21.png", alt: "Padres reunidos na celebração",         categoria: "corpus-christi", descricao: "Padres durante a celebração" },
 ];
 
 const CATEGORIAS: { key: Category; label: string }[] = [
