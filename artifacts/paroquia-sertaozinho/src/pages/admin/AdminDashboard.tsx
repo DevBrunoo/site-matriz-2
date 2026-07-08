@@ -13,6 +13,7 @@ import {
   getPosters, savePosters, Poster,
   getCapelas, saveCapelas, CapelaDado,
   getPadres, savePadres, PadreDado,
+  getGaleriaFotos, saveGaleriaFotos, FotoGaleria,
   getContentBlock, updateContentBlock, ContentBlock, ContentItem,
   generateId,
 } from "@/lib/adminData";
@@ -422,13 +423,137 @@ function ContentBlockEditor({ blockKey, groupLabel }: { blockKey: string; groupL
   );
 }
 
+// ─── Galeria ──────────────────────────────────────────────────────────────────
+function GaleriaSection() {
+  const [data, setData] = useState<FotoGaleria[]>([]);
+  const [saved, setSaved] = useState(false);
+  const [altForm, setAltForm] = useState("");
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => { setData(getGaleriaFotos()); }, []);
+
+  function persist(d: FotoGaleria[]) {
+    setData(d); saveGaleriaFotos(d);
+    setSaved(true); setTimeout(() => setSaved(false), 1500);
+  }
+
+  function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    const arr = Array.from(files);
+    let done = 0;
+    const results: FotoGaleria[] = [];
+    arr.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        results.push({ id: generateId(), imageDataUrl: reader.result as string, alt: file.name.replace(/\.[^/.]+$/, "") });
+        done++;
+        if (done === arr.length) {
+          setUploading(false);
+          if (arr.length === 1) {
+            setPreviewUrl(results[0].imageDataUrl);
+            setAltForm(results[0].alt);
+            setShowForm(true);
+          } else {
+            persist([...getGaleriaFotos(), ...results]);
+            if (fileRef.current) fileRef.current.value = "";
+          }
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function confirmSingle() {
+    if (!previewUrl) return;
+    persist([...getGaleriaFotos(), { id: generateId(), imageDataUrl: previewUrl, alt: altForm }]);
+    setPreviewUrl(""); setAltForm(""); setShowForm(false);
+    if (fileRef.current) fileRef.current.value = "";
+  }
+
+  function cancelSingle() {
+    setPreviewUrl(""); setAltForm(""); setShowForm(false);
+    if (fileRef.current) fileRef.current.value = "";
+  }
+
+  function del(id: string) {
+    if (confirm("Remover esta foto da galeria?")) persist(data.filter(f => f.id !== id));
+  }
+
+  return (
+    <div>
+      <SectionHeader title="Galeria de Fotos" subtitle="Adicione e remova fotos da página Galeria" saved={saved} />
+
+      <div className="mb-6">
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={handleFile}
+          className="hidden"
+        />
+        <button
+          onClick={() => fileRef.current?.click()}
+          disabled={uploading}
+          className="flex items-center gap-2 border border-dashed border-secondary px-5 py-3 text-sm text-secondary font-medium hover:bg-secondary/5 transition-colors disabled:opacity-50"
+        >
+          <Upload className="w-4 h-4" />
+          {uploading ? "Carregando..." : "Adicionar fotos"}
+        </button>
+        <p className="text-xs text-muted-foreground font-light mt-2">Selecione uma ou várias fotos de uma vez.</p>
+      </div>
+
+      {showForm && previewUrl && (
+        <div className="border border-secondary/30 bg-secondary/5 p-5 mb-6">
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Confirmar foto</h3>
+          <div className="flex gap-5 mb-4">
+            <img src={previewUrl} alt="preview" className="h-28 object-cover border border-gray-100 shrink-0" />
+            <div className="flex-1">
+              <Field label="Descrição / legenda">
+                <Input value={altForm} onChange={setAltForm} placeholder="Ex: Procissão de Corpus Christi" />
+              </Field>
+            </div>
+          </div>
+          <div className="flex gap-3 justify-end">
+            <button onClick={cancelSingle} className="flex items-center gap-1.5 px-4 py-2 border border-gray-200 text-sm text-muted-foreground hover:border-gray-300 transition-colors"><X className="w-3.5 h-3.5" /> Cancelar</button>
+            <button onClick={confirmSingle} className="flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors"><Check className="w-3.5 h-3.5" /> Adicionar</button>
+          </div>
+        </div>
+      )}
+
+      {data.length === 0 ? (
+        <p className="text-muted-foreground font-light text-sm py-8 text-center">Nenhuma foto adicionada pelo admin ainda.</p>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          {data.map(foto => (
+            <div key={foto.id} className="relative group border border-gray-100 overflow-hidden">
+              <img src={foto.imageDataUrl} alt={foto.alt} className="w-full h-28 object-cover" />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button onClick={() => del(foto.id)} className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors">
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </div>
+              {foto.alt && <p className="text-[10px] text-muted-foreground font-light px-2 py-1 truncate">{foto.alt}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
 type SidebarGroup = { label: string; icon: React.ComponentType<{className?:string}>; items: { id: string; label: string }[] };
 
 const SIDEBAR: SidebarGroup[] = [
   { label: "Comunicação", icon: Bell, items: [{ id:"avisos", label:"Avisos" }, { id:"cartazes", label:"Cartazes" }] },
   { label: "Agenda", icon: Calendar, items: [{ id:"eventos", label:"Eventos" }, { id:"horarios", label:"Horários de Missa" }] },
-  { label: "Paróquia", icon: MapPin, items: [{ id:"capelas", label:"Capelas" }, { id:"padres", label:"Padres e Diáconos" }] },
+  { label: "Paróquia", icon: MapPin, items: [{ id:"capelas", label:"Capelas" }, { id:"padres", label:"Padres e Diáconos" }, { id:"galeria", label:"Galeria de Fotos" }] },
   { label: "Sacramentos", icon: Cross, items: [
     { id:"batismo", label:"Batismo" }, { id:"confissao", label:"Confissão" },
     { id:"eucaristia", label:"Eucaristia" }, { id:"crisma", label:"Crisma" }, { id:"matrimonio", label:"Matrimônio" },
@@ -476,6 +601,7 @@ export default function AdminDashboard() {
     if (active === "cartazes") return <CargazesSection />;
     if (active === "capelas") return <CapelasSection />;
     if (active === "padres") return <PadresSection />;
+    if (active === "galeria") return <GaleriaSection />;
     if (SACRAMENTOS_KEYS.includes(active)) return <ContentBlockEditor blockKey={active} groupLabel="Sacramento" />;
     if (PASTORAIS_KEYS.includes(active)) return <ContentBlockEditor blockKey={active} groupLabel="Pastoral" />;
     return null;

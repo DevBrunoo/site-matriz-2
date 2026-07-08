@@ -17,6 +17,10 @@ export interface CapelaDado {
 export interface PadreDado {
   id: string; tipo: string; nome: string; ordenacao: string; bio: string; contato: string;
 }
+export interface FotoGaleria {
+  id: string; imageDataUrl: string; alt: string;
+}
+
 export interface ContentItem { label: string; info: string; }
 export interface ContentBlock {
   key: string; titulo: string; subtitulo: string;
@@ -127,6 +131,9 @@ export const saveCapelas = (d: CapelaDado[]) => save("admin_capelas", d);
 
 export const getPadres = (): PadreDado[] => load("admin_padres", defaultPadres);
 export const savePadres = (d: PadreDado[]) => save("admin_padres", d);
+
+export const getGaleriaFotos = (): FotoGaleria[] => load("admin_galeria", [] as FotoGaleria[]);
+export const saveGaleriaFotos = (d: FotoGaleria[]) => save("admin_galeria", d);
 
 export const getContentBlocks = (): ContentBlock[] => load("admin_content_blocks", defaultContentBlocks);
 export const saveContentBlocks = (d: ContentBlock[]) => save("admin_content_blocks", d);

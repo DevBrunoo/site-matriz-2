@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { getGaleriaFotos } from "@/lib/adminData";
 
 import img_missa1 from "@assets/20260111_174919_1783480653247.jpg";
 import img_missa2 from "@assets/20260111_175549_1783480653247.jpg";
@@ -69,14 +70,22 @@ const FOTOS: GaleriaItem[] = [
   { id: 34, src: "/galeria/cc21.png", alt: "Padres reunidos na celebração" },
 ];
 
-const TOTAL_PAGINAS = Math.ceil(FOTOS.length / POR_PAGINA);
-
 export default function Galeria() {
   const [pagina, setPagina] = useState(1);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [todasFotos, setTodasFotos] = useState(FOTOS);
 
+  useEffect(() => {
+    const extras = getGaleriaFotos();
+    if (extras.length > 0) {
+      const next = extras.map((f, i) => ({ id: 1000 + i, src: f.imageDataUrl, alt: f.alt }));
+      setTodasFotos([...FOTOS, ...next]);
+    }
+  }, []);
+
+  const totalPaginas = Math.ceil(todasFotos.length / POR_PAGINA);
   const inicio = (pagina - 1) * POR_PAGINA;
-  const fotosPagina = FOTOS.slice(inicio, inicio + POR_PAGINA);
+  const fotosPagina = todasFotos.slice(inicio, inicio + POR_PAGINA);
 
   const closeLightbox = () => setLightboxIndex(null);
 
@@ -139,7 +148,7 @@ export default function Galeria() {
           </div>
 
           {/* Paginação */}
-          {TOTAL_PAGINAS > 1 && (
+          {totalPaginas > 1 && (
             <div className="mt-12 flex items-center justify-center gap-2">
               <button
                 disabled={pagina === 1}
@@ -149,7 +158,7 @@ export default function Galeria() {
                 <ChevronLeft className="w-5 h-5" />
               </button>
 
-              {Array.from({ length: TOTAL_PAGINAS }, (_, i) => i + 1).map((p) => (
+              {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((p) => (
                 <button
                   key={p}
                   onClick={() => irParaPagina(p)}
@@ -165,7 +174,7 @@ export default function Galeria() {
               ))}
 
               <button
-                disabled={pagina === TOTAL_PAGINAS}
+                disabled={pagina === totalPaginas}
                 onClick={() => irParaPagina(pagina + 1)}
                 className="p-2 text-gray-400 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
