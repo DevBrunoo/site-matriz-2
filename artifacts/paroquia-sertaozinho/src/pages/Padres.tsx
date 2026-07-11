@@ -56,11 +56,6 @@ export default function Padres() {
                   <p className="text-[11px] text-secondary font-medium mb-3 tracking-widest uppercase">
                     {p.ordenacao}
                   </p>
-                  {p.nascimento?.trim() && (
-                    <p className="text-[11px] text-primary font-medium mb-2 tracking-wide uppercase">
-                      Aniversário Natalício: {p.nascimento}
-                    </p>
-                  )}
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
                     {p.bio}
                   </p>

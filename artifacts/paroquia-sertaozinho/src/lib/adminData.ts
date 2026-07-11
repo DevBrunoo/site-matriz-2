@@ -15,7 +15,7 @@ export interface CapelaDado {
   id: string; nome: string; endereco: string; setor: string; missas: string; destaque: boolean;
 }
 export interface PadreDado {
-  id: string; tipo: string; nome: string; ordenacao: string; nascimento: string; bio: string; contato: string;
+  id: string; tipo: string; nome: string; ordenacao: string; bio: string; contato: string;
 }
 export interface FotoGaleria {
   id: string; imageDataUrl: string; alt: string;
@@ -64,10 +64,10 @@ const defaultCapelas: CapelaDado[] = [
 ];
 
 const defaultPadres: PadreDado[] = [
-  { id: "1", tipo: "Pároco", nome: "Pe. Sérgio Donizetti Carmona", ordenacao: "Ordenação: 02/06/1996", nascimento: "", bio: "Nascido em 29/03/1964. Ordenado sacerdote em 02/06/1996. Atuou como Vigário da Capela do Senhor Bom Jesus da Paróquia Nossa Senhora Aparecida (1996–2000), na Paróquia Santa Cruz (1996–2002) e como Coordenador Arquidiocesano de Pastoral (2001–2013). Atualmente é Assessor Eclesiástico Arquidiocesano da Pastoral do Dízimo e Pároco da Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
-  { id: "2", tipo: "Padre Auxiliar", nome: "Pe. Rafael Costa do Nascimento", ordenacao: "Ordenação: 11/11/2023", nascimento: "11/12/1990", bio: "Nascido em 11/12/1990. Ingressou em uma comunidade missionária em 2010. Iniciou os estudos em 2015 na Universidade de Szczecin (Polônia) e concluiu na Universidade de Poznan (Polônia) em 2021. Ordenado sacerdote em 11/11/2023. Idealizador do projeto Santo Encontro — unir solteiros católicos, formar casais e construir famílias de Deus: www.santoencontro.com", contato: "" },
-  { id: "3", tipo: "Diácono Permanente", nome: "Diácono Jorge Silva", ordenacao: "Ordenação: 09/08/2025", nascimento: "", bio: "Nascido em 21/02/1959. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Ordenado diácono em 09/08/2025. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
-  { id: "4", tipo: "Diácono Permanente", nome: "Diácono José Marçal Pereira", ordenacao: "Ordenação: 09/08/2025", nascimento: "", bio: "Nascido em 21/08/1966. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Ordenado diácono em 09/08/2025. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
+  { id: "1", tipo: "Pároco", nome: "Pe. Sérgio Donizetti Carmona", ordenacao: "Ordenação: 02/06/1996", bio: "Nascido em 29/03/1964. Ordenado sacerdote em 02/06/1996. Atuou como Vigário da Capela do Senhor Bom Jesus da Paróquia Nossa Senhora Aparecida (1996–2000), na Paróquia Santa Cruz (1996–2002) e como Coordenador Arquidiocesano de Pastoral (2001–2013). Atualmente é Assessor Eclesiástico Arquidiocesano da Pastoral do Dízimo e Pároco da Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
+  { id: "2", tipo: "Padre Auxiliar", nome: "Pe. Rafael Costa do Nascimento", ordenacao: "Ordenação: 11/11/2023", bio: "Nascido em 11/12/1990. Ingressou em uma comunidade missionária em 2010. Iniciou os estudos em 2015 na Universidade de Szczecin (Polônia) e concluiu na Universidade de Poznan (Polônia) em 2021. Ordenado sacerdote em 11/11/2023. Idealizador do projeto Santo Encontro — unir solteiros católicos, formar casais e construir famílias de Deus: www.santoencontro.com", contato: "" },
+  { id: "3", tipo: "Diácono Permanente", nome: "Diácono Jorge Silva", ordenacao: "Ordenação: 09/08/2025", bio: "Nascido em 21/02/1959. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Ordenado diácono em 09/08/2025. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
+  { id: "4", tipo: "Diácono Permanente", nome: "Diácono José Marçal Pereira", ordenacao: "Ordenação: 09/08/2025", bio: "Nascido em 21/08/1966. Ingressou na Escola Diaconal São Lourenço da Arquidiocese de Ribeirão Preto em 2018. Ordenado diácono em 09/08/2025. Diácono na Paróquia Nossa Senhora Aparecida de Sertãozinho.", contato: "" },
 ];
 
 const defaultContentBlocks: ContentBlock[] = [
@@ -129,8 +129,8 @@ export const savePosters = (d: Poster[]) => save("admin_posters", d);
 export const getCapelas = (): CapelaDado[] => load("admin_capelas", defaultCapelas);
 export const saveCapelas = (d: CapelaDado[]) => save("admin_capelas", d);
 
-export const getPadres = (): PadreDado[] => load("admin_padres_v2", defaultPadres);
-export const savePadres = (d: PadreDado[]) => save("admin_padres_v2", d);
+export const getPadres = (): PadreDado[] => load("admin_padres", defaultPadres);
+export const savePadres = (d: PadreDado[]) => save("admin_padres", d);
 
 export const getGaleriaFotos = (): FotoGaleria[] => load("admin_galeria", [] as FotoGaleria[]);
 export const saveGaleriaFotos = (d: FotoGaleria[]) => save("admin_galeria", d);
