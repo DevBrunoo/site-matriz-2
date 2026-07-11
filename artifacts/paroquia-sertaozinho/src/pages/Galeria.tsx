@@ -28,6 +28,7 @@ import img_ss_elevacao from "@assets/20260404_223849_1783481518443.jpg";
 import img_ss_ressurreicao from "@assets/20260405_053841_1783481518444.jpg";
 import img_ss_grupo from "@assets/20260401_220953(0)_1783481525733.jpg";
 import img_tlc1 from "@assets/20250817_203552_1783481983366.jpg";
+import img_padroeira1 from "@assets/nossa-senhora-aparecida-1.jpg";
 
 const POR_PAGINA = 12;
 
@@ -62,7 +63,8 @@ const FOTOS: GaleriaItem[] = [
   { id: 19, src: img_ss_ressurreicao, alt: "Imagem da Ressurreição",                cat: "semana-santa" },
   { id: 20, src: img_ss_grupo,        alt: "Grupo Semana Santa",                    cat: "semana-santa" },
   { id: 21, src: img_tlc1,            alt: "TLC — Treinamento de Liderança Cristã", cat: "celebracoes" },
-  { id: 22, src: "/galeria/cc1.png",  alt: "Corpus Christi — exposição",            cat: "celebracoes" },
+  { id: 22, src: img_padroeira1,      alt: "Nossa Senhora Aparecida",               cat: "festa-padroeira" },
+  { id: 23, src: "/galeria/cc1.png",  alt: "Corpus Christi — exposição",            cat: "celebracoes" },
   { id: 23, src: "/galeria/cc4.png",  alt: "Corpus Christi — padre no púlpito",     cat: "celebracoes" },
   { id: 24, src: "/galeria/cc6.png",  alt: "Corpus Christi — padres ajoelhados",    cat: "celebracoes" },
   { id: 25, src: "/galeria/cc8.png",  alt: "Procissão de Corpus Christi",           cat: "celebracoes" },

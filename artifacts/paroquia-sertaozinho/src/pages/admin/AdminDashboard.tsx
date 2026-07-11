@@ -320,14 +320,14 @@ const TIPOS_CLERO = ["Pároco","Padre Auxiliar","Diácono Permanente","Diácono 
 function PadresSection() {
   const [data, setData] = useState<PadreDado[]>([]);
   const [editing, setEditing] = useState<string|null>(null);
-  const [form, setForm] = useState({ tipo:"Padre Auxiliar", nome:"", ordenacao:"", bio:"", contato:"" });
+  const [form, setForm] = useState({ tipo:"Padre Auxiliar", nome:"", ordenacao:"", nascimento:"", bio:"", contato:"" });
   const [show, setShow] = useState(false);
   const [saved, setSaved] = useState(false);
   useEffect(() => { setData(getPadres()); }, []);
   function persist(d: PadreDado[]) { setData(d); savePadres(d); setSaved(true); setTimeout(() => setSaved(false), 1500); }
-  function open(p?: PadreDado) { setEditing(p?.id??null); setForm(p?{tipo:p.tipo,nome:p.nome,ordenacao:p.ordenacao,bio:p.bio,contato:p.contato}:{tipo:"Padre Auxiliar",nome:"",ordenacao:"",bio:"",contato:""}); setShow(true); }
+  function open(p?: PadreDado) { setEditing(p?.id??null); setForm(p?{tipo:p.tipo,nome:p.nome,ordenacao:p.ordenacao,nascimento:p.nascimento,bio:p.bio,contato:p.contato}:{tipo:"Padre Auxiliar",nome:"",ordenacao:"",nascimento:"",bio:"",contato:""}); setShow(true); }
   function close() { setShow(false); setEditing(null); }
-  function doSave() { if(!form.nome.trim()) return; editing ? persist(data.map(p=>p.id===editing?{...form,id:editing}:p)) : persist([...data,{...form,id:generateId()}]); close(); }
+  function doSave() { if(!form.nome.trim()) return; editing ? persist(data.map(p=>p.id===editing?{...form,id:editing}:p)) : persist([...data,{...form,id:generateId()}] as PadreDado[]); close(); }
   function del(id:string) { if(confirm("Excluir?")) persist(data.filter(p=>p.id!==id)); }
   return (
     <div>
@@ -337,6 +337,7 @@ function PadresSection() {
           <Field label="Tipo"><Select value={form.tipo} onChange={v=>setForm(p=>({...p,tipo:v}))} options={TIPOS_CLERO} /></Field>
           <Field label="Nome Completo"><Input value={form.nome} onChange={v=>setForm(p=>({...p,nome:v}))} placeholder="Pe. / Dc. ..." /></Field>
           <Field label="Ordenação"><Input value={form.ordenacao} onChange={v=>setForm(p=>({...p,ordenacao:v}))} placeholder="Ordenado em 2010" /></Field>
+          <Field label="Aniversário Natalício"><Input value={form.nascimento} onChange={v=>setForm(p=>({...p,nascimento:v}))} placeholder="dd/mm/aaaa" /></Field>
           <Field label="E-mail"><Input value={form.contato} onChange={v=>setForm(p=>({...p,contato:v}))} placeholder="email@..." /></Field>
         </div>
         <Field label="Biografia"><Textarea value={form.bio} onChange={v=>setForm(p=>({...p,bio:v}))} placeholder="Mini bio..." rows={3} /></Field>
