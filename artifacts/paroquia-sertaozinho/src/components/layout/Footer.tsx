@@ -119,7 +119,7 @@ export function Footer() {
           <p>&copy; {new Date().getFullYear()} Paróquia Nossa Senhora Aparecida. Sertãozinho - SP.</p>
           <p>
             Feito por{" "}
-            <a href="https://engcre.com.br" target="_blank" rel="noopener noreferrer" className="text-secondary/80 hover:text-secondary transition-colors">
+            <a href="https://engcre.site/" target="_blank" rel="noopener noreferrer" className="text-secondary/80 hover:text-secondary transition-colors">
               EngCre
             </a>
           </p>
