@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paroquianossasenhoraaparecida.com.br/sitemap.xml
