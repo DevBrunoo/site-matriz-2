@@ -88,7 +88,6 @@ export default function Home() {
               initial={{ scale: 1 }}
               animate={{ scale: 1.08 }}
               transition={{ duration: 7, ease: "linear" }}
-              {...(current === 0 ? { fetchPriority: "high" } : { loading: "lazy", decoding: "async" })}
             />
           </motion.div>
         </AnimatePresence>
