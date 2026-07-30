@@ -12,9 +12,11 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 // Home is the initial page — keep eager so it renders immediately
 import Home from "@/pages/Home";
 
+// Admin pages kept eager — critical auth flow, no benefit to lazy-loading
+import AdminLogin from "@/pages/admin/AdminLogin";
+import AdminDashboard from "@/pages/admin/AdminDashboard";
+
 // All other pages lazy-loaded → smaller initial JS bundle
-const AdminLogin      = lazy(() => import("@/pages/admin/AdminLogin"));
-const AdminDashboard  = lazy(() => import("@/pages/admin/AdminDashboard"));
 
 const Historia        = lazy(() => import("@/pages/Historia"));
 const Capelas         = lazy(() => import("@/pages/Capelas"));
@@ -135,11 +137,9 @@ function Router() {
       <Route path="/cartazes"><Layout><Cartazes /></Layout></Route>
 
       {/* Admin — no Layout wrapper */}
-      <Route path="/admin"><Suspense fallback={null}><AdminLogin /></Suspense></Route>
+      <Route path="/admin"><AdminLogin /></Route>
       <Route path="/admin/dashboard">
-        <Suspense fallback={null}>
-          {isAuthenticated() ? <AdminDashboard /> : <Redirect to="/admin" />}
-        </Suspense>
+        {isAuthenticated() ? <AdminDashboard /> : <Redirect to="/admin" />}
       </Route>
 
       <Route component={NotFound} />
