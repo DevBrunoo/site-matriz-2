@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,56 +8,72 @@ import { isAuthenticated } from "@/lib/adminAuth";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
-import AdminLogin from "@/pages/admin/AdminLogin";
-import AdminDashboard from "@/pages/admin/AdminDashboard";
 
+// Home is the initial page — keep eager so it renders immediately
 import Home from "@/pages/Home";
-import Historia from "@/pages/Historia";
-import Capelas from "@/pages/Capelas";
-import Padres from "@/pages/Padres";
-import Secretaria from "@/pages/Secretaria";
-import Agenda from "@/pages/Agenda";
-import Missas from "@/pages/Missas";
-import Eventos from "@/pages/Eventos";
-import ViaSacra from "@/pages/ViaSacra";
-import Sacramentos from "@/pages/Sacramentos";
-import Batismo from "@/pages/Batismo";
-import Confissao from "@/pages/Confissao";
-import UncaoEnfermos from "@/pages/UncaoEnfermos";
-import Brasao from "@/pages/Brasao";
-import Eucaristia from "@/pages/Eucaristia";
-import Crisma from "@/pages/Crisma";
-import Matrimonio from "@/pages/Matrimonio";
-import Pastorais from "@/pages/Pastorais";
-import Rcc from "@/pages/Rcc";
-import Tlc from "@/pages/Tlc";
-import TercoHomens from "@/pages/TercoHomens";
-import Catequese from "@/pages/Catequese";
-import Pascom from "@/pages/Pascom";
-import Liturgia from "@/pages/Liturgia";
-import Coral from "@/pages/Coral";
-import AssociacaoRosario from "@/pages/AssociacaoRosario";
-import PastoralFamiliar from "@/pages/PastoralFamiliar";
-import GrupoEvangelizacao from "@/pages/GrupoEvangelizacao";
-import SagradoCoracaoDeJesus from "@/pages/SagradoCoracaoDeJesus";
-import PastoralSobriedade from "@/pages/PastoralSobriedade";
-import PastoralDizimo from "@/pages/PastoralDizimo";
-import RenovacaoCarismatica from "@/pages/RenovacaoCarismatica";
-import Contato from "@/pages/Contato";
-import Dizimo from "@/pages/Dizimo";
-import Cartazes from "@/pages/Cartazes";
-import ReformaParoquia from "@/pages/ReformaParoquia";
-import PastoralBatismo from "@/pages/PastoralBatismo";
-import Galeria from "@/pages/Galeria";
-import NotFound from "@/pages/not-found";
+
+// All other pages lazy-loaded → smaller initial JS bundle
+const AdminLogin      = lazy(() => import("@/pages/admin/AdminLogin"));
+const AdminDashboard  = lazy(() => import("@/pages/admin/AdminDashboard"));
+
+const Historia        = lazy(() => import("@/pages/Historia"));
+const Capelas         = lazy(() => import("@/pages/Capelas"));
+const Padres          = lazy(() => import("@/pages/Padres"));
+const Secretaria      = lazy(() => import("@/pages/Secretaria"));
+
+const Agenda          = lazy(() => import("@/pages/Agenda"));
+const Missas          = lazy(() => import("@/pages/Missas"));
+const Eventos         = lazy(() => import("@/pages/Eventos"));
+const ViaSacra        = lazy(() => import("@/pages/ViaSacra"));
+
+const Sacramentos     = lazy(() => import("@/pages/Sacramentos"));
+const Batismo         = lazy(() => import("@/pages/Batismo"));
+const Confissao       = lazy(() => import("@/pages/Confissao"));
+const UncaoEnfermos   = lazy(() => import("@/pages/UncaoEnfermos"));
+const Brasao          = lazy(() => import("@/pages/Brasao"));
+const Eucaristia      = lazy(() => import("@/pages/Eucaristia"));
+const Crisma          = lazy(() => import("@/pages/Crisma"));
+const Matrimonio      = lazy(() => import("@/pages/Matrimonio"));
+const PastoralBatismo = lazy(() => import("@/pages/PastoralBatismo"));
+
+const Pastorais             = lazy(() => import("@/pages/Pastorais"));
+const Rcc                   = lazy(() => import("@/pages/Rcc"));
+const Tlc                   = lazy(() => import("@/pages/Tlc"));
+const TercoHomens           = lazy(() => import("@/pages/TercoHomens"));
+const Catequese             = lazy(() => import("@/pages/Catequese"));
+const Pascom                = lazy(() => import("@/pages/Pascom"));
+const Liturgia              = lazy(() => import("@/pages/Liturgia"));
+const Coral                 = lazy(() => import("@/pages/Coral"));
+const AssociacaoRosario     = lazy(() => import("@/pages/AssociacaoRosario"));
+const PastoralFamiliar      = lazy(() => import("@/pages/PastoralFamiliar"));
+const GrupoEvangelizacao    = lazy(() => import("@/pages/GrupoEvangelizacao"));
+const SagradoCoracaoDeJesus = lazy(() => import("@/pages/SagradoCoracaoDeJesus"));
+const PastoralSobriedade    = lazy(() => import("@/pages/PastoralSobriedade"));
+const PastoralDizimo        = lazy(() => import("@/pages/PastoralDizimo"));
+const RenovacaoCarismatica  = lazy(() => import("@/pages/RenovacaoCarismatica"));
+
+const Galeria         = lazy(() => import("@/pages/Galeria"));
+const ReformaParoquia = lazy(() => import("@/pages/ReformaParoquia"));
+const Contato         = lazy(() => import("@/pages/Contato"));
+const Dizimo          = lazy(() => import("@/pages/Dizimo"));
+const Cartazes        = lazy(() => import("@/pages/Cartazes"));
+const NotFound        = lazy(() => import("@/pages/not-found"));
 
 const queryClient = new QueryClient();
+
+// Page fallback: dark navy matches the site background — no white flash
+const PageFallback = () => (
+  <div className="flex-grow" style={{ minHeight: "calc(100vh - 56px)", background: "hsl(224,64%,15%)" }} />
+);
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh flex flex-col w-full relative">
       <Navbar />
-      <div className="flex-grow">{children}</div>
+      {/* Suspense here so Navbar + Footer always stay visible during lazy-page load */}
+      <Suspense fallback={<PageFallback />}>
+        <div className="flex-grow">{children}</div>
+      </Suspense>
       <Footer />
       <FloatingWhatsApp />
     </div>
@@ -117,10 +134,12 @@ function Router() {
       <Route path="/dizimo"><Layout><Dizimo /></Layout></Route>
       <Route path="/cartazes"><Layout><Cartazes /></Layout></Route>
 
-      {/* Admin */}
-      <Route path="/admin"><AdminLogin /></Route>
+      {/* Admin — no Layout wrapper */}
+      <Route path="/admin"><Suspense fallback={null}><AdminLogin /></Suspense></Route>
       <Route path="/admin/dashboard">
-        {isAuthenticated() ? <AdminDashboard /> : <Redirect to="/admin" />}
+        <Suspense fallback={null}>
+          {isAuthenticated() ? <AdminDashboard /> : <Redirect to="/admin" />}
+        </Suspense>
       </Route>
 
       <Route component={NotFound} />
