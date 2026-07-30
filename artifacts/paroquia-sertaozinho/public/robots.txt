@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paroquianossasenhoraaparecida.com.br/sitemap.xml
+Sitemap: https://matrizsertaozinho.com/sitemap.xml
