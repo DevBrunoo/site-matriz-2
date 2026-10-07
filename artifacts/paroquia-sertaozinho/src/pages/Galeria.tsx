@@ -32,6 +32,9 @@ import img_padroeira1 from "@assets/nossa-senhora-aparecida-1.jpg";
 import img_novenaDia1_1 from "@assets/20261003_190335_1791342966057.jpg";
 import img_novenaDia1_2 from "@assets/20261003_190834_1791342966059.jpg";
 import img_novenaDia1_3 from "@assets/20261003_191150_1791343073926.jpg";
+import img_novenaDia1_4 from "@assets/20261003_193201_1791344204364.jpg";
+import img_novenaDia1_5 from "@assets/20261003_195703_1791344200812.jpg";
+import img_novenaDia1_6 from "@assets/20261003_195801_1791344196540.jpg";
 import img_novenaDia2_1 from "@assets/20261004_190847_1791343168703.jpg";
 import img_novenaDia2_2 from "@assets/20261004_202032_1791343176772.jpg";
 import img_novenaDia2_3 from "@assets/20261004_203757_1791343183309.jpg";
@@ -105,6 +108,9 @@ const FOTOS: GaleriaItem[] = [
   { id: 37, src: img_novenaDia1_1,    alt: "Bispo durante o primeiro dia da novena", cat: "novena-dia-1" },
   { id: 38, src: img_novenaDia1_2,    alt: "Celebração no primeiro dia da novena",   cat: "novena-dia-1" },
   { id: 39, src: img_novenaDia1_3,    alt: "Bispo no altar no primeiro dia da novena", cat: "novena-dia-1" },
+  { id: 50, src: img_novenaDia1_4,    alt: "Bispo proclamando a Palavra no primeiro dia da novena", cat: "novena-dia-1" },
+  { id: 51, src: img_novenaDia1_5,    alt: "Celebração no altar no primeiro dia da novena", cat: "novena-dia-1" },
+  { id: 52, src: img_novenaDia1_6,    alt: "Celebração diante do altar no primeiro dia da novena", cat: "novena-dia-1" },
   { id: 40, src: img_novenaDia2_1,    alt: "Celebração no segundo dia da novena",    cat: "novena-dia-2" },
   { id: 41, src: img_novenaDia2_2,    alt: "Comunidade reunida no segundo dia da novena", cat: "novena-dia-2" },
   { id: 42, src: img_novenaDia2_3,    alt: "Celebrantes no segundo dia da novena",   cat: "novena-dia-2" },
