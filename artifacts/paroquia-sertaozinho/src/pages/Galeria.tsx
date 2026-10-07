@@ -266,11 +266,6 @@ export default function Galeria() {
                     width={600}
                     className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
-                  {foto.cat.startsWith("novena-dia-") && (
-                    <p className="border-t border-gray-100 bg-white px-3 py-2 text-xs font-medium text-primary">
-                      {CATEGORIAS.find((cat) => cat.key === foto.cat)?.label}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
