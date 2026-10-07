@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { getAvisos, Aviso } from "@/lib/adminData";
 
-// photo1 lives in public/ with a stable URL so index.html can preload it as the LCP image
+import photo1 from "@assets/5d75f078-bebd-4e71-a048-a0b2d64ac628_1782522399374.JPG";
 import photo2 from "@assets/465f859d-64d1-4fff-969e-13aad3a9398b_1782522399375.JPG";
 import photo3 from "@assets/0618ff30-91fb-4d08-8228-18216b8837de_1782522399377.JPG";
 import photo4 from "@assets/05642895-2056-44c5-97ea-b2553f40b228_1782522399377.JPG";
 import photo5 from "@assets/de8dc0f6-7d60-40ae-b748-ee301a6d85ea_1782522399378.JPG";
 
 const SLIDES = [
-  { src: "/hero-slide-1.jpg", pos: "object-center" },
+  { src: photo1, pos: "object-center" },
   { src: photo2, pos: "object-top" },
   { src: photo3, pos: "object-center" },
   { src: photo4, pos: "object-center" },
