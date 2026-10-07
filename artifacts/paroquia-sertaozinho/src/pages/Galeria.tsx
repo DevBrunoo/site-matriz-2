@@ -29,10 +29,28 @@ import img_ss_ressurreicao from "@assets/20260405_053841_1783481518444.jpg";
 import img_ss_grupo from "@assets/20260401_220953(0)_1783481525733.jpg";
 import img_tlc1 from "@assets/20250817_203552_1783481983366.jpg";
 import img_padroeira1 from "@assets/nossa-senhora-aparecida-1.jpg";
+import img_novenaDia1_1 from "@assets/20261003_190335_1791342966057.jpg";
+import img_novenaDia1_2 from "@assets/20261003_190834_1791342966059.jpg";
+import img_novenaDia1_3 from "@assets/20261003_191150_1791343073926.jpg";
+import img_novenaDia2_1 from "@assets/20261004_190847_1791343168703.jpg";
+import img_novenaDia2_2 from "@assets/20261004_202032_1791343176772.jpg";
+import img_novenaDia2_3 from "@assets/20261004_203757_1791343183309.jpg";
+import img_novenaDia3_1 from "@assets/20261005_201230_1791343283085.jpg";
+import img_novenaDia3_2 from "@assets/20261005_201356_1791343290895.jpg";
+import img_novenaDia3_3 from "@assets/20261005_202622_1791343314854.jpg";
 
 const POR_PAGINA = 12;
 
-type Categoria = "todas" | "matriz" | "capelas" | "semana-santa" | "festa-padroeira" | "celebracoes";
+type Categoria =
+  | "todas"
+  | "matriz"
+  | "capelas"
+  | "semana-santa"
+  | "festa-padroeira"
+  | "celebracoes"
+  | "novena-dia-1"
+  | "novena-dia-2"
+  | "novena-dia-3";
 
 interface GaleriaItem {
   id: number;
@@ -79,6 +97,15 @@ const FOTOS: GaleriaItem[] = [
   { id: 34, src: img_svp1,            alt: "Celebração na Capela São Vicente",       cat: "capelas" },
   { id: 35, src: img_svp2,            alt: "Adoração na Capela São Vicente",         cat: "capelas" },
   { id: 36, src: img_svp3,            alt: "Crucifixo — São Vicente de Paulo",       cat: "capelas" },
+  { id: 37, src: img_novenaDia1_1,    alt: "Bispo durante o primeiro dia da novena", cat: "novena-dia-1" },
+  { id: 38, src: img_novenaDia1_2,    alt: "Celebração no primeiro dia da novena",   cat: "novena-dia-1" },
+  { id: 39, src: img_novenaDia1_3,    alt: "Bispo no altar no primeiro dia da novena", cat: "novena-dia-1" },
+  { id: 40, src: img_novenaDia2_1,    alt: "Celebração no segundo dia da novena",    cat: "novena-dia-2" },
+  { id: 41, src: img_novenaDia2_2,    alt: "Comunidade reunida no segundo dia da novena", cat: "novena-dia-2" },
+  { id: 42, src: img_novenaDia2_3,    alt: "Celebrantes no segundo dia da novena",   cat: "novena-dia-2" },
+  { id: 43, src: img_novenaDia3_1,    alt: "Preparação da celebração no terceiro dia da novena", cat: "novena-dia-3" },
+  { id: 44, src: img_novenaDia3_2,    alt: "Imagem de Nossa Senhora no terceiro dia da novena", cat: "novena-dia-3" },
+  { id: 45, src: img_novenaDia3_3,    alt: "Comunidade e celebrantes no terceiro dia da novena", cat: "novena-dia-3" },
 ];
 
 const CATEGORIAS: { key: Categoria; label: string }[] = [
@@ -88,6 +115,9 @@ const CATEGORIAS: { key: Categoria; label: string }[] = [
   { key: "semana-santa",   label: "Semana Santa" },
   { key: "festa-padroeira",label: "Festa da Padroeira" },
   { key: "celebracoes",    label: "Celebrações Diversas" },
+  { key: "novena-dia-1",   label: "1º Dia da Novena" },
+  { key: "novena-dia-2",   label: "2º Dia da Novena" },
+  { key: "novena-dia-3",   label: "3º Dia da Novena" },
 ];
 
 export default function Galeria() {
@@ -185,6 +215,21 @@ export default function Galeria() {
           </div>
 
           {/* Grid */}
+          {catAtiva.startsWith("novena-dia-") && (
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-secondary">
+                  Novena de Nossa Senhora Aparecida
+                </p>
+                <h2 className="mt-1 font-display text-2xl font-semibold text-primary">
+                  {CATEGORIAS.find((cat) => cat.key === catAtiva)?.label}
+                </h2>
+              </div>
+              <span className="text-xs text-muted-foreground">
+                {fotosPagina.length} {fotosPagina.length === 1 ? "foto" : "fotos"}
+              </span>
+            </div>
+          )}
           {fotosPagina.length === 0 ? (
             <div className="py-24 text-center">
               <p className="text-muted-foreground text-sm font-light">Nenhuma foto disponível nesta categoria ainda.</p>
@@ -205,6 +250,11 @@ export default function Galeria() {
                     width={600}
                     className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
+                  {foto.cat.startsWith("novena-dia-") && (
+                    <p className="border-t border-gray-100 bg-white px-3 py-2 text-xs font-medium text-primary">
+                      {CATEGORIAS.find((cat) => cat.key === foto.cat)?.label}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
