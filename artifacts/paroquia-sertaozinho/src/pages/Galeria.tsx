@@ -38,6 +38,10 @@ import img_novenaDia2_3 from "@assets/20261004_203757_1791343183309.jpg";
 import img_novenaDia3_1 from "@assets/20261005_201230_1791343283085.jpg";
 import img_novenaDia3_2 from "@assets/20261005_201356_1791343290895.jpg";
 import img_novenaDia3_3 from "@assets/20261005_202622_1791343314854.jpg";
+import img_novenaDia4_1 from "@assets/20261006_190537_1791343666642.jpg";
+import img_novenaDia4_2 from "@assets/20261006_200940_1791343672691.jpg";
+import img_novenaDia4_3 from "@assets/20261006_201915_1791343676815.jpg";
+import img_novenaDia4_4 from "@assets/20261006_202708_1791343681161.jpg";
 
 const POR_PAGINA = 12;
 
@@ -50,7 +54,8 @@ type Categoria =
   | "celebracoes"
   | "novena-dia-1"
   | "novena-dia-2"
-  | "novena-dia-3";
+  | "novena-dia-3"
+  | "novena-dia-4";
 
 interface GaleriaItem {
   id: number;
@@ -106,6 +111,10 @@ const FOTOS: GaleriaItem[] = [
   { id: 43, src: img_novenaDia3_1,    alt: "Preparação da celebração no terceiro dia da novena", cat: "novena-dia-3" },
   { id: 44, src: img_novenaDia3_2,    alt: "Imagem de Nossa Senhora no terceiro dia da novena", cat: "novena-dia-3" },
   { id: 45, src: img_novenaDia3_3,    alt: "Comunidade e celebrantes no terceiro dia da novena", cat: "novena-dia-3" },
+  { id: 46, src: img_novenaDia4_1,    alt: "Celebrante no quarto dia da novena", cat: "novena-dia-4" },
+  { id: 47, src: img_novenaDia4_2,    alt: "Encenação da Sagrada Família no quarto dia da novena", cat: "novena-dia-4" },
+  { id: 48, src: img_novenaDia4_3,    alt: "Comunidade reunida diante de Nossa Senhora no quarto dia da novena", cat: "novena-dia-4" },
+  { id: 49, src: img_novenaDia4_4,    alt: "Comunidade e celebrantes no quarto dia da novena", cat: "novena-dia-4" },
 ];
 
 const CATEGORIAS: { key: Categoria; label: string }[] = [
@@ -118,6 +127,7 @@ const CATEGORIAS: { key: Categoria; label: string }[] = [
   { key: "novena-dia-1",   label: "1º Dia da Novena" },
   { key: "novena-dia-2",   label: "2º Dia da Novena" },
   { key: "novena-dia-3",   label: "3º Dia da Novena" },
+  { key: "novena-dia-4",   label: "4º Dia da Novena" },
 ];
 
 export default function Galeria() {
